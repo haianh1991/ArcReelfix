@@ -30,6 +30,8 @@ function makeConfigResponse(
       anthropic_default_opus_model: "",
       anthropic_default_sonnet_model: "",
       claude_code_subagent_model: "",
+      agent_orchestrator: "claude",
+      gemini_agent_model: "gemini-2.5-flash",
       agent_session_cleanup_delay_seconds: 300,
       agent_max_concurrent_sessions: 5,
       ...overrides,

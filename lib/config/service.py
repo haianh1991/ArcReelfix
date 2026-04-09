@@ -23,6 +23,8 @@ _ANTHROPIC_ENV_MAP: dict[str, str] = {
     "anthropic_default_opus_model": "ANTHROPIC_DEFAULT_OPUS_MODEL",
     "anthropic_default_sonnet_model": "ANTHROPIC_DEFAULT_SONNET_MODEL",
     "claude_code_subagent_model": "CLAUDE_CODE_SUBAGENT_MODEL",
+    "agent_orchestrator": "AGENT_ORCHESTRATOR",
+    "gemini_agent_model": "GEMINI_AGENT_MODEL",
 }
 
 

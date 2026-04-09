@@ -228,12 +228,8 @@ export function useAssistantSession(projectName: string | null) {
         const data = parseSsePayload(event as MessageEvent);
         const isSending = store.getState().sending;
 
-        // 正在发送消息时，后端可能尚未将 session 切为 "running"，
-        // 此时 SSE 连接到旧 "completed" session 会立即收到旧 snapshot + status 后断开。
-        // 忽略这种 stale snapshot 的 turns 和 status，保留前端的 optimistic 状态。
-        if (isSending && typeof data.status === "string" && data.status !== "running") {
-          return;
-        }
+        // Fix: Removed the over-defensive 'isSending' check that blocked perfectly valid 
+        // quick-closing streams (like Gemini 503 errors) from updating the UI.
 
         applySnapshot(data as Partial<AssistantSnapshot>);
 

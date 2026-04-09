@@ -103,6 +103,8 @@ class SystemConfigPatchRequest(BaseModel):
     claude_code_subagent_model: str | None = None
     agent_session_cleanup_delay_seconds: int | None = None
     agent_max_concurrent_sessions: int | None = None
+    agent_orchestrator: str | None = None
+    gemini_agent_model: str | None = None
     text_backend_script: str | None = None
     text_backend_overview: str | None = None
     text_backend_style: str | None = None
@@ -116,6 +118,8 @@ _STRING_SETTINGS = (
     "anthropic_default_opus_model",
     "anthropic_default_sonnet_model",
     "claude_code_subagent_model",
+    "agent_orchestrator",
+    "gemini_agent_model",
     "text_backend_script",
     "text_backend_overview",
     "text_backend_style",
@@ -154,6 +158,8 @@ async def get_system_config(
         "anthropic_default_opus_model": all_s.get("anthropic_default_opus_model") or None,
         "anthropic_default_sonnet_model": all_s.get("anthropic_default_sonnet_model") or None,
         "claude_code_subagent_model": all_s.get("claude_code_subagent_model") or None,
+        "agent_orchestrator": all_s.get("agent_orchestrator") or "claude",
+        "gemini_agent_model": all_s.get("gemini_agent_model") or "gemini-2.5-flash",
         "agent_session_cleanup_delay_seconds": int(all_s.get("agent_session_cleanup_delay_seconds") or "300"),
         "agent_max_concurrent_sessions": int(all_s.get("agent_max_concurrent_sessions") or "5"),
         "text_backend_script": all_s.get("text_backend_script") or "",

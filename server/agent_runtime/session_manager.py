@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 from server.agent_runtime.message_utils import extract_plain_user_content
 from server.agent_runtime.models import SessionMeta, SessionStatus
 from server.agent_runtime.session_store import SessionMetaStore
+from server.agent_runtime.gemini_stream_adapter import GeminiStreamAdapter
 
 try:
     from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
@@ -836,7 +837,13 @@ class SessionManager:
             resume_id=None,
             can_use_tool=await self._build_can_use_tool_callback(temp_id, managed_ref),
         )
-        client = ClaudeSDKClient(options=options)
+        
+        orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
+        if orchestrator == "gemini":
+            client = GeminiStreamAdapter(options=options)
+        else:
+            client = ClaudeSDKClient(options=options)
+            
         await client.connect()
 
         managed = ManagedSession(
@@ -934,7 +941,13 @@ class SessionManager:
                 meta.id,  # SessionMeta.id 就是 sdk_session_id
                 can_use_tool=await self._build_can_use_tool_callback(session_id),
             )
-            client = ClaudeSDKClient(options=options)
+            
+            orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
+            if orchestrator == "gemini":
+                client = GeminiStreamAdapter(options=options)
+            else:
+                client = ClaudeSDKClient(options=options)
+                
             await client.connect()
 
             managed = ManagedSession(
