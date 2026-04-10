@@ -24,6 +24,7 @@ interface AgentDraft {
   geminiAgentModel: string;
   cleanupDelaySeconds: string;
   maxConcurrentSessions: string;
+  outputLanguage: string;
 }
 
 function buildDraft(data: GetSystemConfigResponse): AgentDraft {
@@ -40,6 +41,7 @@ function buildDraft(data: GetSystemConfigResponse): AgentDraft {
     geminiAgentModel: s.gemini_agent_model ?? "gemini-2.5-flash",
     cleanupDelaySeconds: String(s.agent_session_cleanup_delay_seconds ?? 300),
     maxConcurrentSessions: String(s.agent_max_concurrent_sessions ?? 5),
+    outputLanguage: s.output_language ?? "zh",
   };
 }
 
@@ -55,7 +57,8 @@ function deepEqual(a: AgentDraft, b: AgentDraft): boolean {
     a.agentOrchestrator === b.agentOrchestrator &&
     a.geminiAgentModel === b.geminiAgentModel &&
     a.cleanupDelaySeconds === b.cleanupDelaySeconds &&
-    a.maxConcurrentSessions === b.maxConcurrentSessions
+    a.maxConcurrentSessions === b.maxConcurrentSessions &&
+    a.outputLanguage === b.outputLanguage
   );
 }
 
@@ -82,6 +85,8 @@ function buildPatch(draft: AgentDraft, saved: AgentDraft): SystemConfigPatch {
     patch.agent_session_cleanup_delay_seconds = Number(draft.cleanupDelaySeconds) || 300;
   if (draft.maxConcurrentSessions !== saved.maxConcurrentSessions)
     patch.agent_max_concurrent_sessions = Number(draft.maxConcurrentSessions) || 5;
+  if (draft.outputLanguage !== saved.outputLanguage)
+    patch.output_language = draft.outputLanguage;
   return patch;
 }
 
@@ -167,6 +172,7 @@ export function AgentConfigTab({ visible }: AgentConfigTabProps) {
     geminiAgentModel: "gemini-2.5-flash",
     cleanupDelaySeconds: "300",
     maxConcurrentSessions: "5",
+    outputLanguage: "zh",
   });
   const savedRef = useRef<AgentDraft>({
     anthropicKey: "",
@@ -180,6 +186,7 @@ export function AgentConfigTab({ visible }: AgentConfigTabProps) {
     geminiAgentModel: "gemini-2.5-flash",
     cleanupDelaySeconds: "300",
     maxConcurrentSessions: "5",
+    outputLanguage: "zh",
   });
   const [saving, setSaving] = useState(false);
   const [clearingField, setClearingField] = useState<string | null>(null);
@@ -361,6 +368,39 @@ export function AgentConfigTab({ visible }: AgentConfigTabProps) {
                 />
               </div>
             )}
+          </div>
+        </div>
+
+        <div className="my-6 border-b border-gray-800/60" />
+
+        {/* ----------------------------------------------------------------- */}
+        {/* Section 0.5: Language Setting */}
+        {/* ----------------------------------------------------------------- */}
+        <div>
+          <SectionHeading
+            title="输出与界面语言 (Language)"
+            description="选择 AI 生成剧本的语言结构以及系统界面的显示语言。"
+          />
+          <div className={`${cardClassName} space-y-4`}>
+            <div>
+              <label htmlFor="output-language" className="block text-sm font-medium text-gray-100">
+                设定语言
+              </label>
+              <select
+                id="output-language"
+                value={draft.outputLanguage}
+                onChange={(e) => updateDraft("outputLanguage", e.target.value)}
+                className={`${inputClassName} mt-2 block w-full appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%239CA3AF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_0.5rem_center] bg-no-repeat`}
+                disabled={saving}
+              >
+                <option value="zh">中文 (Chinese - 默认)</option>
+                <option value="vi">Tiếng Việt (Vietnamese)</option>
+                <option value="en">English (英语)</option>
+              </select>
+              <p className="mt-1.5 text-xs text-gray-500">
+                切换后，Agent 和剧本生成都会使用此语言（系统专有名词如 JSON, Prompt, Character 等保留英文）。
+              </p>
+            </div>
           </div>
         </div>
 

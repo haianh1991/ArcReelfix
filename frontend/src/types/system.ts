@@ -17,6 +17,7 @@ export interface SystemConfigSettings {
   gemini_agent_model: string;
   agent_session_cleanup_delay_seconds: number;
   agent_max_concurrent_sessions: number;
+  output_language: string;
 }
 
 export interface SystemConfigOptions {
@@ -50,4 +51,5 @@ export interface SystemConfigPatch {
   gemini_agent_model?: string;
   agent_session_cleanup_delay_seconds?: number;
   agent_max_concurrent_sessions?: number;
+  output_language?: string;
 }

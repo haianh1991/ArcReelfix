@@ -328,7 +328,7 @@ class SessionManager:
 - 你不能创建或编辑代码文件（.py/.js/.sh 等），Write/Edit 仅限 .json/.md/.txt
 - 你是用户的视频制作搭档，专业、友善、高效"""
 
-    def _build_append_prompt(self, project_name: str) -> str:
+    def _build_append_prompt(self, project_name: str, output_language: str = "zh") -> str:
         """Build the append portion for SystemPromptPreset.
 
         Combines the ArcReel persona with project-specific context from
@@ -337,6 +337,17 @@ class SessionManager:
         project cwd.
         """
         parts = [self._PERSONA_PROMPT]
+
+        # Inject Output Language Rule dynamically to override CLAUDE.md
+        lang_map = {"zh": "Chinese (中文)", "vi": "Vietnamese (Tiếng Việt)", "en": "English"}
+        lang = lang_map.get(output_language, "Chinese")
+        
+        parts.append(f"""
+## IMPORTANT LANGUAGE RULES
+You MUST communicate, reason, and generate all descriptive output files ENTIRELY in {lang}!
+Ignore any prior instructions in CLAUDE.md to always use Chinese.
+However, you MUST KEEP English technical keywords (like JSON, Prompt, Character, Role, Clue, etc.) in English.
+""")
 
         project_context = self._build_project_context(project_name)
         if project_context:
@@ -416,6 +427,7 @@ class SessionManager:
         project_name: str,
         resume_id: str | None = None,
         can_use_tool: Callable[[str, dict[str, Any], Any], Any] | None = None,
+        output_language: str = "zh",
     ) -> Any:
         """Build ClaudeAgentOptions for a session."""
         if not SDK_AVAILABLE or ClaudeAgentOptions is None:
@@ -471,7 +483,7 @@ class SessionManager:
             system_prompt=SystemPromptPreset(
                 type="preset",
                 preset="claude_code",
-                append=self._build_append_prompt(project_name),
+                append=self._build_append_prompt(project_name, output_language),
             ),
             include_partial_messages=True,
             resume=resume_id,
@@ -805,10 +817,12 @@ class SessionManager:
         temp_id = uuid4().hex
         managed_ref: list[ManagedSession | None] = [None]
 
+        output_lang = await self._get_output_language()
         options = self._build_options(
             project_name,
             resume_id=None,
             can_use_tool=await self._build_can_use_tool_callback(temp_id, managed_ref),
+            output_language=output_lang,
         )
         orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
         
@@ -934,10 +948,12 @@ class SessionManager:
                 raise RuntimeError("claude_agent_sdk is not installed")
 
             await self._ensure_capacity()
+            output_lang = await self._get_output_language()
             options = self._build_options(
                 meta.project_name,
                 meta.id,  # SessionMeta.id 就是 sdk_session_id
                 can_use_tool=await self._build_can_use_tool_callback(session_id),
+                output_language=output_lang,
             )
             orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
             
@@ -1451,6 +1467,17 @@ class SessionManager:
             pid,
             self._process_returncode(process),
         )
+
+    async def _get_output_language(self) -> str:
+        """返回当前的 output_language 配置，默认 'zh'。"""
+        try:
+            async with async_session_factory() as session:
+                svc = ConfigService(session)
+                val = await svc.get_setting("output_language", "zh")
+            return val
+        except Exception:
+            logger.warning("读取 output_language 配置失败，使用默认值 zh", exc_info=True)
+            return "zh"
 
     async def _get_cleanup_delay(self) -> int:
         """返回会话清理延迟秒数，默认 300（5 分钟）。"""

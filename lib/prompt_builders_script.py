@@ -50,6 +50,7 @@ def build_narration_prompt(
     supported_durations: list[int] | None = None,
     default_duration: int | None = None,
     aspect_ratio: str = "9:16",
+    output_language: str = "zh",
 ) -> str:
     """
     构建说书模式的 Prompt
@@ -61,6 +62,10 @@ def build_narration_prompt(
         characters: 角色字典（仅用于提取名称列表）
         clues: 线索字典（仅用于提取名称列表）
         segments_md: Step 1 的 Markdown 内容
+        supported_durations: 支持的时长列表
+        default_duration: 默认时长
+        aspect_ratio: 画面比例
+        output_language: 输出语言（zh/vi/en）
 
     Returns:
         构建好的 Prompt 字符串
@@ -68,15 +73,19 @@ def build_narration_prompt(
     character_names = list(characters.keys())
     clue_names = list(clues.keys())
 
+    lang_map = {"zh": "中文 (Chinese)", "vi": "Tiếng Việt (Vietnamese)", "en": "English"}
+    lang = lang_map.get(output_language, "中文 (Chinese)")
+
     prompt = f"""你的任务是为短视频生成分镜剧本。请仔细遵循以下指示：
 
-**重要：所有输出内容必须使用中文。仅 JSON 键名和枚举值使用英文。**
+**重要：所有输出内容必须使用 {lang}。仅 JSON 键名和系统枚举值使用英文。**
+**IMPORTANT: All descriptive output MUST be written in {lang}. Only JSON keys and enum values should be kept in English.**
 
 1. 你将获得故事概述、视觉风格、角色列表、线索列表，以及已拆分的小说片段。
 
 2. 为每个片段生成：
-   - image_prompt：第一帧的图像生成提示词（中文描述）
-   - video_prompt：动作和音效的视频生成提示词（中文描述）
+   - image_prompt：第一帧的图像生成提示词（描述画面细节）
+   - video_prompt：动作和音效的视频生成提示词（描述动作细节）
 
 <overview>
 {project_overview.get("synopsis", "")}
@@ -123,23 +132,23 @@ c. **clues_in_segment**：列出本片段中涉及的线索名称。
    - 仅包含明确提及或明显暗示的线索
 
 d. **image_prompt**：生成包含以下字段的对象：
-   - scene：用中文描述此刻画面中的具体场景——角色位置、姿态、表情、服装细节，以及可见的环境元素和物品。
+   - scene：用 {lang} 描述此刻画面中的具体场景——角色位置、姿态、表情、服装细节，以及可见的环境元素和物品。
      聚焦当下瞬间的可见画面。仅描述摄像机能够捕捉到的具体视觉元素。
      确保描述避免超出此刻画面的元素。排除比喻、隐喻、抽象情绪词、主观评价、多场景切换等无法直接渲染的描述。
      画面应自包含，不暗示过去事件或未来发展。
    - composition：
      - shot_type：镜头类型（Extreme Close-up, Close-up, Medium Close-up, Medium Shot, Medium Long Shot, Long Shot, Extreme Long Shot, Over-the-shoulder, Point-of-view）
-     - lighting：用中文描述具体的光源类型、方向和色温（如"左侧窗户透入的暖黄色晨光"）
-     - ambiance：用中文描述可见的环境效果（如"薄雾弥漫"、"尘埃飞扬"），避免抽象情绪词
+     - lighting：用 {lang} 描述具体的光源类型、方向和色温
+     - ambiance：用 {lang} 描述可见的环境效果，避免抽象情绪词
 
 e. **video_prompt**：生成包含以下字段的对象：
-   - action：用中文精确描述该时长内主体的具体动作——身体移动、手势变化、表情转换。
+   - action：用 {lang} 精确描述该时长内主体的具体动作——身体移动、手势变化、表情转换。
      聚焦单一连贯动作，确保在指定时长内可完成。
      排除多场景切换、蒙太奇、快速剪辑等单次生成无法实现的效果。
-     排除比喻性动作描述（如"像蝴蝶般飞舞"）。
+     排除比喻性动作描述。
    - camera_motion：镜头运动（Static, Pan Left, Pan Right, Tilt Up, Tilt Down, Zoom In, Zoom Out, Tracking Shot）
      每个片段仅选择一种镜头运动。
-   - ambiance_audio：用中文描述画内音（diegetic sound）——环境声、脚步声、物体声音。
+   - ambiance_audio：用 {lang} 描述画内音（diegetic sound）——环境声、脚步声、物体声音。
      仅描述场景内真实存在的声音。排除音乐、BGM、旁白、画外音。
    - dialogue：{{speaker, line}} 数组。仅当原文有引号对话时填写。speaker 必须来自 characters_in_segment。
 
@@ -164,6 +173,7 @@ def build_drama_prompt(
     supported_durations: list[int] | None = None,
     default_duration: int | None = None,
     aspect_ratio: str = "16:9",
+    output_language: str = "zh",
 ) -> str:
     """
     构建剧集动画模式的 Prompt
@@ -182,15 +192,19 @@ def build_drama_prompt(
     character_names = list(characters.keys())
     clue_names = list(clues.keys())
 
+    lang_map = {"zh": "中文 (Chinese)", "vi": "Tiếng Việt (Vietnamese)", "en": "English"}
+    lang = lang_map.get(output_language, "中文 (Chinese)")
+
     prompt = f"""你的任务是为剧集动画生成分镜剧本。请仔细遵循以下指示：
 
-**重要：所有输出内容必须使用中文。仅 JSON 键名和枚举值使用英文。**
+**重要：所有输出内容必须使用 {lang}。仅 JSON 键名和系统枚举值使用英文。**
+**IMPORTANT: All descriptive output MUST be written in {lang}. Only JSON keys and enum values should be kept in English.**
 
 1. 你将获得故事概述、视觉风格、角色列表、线索列表，以及已拆分的场景列表。
 
 2. 为每个场景生成：
-   - image_prompt：第一帧的图像生成提示词（中文描述）
-   - video_prompt：动作和音效的视频生成提示词（中文描述）
+   - image_prompt：第一帧的图像生成提示词（描述画面细节）
+   - video_prompt：动作和音效的视频生成提示词（描述动作细节）
 
 <overview>
 {project_overview.get("synopsis", "")}
@@ -235,23 +249,23 @@ b. **clues_in_scene**：列出本场景中涉及的线索名称。
    - 仅包含明确提及或明显暗示的线索
 
 c. **image_prompt**：生成包含以下字段的对象：
-   - scene：用中文描述此刻画面中的具体场景——角色位置、姿态、表情、服装细节，以及可见的环境元素和物品。{_format_aspect_ratio_desc(aspect_ratio)}。
+   - scene：用 {lang} 描述此刻画面中的具体场景——角色位置、姿态、表情、服装细节，以及可见的环境元素和物品。{_format_aspect_ratio_desc(aspect_ratio)}。
      聚焦当下瞬间的可见画面。仅描述摄像机能够捕捉到的具体视觉元素。
      确保描述避免超出此刻画面的元素。排除比喻、隐喻、抽象情绪词、主观评价、多场景切换等无法直接渲染的描述。
      画面应自包含，不暗示过去事件或未来发展。
    - composition：
-     - shot_type：镜头类型（Extreme Close-up, Close-up, Medium Close-up, Medium Shot, Medium Long Shot, Long Shot, Extreme Long Shot, Over-the-shoulder, Point-of-view）
-     - lighting：用中文描述具体的光源类型、方向和色温（如"左侧窗户透入的暖黄色晨光"）
-     - ambiance：用中文描述可见的环境效果（如"薄雾弥漫"、"尘埃飞扬"），避免抽象情绪词
+     - shot_type：镜头类型（极端特写、特写等）
+     - lighting：用 {lang} 描述具体的光源类型、方向和色温
+     - ambiance：用 {lang} 描述可见的环境效果，避免抽象情绪词
 
 d. **video_prompt**：生成包含以下字段的对象：
-   - action：用中文精确描述该时长内主体的具体动作——身体移动、手势变化、表情转换。
+   - action：用 {lang} 精确描述该时长内主体的具体动作——身体移动、手势变化、表情转换。
      聚焦单一连贯动作，确保在指定时长内可完成。
      排除多场景切换、蒙太奇、快速剪辑等单次生成无法实现的效果。
-     排除比喻性动作描述（如"像蝴蝶般飞舞"）。
+     排除比喻性动作描述。
    - camera_motion：镜头运动（Static, Pan Left, Pan Right, Tilt Up, Tilt Down, Zoom In, Zoom Out, Tracking Shot）
      每个片段仅选择一种镜头运动。
-   - ambiance_audio：用中文描述画内音（diegetic sound）——环境声、脚步声、物体声音。
+   - ambiance_audio：用 {lang} 描述画内音（diegetic sound）——环境声、脚步声、物体声音。
      仅描述场景内真实存在的声音。排除音乐、BGM、旁白、画外音。
    - dialogue：{{speaker, line}} 数组。包含角色对话。speaker 必须来自 characters_in_scene。
 

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { API } from "@/api";
+import { useI18nStore } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // ConfigIssue
@@ -20,6 +21,11 @@ async function getConfigIssues(): Promise<ConfigIssue[]> {
   ]);
 
   const settings = configRes.settings;
+
+  // Sync language with store
+  if (settings.output_language) {
+    useI18nStore.getState().setLanguage(settings.output_language as any);
+  }
 
   // 1. Check anthropic key
   if (!settings.anthropic_api_key?.is_set) {

@@ -44,6 +44,7 @@ class ScriptGenerator:
         """
         self.project_path = Path(project_path)
         self.generator = generator
+        self.output_language = "zh"  # default
 
         # 加载 project.json
         self.project_json = self._load_project_json()
@@ -54,7 +55,19 @@ class ScriptGenerator:
         """异步工厂方法，自动从 DB 加载供应商配置创建 TextGenerator。"""
         project_name = Path(project_path).name
         generator = await TextGenerator.create(TextTaskType.SCRIPT, project_name)
-        return cls(project_path, generator)
+        instance = cls(project_path, generator)
+        
+        # Read output_language from DB
+        try:
+            from lib.db import async_session_factory
+            from lib.config.service import ConfigService
+            async with async_session_factory() as session:
+                svc = ConfigService(session)
+                instance.output_language = await svc.get_setting("output_language", "zh")
+        except Exception:
+            pass
+            
+        return instance
 
     async def generate(
         self,
@@ -93,6 +106,7 @@ class ScriptGenerator:
                 supported_durations=self._resolve_supported_durations(),
                 default_duration=self.project_json.get("default_duration"),
                 aspect_ratio=self._resolve_aspect_ratio(),
+                output_language=self.output_language,
             )
             schema = NarrationEpisodeScript
         else:
@@ -106,6 +120,7 @@ class ScriptGenerator:
                 supported_durations=self._resolve_supported_durations(),
                 default_duration=self.project_json.get("default_duration"),
                 aspect_ratio=self._resolve_aspect_ratio(),
+                output_language=self.output_language,
             )
             schema = DramaEpisodeScript
 
@@ -160,6 +175,7 @@ class ScriptGenerator:
                 supported_durations=self._resolve_supported_durations(),
                 default_duration=self.project_json.get("default_duration"),
                 aspect_ratio=self._resolve_aspect_ratio(),
+                output_language=self.output_language,
             )
         else:
             return build_drama_prompt(
@@ -172,6 +188,7 @@ class ScriptGenerator:
                 supported_durations=self._resolve_supported_durations(),
                 default_duration=self.project_json.get("default_duration"),
                 aspect_ratio=self._resolve_aspect_ratio(),
+                output_language=self.output_language,
             )
 
     def _resolve_supported_durations(self) -> list[int] | None:

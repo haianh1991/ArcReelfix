@@ -7,6 +7,7 @@ import { ApiKeysTab } from "./ApiKeysTab";
 import { MediaModelSection } from "./settings/MediaModelSection";
 import { ProviderSection } from "./ProviderSection";
 import { UsageStatsSection } from "./settings/UsageStatsSection";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -18,12 +19,12 @@ type SettingsSection = "agent" | "providers" | "media" | "usage" | "api-keys";
 // Sidebar navigation config
 // ---------------------------------------------------------------------------
 
-const SECTION_LIST: { id: SettingsSection; label: string; Icon: React.ComponentType<{ className?: string }> }[] = [
-  { id: "agent", label: "智能体", Icon: Bot },
-  { id: "providers", label: "供应商", Icon: Plug },
-  { id: "media", label: "模型选择", Icon: Film },
-  { id: "usage", label: "用量统计", Icon: BarChart3 },
-  { id: "api-keys", label: "API 管理", Icon: KeyRound },
+const SECTION_LIST: { id: SettingsSection; labelKey: string; Icon: React.ComponentType<{ className?: string }> }[] = [
+  { id: "agent", labelKey: "nav.agent", Icon: Bot },
+  { id: "providers", labelKey: "nav.providers", Icon: Plug },
+  { id: "media", labelKey: "nav.media", Icon: Film },
+  { id: "usage", labelKey: "nav.usage", Icon: BarChart3 },
+  { id: "api-keys", labelKey: "nav.api_keys", Icon: KeyRound },
 ];
 
 // ---------------------------------------------------------------------------
@@ -33,6 +34,7 @@ const SECTION_LIST: { id: SettingsSection; label: string; Icon: React.ComponentT
 export function SystemConfigPage() {
   const [location, navigate] = useLocation();
   const search = useSearch();
+  const { t } = useTranslation();
 
   const activeSection = useMemo((): SettingsSection => {
     const section = new URLSearchParams(search).get("section");
@@ -74,7 +76,7 @@ export function SystemConfigPage() {
             返回
           </Link>
           <div>
-            <h1 className="text-lg font-semibold text-gray-100">设置</h1>
+            <h1 className="text-lg font-semibold text-gray-100">{t("nav.system_settings")}</h1>
             <p className="text-xs text-gray-500">系统配置与 API 访问管理</p>
           </div>
         </div>
@@ -84,7 +86,7 @@ export function SystemConfigPage() {
       <div className="flex min-h-0 flex-1">
         {/* Sidebar */}
         <nav className="w-48 shrink-0 border-r border-gray-800 bg-gray-950/50 py-4">
-          {SECTION_LIST.map(({ id, label, Icon }) => {
+          {SECTION_LIST.map(({ id, labelKey, Icon }) => {
             const isActive = activeSection === id;
             return (
               <button
@@ -98,7 +100,7 @@ export function SystemConfigPage() {
                 }`}
               >
                 <Icon className="h-4 w-4" />
-                {label}
+                {t(labelKey as any)}
               </button>
             );
           })}

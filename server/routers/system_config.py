@@ -108,6 +108,7 @@ class SystemConfigPatchRequest(BaseModel):
     text_backend_script: str | None = None
     text_backend_overview: str | None = None
     text_backend_style: str | None = None
+    output_language: str | None = None
 
 
 # Setting keys that map directly to string DB settings
@@ -123,6 +124,7 @@ _STRING_SETTINGS = (
     "text_backend_script",
     "text_backend_overview",
     "text_backend_style",
+    "output_language",
 )
 
 
@@ -157,11 +159,12 @@ async def get_system_config(
         "anthropic_default_haiku_model": all_s.get("anthropic_default_haiku_model") or None,
         "anthropic_default_opus_model": all_s.get("anthropic_default_opus_model") or None,
         "anthropic_default_sonnet_model": all_s.get("anthropic_default_sonnet_model") or None,
-        "claude_code_subagent_model": all_s.get("claude_code_subagent_model") or None,
-        "agent_orchestrator": all_s.get("agent_orchestrator") or "claude",
-        "gemini_agent_model": all_s.get("gemini_agent_model") or "gemini-2.5-flash",
-        "agent_session_cleanup_delay_seconds": int(all_s.get("agent_session_cleanup_delay_seconds") or "300"),
-        "agent_max_concurrent_sessions": int(all_s.get("agent_max_concurrent_sessions") or "5"),
+        "claude_code_subagent_model": all_s.get("claude_code_subagent_model", ""),
+        "agent_orchestrator": all_s.get("agent_orchestrator", "claude_sdk"),
+        "gemini_agent_model": all_s.get("gemini_agent_model", ""),
+        "output_language": all_s.get("output_language", "zh"),
+        "agent_session_cleanup_delay_seconds": int(all_s.get("agent_session_cleanup_delay_seconds", "86400")),
+        "agent_max_concurrent_sessions": int(all_s.get("agent_max_concurrent_sessions", "10")),
         "text_backend_script": all_s.get("text_backend_script") or "",
         "text_backend_overview": all_s.get("text_backend_overview") or "",
         "text_backend_style": all_s.get("text_backend_style") or "",
