@@ -232,6 +232,13 @@ async def patch_system_config(
             value = patch[key]
             await svc.set_setting(key, str(value).strip() if value else "")
 
+            # If output_language changes, trigger markdown updates dynamically
+            if key == "output_language":
+                from server.services.markdown_updater import update_agent_language_rules
+                import asyncio
+                lang_val = str(value).strip() if value else "zh"
+                asyncio.create_task(asyncio.to_thread(update_agent_language_rules, lang_val))
+
     await session.commit()
 
     # Sync Anthropic settings to env vars so Claude Agent SDK picks them up

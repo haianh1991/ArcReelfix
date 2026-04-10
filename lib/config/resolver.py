@@ -101,6 +101,10 @@ class ConfigResolver:
 
     # ── 公开 API ──
 
+    async def output_lang(self) -> str:
+        async with self._open_session() as (session, svc):
+            return await svc.get_setting("output_language", "zh")
+
     async def video_generate_audio(self, project_name: str | None = None) -> bool:
         """解析 video_generate_audio。
 

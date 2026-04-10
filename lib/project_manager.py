@@ -1500,17 +1500,29 @@ class ProjectManager:
         """
         from .text_backends.base import TextGenerationRequest, TextTaskType
         from .text_generator import TextGenerator
+        from .config.resolver import ConfigResolver
+        from .db.engine import async_session_factory
 
         # 读取源文件内容
         source_content = self._read_source_files(project_name)
         if not source_content:
             raise ValueError("source 目录为空，无法生成概述")
 
+        # 获取系统配置的语言
+        async with ConfigResolver(async_session_factory).session() as resolver:
+            output_lang = await resolver.output_lang()
+
+        lang_instruction = ""
+        if output_lang == "vi":
+            lang_instruction = "IMPORTANT: You MUST respond and extract all information entirely in Vietnamese (Tiếng Việt)."
+        elif output_lang == "en":
+            lang_instruction = "IMPORTANT: You MUST respond and extract all information entirely in English."
+
         # 创建 TextGenerator（自动追踪用量）
         generator = await TextGenerator.create(TextTaskType.OVERVIEW, project_name)
 
         # 调用 TextGenerator（Structured Outputs）
-        prompt = f"请分析以下小说内容，提取关键信息：\n\n{source_content}"
+        prompt = f"请分析以下小说内容，提取关键信息：\n{lang_instruction}\n\n{source_content}"
 
         result = await generator.generate(
             TextGenerationRequest(

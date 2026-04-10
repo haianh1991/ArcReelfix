@@ -3,7 +3,9 @@
 This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## 语言规范
-- **回答用户必须使用中文**：所有回复、任务清单及计划文件，均须使用中文
+<!-- LANGUAGE_RULES_START -->
+- **Trả lời người dùng luôn luôn bằng Tiếng Việt**：Mọi phản hồi, quá trình suy nghĩ, danh sách công việc và file kế hoạch đều phải dùng Tiếng Việt
+<!-- LANGUAGE_RULES_END -->
 
 ## 项目概述
 

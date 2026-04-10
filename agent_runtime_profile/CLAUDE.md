@@ -7,10 +7,12 @@
 以下规则适用于整个项目的所有操作：
 
 ### 语言规范
-- **回答用户必须使用中文**：所有回复、思考过程、任务清单及计划文件，均须使用中文
-- **视频内容必须为中文**：所有生成的视频对话、旁白、字幕均使用中文
-- **文档使用中文**：所有的 Markdown 文件均使用中文编写
-- **Prompt 使用中文**：图片生成/视频生成使用的 prompt 应使用中文编写
+<!-- LANGUAGE_RULES_START -->
+- **Trả lời người dùng luôn luôn bằng Tiếng Việt**：Mọi phản hồi, quá trình suy nghĩ, danh sách công việc và file kế hoạch đều phải dùng Tiếng Việt
+- **Mọi video, lời bình, Vietsub phải là ngôn ngữ Tiếng Việt**
+- **Tất cả các file Markdown phải được viết bằng Tiếng Việt**
+- **Prompt tạo ảnh/tạo video phải được viết bằng Tiếng Việt**
+<!-- LANGUAGE_RULES_END -->
 
 ### 视频规格
 - **视频比例**：由项目 `aspect_ratio` 配置决定，无需在 prompt 中指定
