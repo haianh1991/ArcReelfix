@@ -1,0 +1,100 @@
+arcreel-1  | 2026-04-09 16:10:09 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:09 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:10:12 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:12 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:10:15 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:15 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:10:18 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:10:18 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:10:21 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:10:21 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:10:24 [INFO] server.app: GET /api/v1/tasks/stats 200 12ms
+arcreel-1  | 2026-04-09 16:10:24 [INFO] server.app: GET /api/v1/tasks 200 21ms
+arcreel-1  | 2026-04-09 16:10:27 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:10:27 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:10:30 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:30 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:10:33 [INFO] server.app: GET /api/v1/tasks/stats 200 23ms
+arcreel-1  | 2026-04-09 16:10:33 [INFO] server.app: GET /api/v1/tasks 200 31ms
+arcreel-1  | 2026-04-09 16:10:36 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:10:36 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:10:39 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:39 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:10:42 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:10:42 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:10:45 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:10:45 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:10:48 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:10:48 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:10:51 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:51 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:10:54 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:54 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:10:57 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:10:57 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:00 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:00 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:11:03 [INFO] server.app: GET /api/v1/tasks/stats 200 12ms
+arcreel-1  | 2026-04-09 16:11:03 [INFO] server.app: GET /api/v1/tasks 200 16ms
+arcreel-1  | 2026-04-09 16:11:06 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:11:06 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:11:09 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:09 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:12 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:12 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:11:15 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:11:15 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:18 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:11:18 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:11:21 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:21 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:11:24 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:24 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:27 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:11:27 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:11:30 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:30 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:11:33 [INFO] server.app: GET /api/v1/tasks/stats 200 12ms
+arcreel-1  | 2026-04-09 16:11:33 [INFO] server.app: GET /api/v1/tasks 200 17ms
+arcreel-1  | 2026-04-09 16:11:36 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:36 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:39 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:39 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:11:42 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:11:42 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:45 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:11:45 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:48 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:11:48 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:11:48 [INFO] uvicorn.error: Shutting down
+arcreel-1  | 2026-04-09 16:11:48 [INFO] uvicorn.error: Waiting for connections to close. (CTRL+C to force quit)
+arcreel-1  | 2026-04-09 16:12:03 [INFO] uvicorn.error: Started server process [9]
+arcreel-1  | 2026-04-09 16:12:03 [INFO] uvicorn.error: Waiting for application startup.
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.schemas
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.tables
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.types
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.constraints
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.defaults
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.plugins: setup plugin alembic.autogenerate.comments
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.migration: Context impl SQLiteImpl.
+arcreel-1  | 2026-04-09 16:12:03 [INFO] alembic.runtime.migration: Will assume non-transactional DDL.
+arcreel-1  | 2026-04-09 16:12:03 [INFO] lib.db: Database schema is up to date
+arcreel-1  | 2026-04-09 16:12:03 [INFO] server.app: agent_runtime 软连接修复完成: {'created': 0, 'repaired': 0, 'skipped': 2, 'errors': 0}
+arcreel-1  | 2026-04-09 16:12:03 [INFO] server.app: 启动 GenerationWorker...
+arcreel-1  | 2026-04-09 16:12:03 [INFO] lib.generation_worker: Worker 初始池配置: {'gemini-aistudio': (5, 3), 'gemini-vertex': (5, 3), 'ark': (5, 3), 'grok': (5, 3), 'openai': (5, 3)}
+arcreel-1  | 2026-04-09 16:12:03 [INFO] server.app: GenerationWorker 已启动
+arcreel-1  | 2026-04-09 16:12:03 [INFO] server.app: 启动 ProjectEventService...
+arcreel-1  | 2026-04-09 16:12:03 [INFO] server.app: ProjectEventService 已启动
+arcreel-1  | 2026-04-09 16:12:03 [INFO] uvicorn.error: Application startup complete.
+arcreel-1  | 2026-04-09 16:12:03 [INFO] uvicorn.error: Uvicorn running on http://0.0.0.0:1241 (Press CTRL+C to quit)
+arcreel-1  | 2026-04-09 16:12:04 [INFO] server.auth: 已自动生成 JWT 签名密钥
+arcreel-1  | 2026-04-09 16:12:04 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/events/stream 401 2ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /api/v1/tasks 401 1ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /api/v1/tasks/stats 401 1ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /login 304 4ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /site.webmanifest 304 4ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /android-chrome-192x192.png 304 1ms
+arcreel-1  | 2026-04-09 16:12:06 [INFO] server.app: GET /favicon.ico 304 1ms
+arcreel-1  | 2026-04-09 16:12:09 [INFO] lib.generation_worker: 获得 worker lease (owner=worker-a321733d19)
+arcreel-1  | 2026-04-09 16:12:19 [INFO] server.app: POST /api/v1/projects/test-d46b4b35/assistant/sessions/send 422 2ms
+arcreel-1  | 2026-04-09 16:12:35 [INFO] server.app: POST /api/v1/projects/test-d46b4b35/assistant/sessions/send 401 1ms

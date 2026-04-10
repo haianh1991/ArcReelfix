@@ -1,0 +1,100 @@
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 1017, in send_message
+arcreel-1  |     managed = await self.get_or_connect(session_id, meta=meta)
+arcreel-1  |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 994, in get_or_connect
+arcreel-1  |     await client.connect()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/client.py", line 180, in connect
+arcreel-1  |     await self._query.initialize()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 158, in initialize
+arcreel-1  |     response = await self._send_control_request(
+arcreel-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 391, in _send_control_request
+arcreel-1  |     raise result
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 181, in _read_messages
+arcreel-1  |     async for message in self.transport.read_messages():
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/transport/subprocess_cli.py", line 619, in _read_messages_impl
+arcreel-1  |     raise self._exit_error
+arcreel-1  | claude_agent_sdk._errors.ProcessError: Command failed with exit code 1 (exit code: 1)
+arcreel-1  | Error output: Check stderr output for details
+arcreel-1  | 2026-04-09 16:16:08 [INFO] server.app: POST /api/v1/projects/test-d46b4b35/assistant/sessions/send 500 3170ms
+arcreel-1  | 2026-04-09 16:16:08 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:16:08 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /app/projects/test-d46b4b35 200 2ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /site.webmanifest 200 4ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/providers 200 44ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/usage/stats 200 52ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /favicon.ico 200 5ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/tasks 200 47ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /favicon-32x32.png 304 6ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/tasks/stats 200 75ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/providers 200 32ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/custom-providers 200 122ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/system/config 200 135ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/system/config 200 23ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35 200 134ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/skills 200 11ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/tasks/stats 200 26ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/tasks 200 36ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/usage/stats 200 53ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions 200 53ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/files 200 63ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/events/stream 200 56ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions/local_session 200 9ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions/local_session/snapshot 200 15ms
+arcreel-1  | 2026-04-09 16:16:11 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/cost-estimate 200 35ms
+arcreel-1  | 2026-04-09 16:16:14 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:16:14 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:17 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:17 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:16:17 [ERROR] server.agent_runtime.session_manager: Failed to fetch gemini api key: No module named 'lib.db.repositories.credential'
+arcreel-1  | 2026-04-09 16:16:17 [INFO] claude_agent_sdk._internal.transport.subprocess_cli: Using bundled Claude Code CLI: /app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_bundled/claude
+arcreel-1  | 2026-04-09 16:16:19 [ERROR] claude_agent_sdk._internal.query: Fatal error in message reader: Command failed with exit code 1 (exit code: 1)
+arcreel-1  | Error output: Check stderr output for details
+arcreel-1  | 2026-04-09 16:16:19 [ERROR] server.routers.assistant: 请求处理失败
+arcreel-1  | Traceback (most recent call last):
+arcreel-1  |   File "/app/server/routers/assistant.py", line 72, in send_message
+arcreel-1  |     result = await service.send_or_create(
+arcreel-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/server/agent_runtime/service.py", line 221, in send_or_create
+arcreel-1  |     await self.session_manager.send_message(session_id, text, meta=meta)
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 1017, in send_message
+arcreel-1  |     managed = await self.get_or_connect(session_id, meta=meta)
+arcreel-1  |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 994, in get_or_connect
+arcreel-1  |     await client.connect()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/client.py", line 180, in connect
+arcreel-1  |     await self._query.initialize()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 158, in initialize
+arcreel-1  |     response = await self._send_control_request(
+arcreel-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 391, in _send_control_request
+arcreel-1  |     raise result
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 181, in _read_messages
+arcreel-1  |     async for message in self.transport.read_messages():
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/transport/subprocess_cli.py", line 619, in _read_messages_impl
+arcreel-1  |     raise self._exit_error
+arcreel-1  | claude_agent_sdk._errors.ProcessError: Command failed with exit code 1 (exit code: 1)
+arcreel-1  | Error output: Check stderr output for details
+arcreel-1  | 2026-04-09 16:16:19 [INFO] server.app: POST /api/v1/projects/test-d46b4b35/assistant/sessions/send 500 2150ms
+arcreel-1  | 2026-04-09 16:16:20 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:16:20 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:16:23 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:23 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:16:26 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:26 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:29 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:16:29 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:32 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:32 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:16:35 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:16:35 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:38 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:38 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:16:41 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:16:41 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:44 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:16:44 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:47 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:16:47 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:16:50 [INFO] server.app: GET /api/v1/tasks/stats 200 12ms
+arcreel-1  | 2026-04-09 16:16:50 [INFO] server.app: GET /api/v1/tasks 200 16ms

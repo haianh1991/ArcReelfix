@@ -1,0 +1,5 @@
+564:             _CURLY_QUOTES = "\u201c\u201d\u201e\u201f"  # ""„‟
+566:             def _has_curly_quotes(text: str) -> bool:
+568:                 return any(ch in _CURLY_QUOTES for ch in text)
+595:                 if _has_curly_quotes(new_string):
+596:                     curly_found = [f"U+{ord(ch):04X}" for ch in new_string if ch in _CURLY_QUOTES]

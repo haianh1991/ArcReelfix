@@ -8,7 +8,9 @@ from typing import Literal
 
 logger = logging.getLogger(__name__)
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+import httpx
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from fastapi.responses import StreamingResponse
 from fastapi.sse import EventSourceResponse, ServerSentEvent
 from pydantic import BaseModel, Field
 
@@ -21,6 +23,88 @@ from server.auth import CurrentUser, CurrentUserFlexible
 router = APIRouter()
 
 assistant_service = AssistantService(project_root=PROJECT_ROOT)
+
+@router.post("/litellm_proxy/{path:path}")
+async def litellm_proxy(project_name: str, path: str, request: Request):
+    """
+    Transparent proxy to intercept requests from claude_agent_sdk,
+    extract x-api-key, and inject it into the JSON body as api_key for LiteLLM.
+    """
+    try:
+        body = await request.json()
+    except Exception:
+        body = {}
+        
+    api_key = request.headers.get("x-api-key")
+    if api_key:
+        body["api_key"] = api_key
+        
+    model = body.get("model", "")
+    if model.startswith("gemini/") or model.startswith("gemini-"):
+        from server.agent_runtime.gemini_stream_adapter import generate_anthropic_sse_stream, generate_anthropic_json
+        import traceback
+        
+        try:
+            is_stream = body.get("stream", False)
+            if is_stream:
+                return StreamingResponse(
+                    generate_anthropic_sse_stream(api_key, body),
+                    media_type="text/event-stream"
+                )
+            else:
+                return await generate_anthropic_json(api_key, body)
+        except Exception as e:
+            traceback.print_exc()
+            from fastapi.responses import JSONResponse
+            err_msg = str(e)
+            return JSONResponse(
+                status_code=400,
+                content={
+                    "type": "error",
+                    "error": {
+                        "type": "invalid_request_error",
+                        "message": err_msg
+                    }
+                }
+            )
+        
+    # Forward to litellm
+    target_url = f"http://litellm:4000/{path}"
+    
+    # We must stream the response back
+    client = httpx.AsyncClient()
+    
+    # We send the request and hold the response first to check status
+    req = client.build_request("POST", target_url, json=body)
+    response = await client.send(req, stream=True)
+    
+    if response.status_code != 200:
+        await response.aread()
+        return StreamingResponse(
+            iter([response.content]),
+            status_code=response.status_code,
+            media_type=response.headers.get("content-type", "application/json")
+        )
+    
+    # Forward exactly what was sent but with modified body
+    async def stream_generator():
+        import json
+        async for line in response.aiter_lines():
+            try:
+                # LiteLLM mid-stream errors don't follow Anthropic format
+                # Example chunk: 'data: {"error": {"message": "...'
+                if line.startswith("data: {\"error\""):
+                    parsed = json.loads(line[6:])
+                    err_msg = parsed.get("error", {}).get("message", "Unknown mid-stream error")
+                    # Format as proper Anthropic error
+                    yield f'event: error\ndata: {{"type": "error", "error": {{"type": "api_error", "message": {json.dumps(err_msg)}}}}}\n\n'.encode("utf-8")
+                    continue
+            except Exception:
+                pass
+            yield (line + "\n").encode("utf-8")
+        await response.aclose()
+
+    return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
 
 def get_assistant_service() -> AssistantService:
@@ -66,9 +150,9 @@ async def send_message(
     project_name: str,
     req: SendRequest,
     _user: CurrentUser,
+    service: AssistantService = Depends(get_assistant_service),
 ):
     try:
-        service = get_assistant_service()
         result = await service.send_or_create(
             project_name,
             req.content,

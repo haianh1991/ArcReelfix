@@ -317,7 +317,7 @@ def generate_storyboard_direct(
 
 def main():
     parser = argparse.ArgumentParser(description="生成分镜图")
-    parser.add_argument("script", help="剧本文件名")
+    parser.add_argument("script", nargs="?", help="剧本文件名（如未提供，将自动读取 project.json 中的 episodes）")
 
     # 辅助参数
     parser.add_argument("--scene", help="指定单个场景 ID（单场景模式）")
@@ -327,26 +327,50 @@ def main():
     args = parser.parse_args()
 
     try:
-        # 检测 content_mode
         pm, project_name = ProjectManager.from_cwd()
-        script = pm.load_script(project_name, args.script)
-        content_mode = script.get("content_mode", "narration")
-
-        print(f"🚀 {content_mode} 模式：通过队列生成分镜图")
-
-        # 合并 --scene-ids 和 --segment-ids 参数
-        if args.scene:
-            segment_ids = [args.scene]
+        
+        # Determine scripts to process
+        scripts_to_process = []
+        if args.script:
+            scripts_to_process.append(args.script)
         else:
-            segment_ids = args.segment_ids or args.scene_ids
+            project_data = _load_project_metadata(pm, project_name)
+            if project_data and "episodes" in project_data:
+                for ep in project_data["episodes"]:
+                    if "script_file" in ep:
+                        scripts_to_process.append(ep["script_file"])
+            
+            if not scripts_to_process:
+                print("❌ 错误: 未指定剧本文件，且未在 project.json 中找到任何已保存的剧集 (episodes)。")
+                print("💡 请先使用 generate-script 生成剧本。")
+                sys.exit(1)
+        
+        # Process each script
+        total_results = []
+        total_failed = []
+        
+        for script_file in scripts_to_process:
+            print(f"\n======== 开始处理剧本: {script_file} ========")
+            script = pm.load_script(project_name, script_file)
+            content_mode = script.get("content_mode", "narration")
+            print(f"🚀 {content_mode} 模式：通过队列生成分镜图")
 
-        results, failed = generate_storyboard_direct(
-            args.script,
-            segment_ids=segment_ids,
-        )
-        print(f"\n📊 生成完成: {len(results)} 个分镜图")
-        if failed:
-            print(f"⚠️  失败: {len(failed)} 个")
+            # 合并 --scene-ids 和 --segment-ids 参数
+            if args.scene:
+                segment_ids = [args.scene]
+            else:
+                segment_ids = args.segment_ids or args.scene_ids
+
+            results, failed = generate_storyboard_direct(
+                script_file,
+                segment_ids=segment_ids,
+            )
+            total_results.extend(results)
+            total_failed.extend(failed)
+            
+        print(f"\n📊 总计生成完成: {len(total_results)} 个分镜图")
+        if total_failed:
+            print(f"⚠️  总计失败: {len(total_failed)} 个")
 
     except Exception as e:
         print(f"❌ 错误: {e}")

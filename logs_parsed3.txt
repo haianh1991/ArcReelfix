@@ -1,0 +1,135 @@
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.routers.auth: 用户登录成功: admin
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.app: POST /api/v1/auth/token 200 200ms
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.app: GET /favicon.ico 304 4ms
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.app: GET /api/v1/providers 200 25ms
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.app: GET /api/v1/projects 200 62ms
+arcreel-1  | 2026-04-09 16:25:43 [INFO] server.app: GET /api/v1/system/config 200 61ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/usage/stats 200 40ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/tasks/stats 200 69ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/providers 200 89ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/tasks 200 81ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/custom-providers 200 124ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/system/config 200 135ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35 200 124ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/skills 200 7ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/tasks/stats 200 35ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/tasks 200 48ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/usage/stats 200 68ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions 200 64ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/files 200 79ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions/local_session 200 13ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/events/stream 200 81ms
+arcreel-1  | 2026-04-09 16:25:44 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/assistant/sessions/local_session/snapshot 200 18ms
+arcreel-1  | 2026-04-09 16:25:45 [INFO] server.app: GET /api/v1/projects/test-d46b4b35/cost-estimate 200 57ms
+arcreel-1  | 2026-04-09 16:25:47 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:25:47 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:25:48 [INFO] claude_agent_sdk._internal.transport.subprocess_cli: Using bundled Claude Code CLI: /app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_bundled/claude
+arcreel-1  | 
+arcreel-1  | Claude configuration file not found at: /root/.claude.json
+arcreel-1  | A backup file exists at: /root/.claude/backups/.claude.json.backup.1775750684729
+arcreel-1  | You can manually restore it by running: cp "/root/.claude/backups/.claude.json.backup.1775750684729" "/root/.claude.json"
+arcreel-1  | 
+arcreel-1  | 
+arcreel-1  | Claude configuration file not found at: /root/.claude.json
+arcreel-1  | A backup file exists at: /root/.claude/backups/.claude.json.backup.1775750684729
+arcreel-1  | You can manually restore it by running: cp "/root/.claude/backups/.claude.json.backup.1775750684729" "/root/.claude.json"
+arcreel-1  | 
+arcreel-1  | 
+arcreel-1  | Claude configuration file not found at: /root/.claude.json
+arcreel-1  | A backup file exists at: /root/.claude/backups/.claude.json.backup.1775750684729
+arcreel-1  | You can manually restore it by running: cp "/root/.claude/backups/.claude.json.backup.1775750684729" "/root/.claude.json"
+arcreel-1  | 
+arcreel-1  | 2026-04-09 16:25:50 [ERROR] claude_agent_sdk._internal.query: Fatal error in message reader: Command failed with exit code 1 (exit code: 1)
+arcreel-1  | Error output: Check stderr output for details
+arcreel-1  | 2026-04-09 16:25:50 [ERROR] server.routers.assistant: 请求处理失败
+arcreel-1  | Traceback (most recent call last):
+arcreel-1  |   File "/app/server/routers/assistant.py", line 72, in send_message
+arcreel-1  |     result = await service.send_or_create(
+arcreel-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/server/agent_runtime/service.py", line 221, in send_or_create
+arcreel-1  |     await self.session_manager.send_message(session_id, text, meta=meta)
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 1023, in send_message
+arcreel-1  |     managed = await self.get_or_connect(session_id, meta=meta)
+arcreel-1  |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/server/agent_runtime/session_manager.py", line 1000, in get_or_connect
+arcreel-1  |     await client.connect()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/client.py", line 180, in connect
+arcreel-1  |     await self._query.initialize()
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 158, in initialize
+arcreel-1  |     response = await self._send_control_request(
+arcreel-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 391, in _send_control_request
+arcreel-1  |     raise result
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/query.py", line 181, in _read_messages
+arcreel-1  |     async for message in self.transport.read_messages():
+arcreel-1  |   File "/app/.venv/lib/python3.12/site-packages/claude_agent_sdk/_internal/transport/subprocess_cli.py", line 619, in _read_messages_impl
+arcreel-1  |     raise self._exit_error
+arcreel-1  | claude_agent_sdk._errors.ProcessError: Command failed with exit code 1 (exit code: 1)
+arcreel-1  | Error output: Check stderr output for details
+arcreel-1  | 2026-04-09 16:25:50 [INFO] server.app: POST /api/v1/projects/test-d46b4b35/assistant/sessions/send 500 1861ms
+arcreel-1  | 2026-04-09 16:25:50 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:25:50 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:25:53 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:25:53 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:25:56 [INFO] server.app: GET /api/v1/tasks/stats 200 13ms
+arcreel-1  | 2026-04-09 16:25:56 [INFO] server.app: GET /api/v1/tasks 200 17ms
+arcreel-1  | 2026-04-09 16:25:59 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:25:59 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:26:02 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:02 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:26:05 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:05 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:08 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:08 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:26:11 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:11 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:26:14 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:26:14 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:17 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:26:17 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:20 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:20 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:23 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:23 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:26 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:26 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:26:29 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:29 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:32 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:32 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:35 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:35 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:26:38 [INFO] server.app: GET /api/v1/tasks/stats 200 13ms
+arcreel-1  | 2026-04-09 16:26:38 [INFO] server.app: GET /api/v1/tasks 200 19ms
+arcreel-1  | 2026-04-09 16:26:41 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:26:41 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:26:44 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:44 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:47 [INFO] server.app: GET /api/v1/tasks/stats 200 8ms
+arcreel-1  | 2026-04-09 16:26:47 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:26:50 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:50 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:26:53 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:53 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:26:56 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:26:56 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:26:59 [INFO] server.app: GET /api/v1/tasks/stats 200 11ms
+arcreel-1  | 2026-04-09 16:26:59 [INFO] server.app: GET /api/v1/tasks 200 15ms
+arcreel-1  | 2026-04-09 16:27:02 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:27:02 [INFO] server.app: GET /api/v1/tasks 200 12ms
+arcreel-1  | 2026-04-09 16:27:05 [INFO] server.app: GET /api/v1/tasks/stats 200 12ms
+arcreel-1  | 2026-04-09 16:27:05 [INFO] server.app: GET /api/v1/tasks 200 19ms
+arcreel-1  | 2026-04-09 16:27:08 [INFO] server.app: GET /api/v1/tasks/stats 200 13ms
+arcreel-1  | 2026-04-09 16:27:08 [INFO] server.app: GET /api/v1/tasks 200 24ms
+arcreel-1  | 2026-04-09 16:27:11 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:27:11 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:27:14 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:27:14 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:27:17 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:27:17 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:27:20 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:27:20 [INFO] server.app: GET /api/v1/tasks 200 14ms
+arcreel-1  | 2026-04-09 16:27:23 [INFO] server.app: GET /api/v1/tasks/stats 200 9ms
+arcreel-1  | 2026-04-09 16:27:23 [INFO] server.app: GET /api/v1/tasks 200 13ms
+arcreel-1  | 2026-04-09 16:27:26 [INFO] server.app: GET /api/v1/tasks/stats 200 10ms
+arcreel-1  | 2026-04-09 16:27:26 [INFO] server.app: GET /api/v1/tasks 200 13ms

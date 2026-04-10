@@ -19,7 +19,6 @@ logger = logging.getLogger(__name__)
 from server.agent_runtime.message_utils import extract_plain_user_content
 from server.agent_runtime.models import SessionMeta, SessionStatus
 from server.agent_runtime.session_store import SessionMetaStore
-from server.agent_runtime.gemini_stream_adapter import GeminiStreamAdapter
 
 try:
     from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
@@ -589,32 +588,6 @@ class SessionManager:
                     )
                     return {}
 
-                # Detect curly quotes early — Claude Code may normalise
-                # old_string internally (allowing the edit to succeed) while
-                # the hook's exact-match ``old_string not in current`` check
-                # below would skip validation, letting curly quotes slip into
-                # the file and corrupt JSON.
-                if _has_curly_quotes(new_string):
-                    curly_found = [f"U+{ord(ch):04X}" for ch in new_string if ch in _CURLY_QUOTES]
-                    logger.warning(
-                        "PreToolUse JSON 校验拦截(弯引号): file=%s curly=%s",
-                        file_path,
-                        curly_found[:5],
-                    )
-                    return {
-                        "hookSpecificOutput": {
-                            "hookEventName": "PreToolUse",
-                            "permissionDecision": "deny",
-                            "permissionDecisionReason": (
-                                "操作被阻止：new_string 包含弯引号"
-                                "（\u201c 或 \u201d），"
-                                "这会破坏 JSON 格式。"
-                                "请将所有弯引号替换为标准 ASCII "
-                                "双引号 (U+0022) 后重试。"
-                            ),
-                        },
-                    }
-
                 p = Path(file_path)
                 resolved = (project_cwd / p).resolve() if not p.is_absolute() else p.resolve()
                 try:
@@ -837,12 +810,37 @@ class SessionManager:
             resume_id=None,
             can_use_tool=await self._build_can_use_tool_callback(temp_id, managed_ref),
         )
-        
         orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
+        
+        env_updates = {}
         if orchestrator == "gemini":
-            client = GeminiStreamAdapter(options=options)
+            model = os.environ.get("GEMINI_AGENT_MODEL", "gemini-2.5-flash")
+            options.model = f"gemini/{model}"
+            env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{project_name}/assistant/litellm_proxy"
+            
+            gemini_key = "sk-dummy"
+            try:
+                from lib.db import async_session_factory
+                from lib.db.repositories.credential_repository import CredentialRepository
+                async with async_session_factory() as session:
+                    repo = CredentialRepository(session)
+                    cred = await repo.get_active("gemini-aistudio")
+                    if cred and cred.api_key:
+                        gemini_key = cred.api_key
+            except Exception as e:
+                import logging
+                logging.getLogger(__name__).error(f"Failed to fetch gemini api key: {e}")
+            
+            env_updates["ANTHROPIC_API_KEY"] = gemini_key
+            
+        if options.env is None:
+            options.env = dict(os.environ)
         else:
-            client = ClaudeSDKClient(options=options)
+            options.env = {**os.environ, **options.env}
+            
+        options.env.update(env_updates)
+
+        client = ClaudeSDKClient(options=options)
             
         await client.connect()
 
@@ -941,12 +939,37 @@ class SessionManager:
                 meta.id,  # SessionMeta.id 就是 sdk_session_id
                 can_use_tool=await self._build_can_use_tool_callback(session_id),
             )
-            
             orchestrator = os.environ.get("AGENT_ORCHESTRATOR", "claude")
+            
+            env_updates = {}
             if orchestrator == "gemini":
-                client = GeminiStreamAdapter(options=options)
+                model = os.environ.get("GEMINI_AGENT_MODEL", "gemini-2.5-flash")
+                options.model = f"gemini/{model}"
+                env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{meta.project_name}/assistant/litellm_proxy"
+                
+                gemini_key = "sk-dummy"
+                try:
+                    from lib.db import async_session_factory
+                    from lib.db.repositories.credential_repository import CredentialRepository
+                    async with async_session_factory() as session:
+                        repo = CredentialRepository(session)
+                        cred = await repo.get_active("gemini-aistudio")
+                        if cred and cred.api_key:
+                            gemini_key = cred.api_key
+                except Exception as e:
+                    import logging
+                    logging.getLogger(__name__).error(f"Failed to fetch gemini api key: {e}")
+                
+                env_updates["ANTHROPIC_API_KEY"] = gemini_key
+                
+            if options.env is None:
+                options.env = dict(os.environ)
             else:
-                client = ClaudeSDKClient(options=options)
+                options.env = {**os.environ, **options.env}
+                
+            options.env.update(env_updates)
+
+            client = ClaudeSDKClient(options=options)
                 
             await client.connect()
 
