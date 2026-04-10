@@ -8,6 +8,7 @@ import { useConfigStatusStore } from "@/stores/config-status-store";
 import { CreateProjectModal } from "./CreateProjectModal";
 import { OpenClawModal } from "./OpenClawModal";
 import { ArchiveDiagnosticsDialog } from "@/components/shared/ArchiveDiagnosticsDialog";
+import { useTranslation } from "@/utils/i18n";
 import type {
   ImportConflictPolicy,
   ImportFailureDiagnostics,
@@ -28,6 +29,7 @@ function ImportConflictDialog({
   onCancel,
   onConfirm,
 }: ImportConflictDialogProps) {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4">
       <div className="w-full max-w-md rounded-2xl border border-amber-400/20 bg-gray-900 p-6 shadow-2xl shadow-black/40">
@@ -36,13 +38,13 @@ function ImportConflictDialog({
             <AlertTriangle className="h-5 w-5" />
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-gray-100">检测到项目编号重复</h2>
+            <h2 className="text-lg font-semibold text-gray-100">{t("proj.title_conflict")}</h2>
             <p className="text-sm leading-6 text-gray-400">
-              导入包准备使用的项目编号
+              {t("proj.conflict_msg_1")}
               <span className="mx-1 rounded bg-gray-800 px-1.5 py-0.5 font-mono text-gray-200">
                 {projectName}
               </span>
-              已存在。你可以覆盖现有项目，或自动重命名后继续导入。
+              {t("proj.conflict_msg_2")}
             </p>
           </div>
         </div>
@@ -52,13 +54,13 @@ function ImportConflictDialog({
             type="button"
             onClick={() => onConfirm("overwrite")}
             disabled={importing}
-            aria-label="覆盖现有项目"
+            aria-label={t("proj.overwrite")}
             className="flex w-full items-center justify-between rounded-xl border border-red-400/25 bg-red-500/10 px-4 py-3 text-left text-sm text-red-100 transition-colors hover:border-red-300/40 hover:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <span>
-              <span className="block font-medium">覆盖现有项目</span>
+              <span className="block font-medium">{t("proj.overwrite")}</span>
               <span className="mt-1 block text-xs text-red-200/80">
-                使用导入包内容替换现有项目编号对应的数据
+                {t("proj.overwrite_desc")}
               </span>
             </span>
             {importing && <Loader2 className="h-4 w-4 animate-spin" />}
@@ -68,13 +70,13 @@ function ImportConflictDialog({
             type="button"
             onClick={() => onConfirm("rename")}
             disabled={importing}
-            aria-label="自动重命名导入"
+            aria-label={t("proj.rename")}
             className="flex w-full items-center justify-between rounded-xl border border-indigo-400/25 bg-indigo-500/10 px-4 py-3 text-left text-sm text-indigo-100 transition-colors hover:border-indigo-300/40 hover:bg-indigo-500/15 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <span>
-              <span className="block font-medium">自动重命名导入</span>
+              <span className="block font-medium">{t("proj.rename")}</span>
               <span className="mt-1 block text-xs text-indigo-200/80">
-                保留现有项目，新导入项目自动生成新的内部编号
+                {t("proj.rename_desc")}
               </span>
             </span>
             {importing && <Loader2 className="h-4 w-4 animate-spin" />}
@@ -88,7 +90,7 @@ function ImportConflictDialog({
             disabled={importing}
             className="rounded-lg border border-gray-700 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
           >
-            取消
+            {t("btn.cancel")}
           </button>
         </div>
       </div>
@@ -124,14 +126,15 @@ function ImportDiagnosticsDialogWrapper({
   diagnostics: ImportFailureDiagnostics;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   return (
     <ArchiveDiagnosticsDialog
-      title="导入诊断"
-      description="导入已完成预检查。以下问题按严重程度分组展示，阻断问题解决前不会继续导入。"
+      title={t("proj.diag_title")}
+      description={t("proj.diag_desc")}
       sections={[
-        { key: "blocking", title: "阻断问题", tone: "border-red-400/25 bg-red-500/10 text-red-100", items: diagnostics.blocking },
-        { key: "auto_fixable", title: "可自动修复", tone: "border-indigo-400/25 bg-indigo-500/10 text-indigo-100", items: diagnostics.auto_fixable },
-        { key: "warnings", title: "警告", tone: "border-amber-400/25 bg-amber-500/10 text-amber-100", items: diagnostics.warnings },
+        { key: "blocking", title: t("proj.diag_blocking"), tone: "border-red-400/25 bg-red-500/10 text-red-100", items: diagnostics.blocking },
+        { key: "auto_fixable", title: t("proj.diag_auto"), tone: "border-indigo-400/25 bg-indigo-500/10 text-indigo-100", items: diagnostics.auto_fixable },
+        { key: "warnings", title: t("proj.diag_warning"), tone: "border-amber-400/25 bg-amber-500/10 text-amber-100", items: diagnostics.warnings },
       ]}
       onClose={onClose}
     />
@@ -142,26 +145,31 @@ function ImportDiagnosticsDialogWrapper({
 // Phase display helpers
 // ---------------------------------------------------------------------------
 
-const PHASE_LABELS: Record<string, string> = {
-  setup: "准备中",
-  worldbuilding: "世界观",
-  scripting: "剧本创作",
-  production: "制作中",
-  completed: "已完成",
-};
+function usePhaseLabels(): Record<string, string> {
+  const { t } = useTranslation();
+  return {
+    setup: t("proj.phase_setup"),
+    worldbuilding: t("proj.phase_world"),
+    scripting: t("proj.phase_script"),
+    production: t("proj.phase_prod"),
+    completed: t("proj.phase_done"),
+  };
+}
 
 // ---------------------------------------------------------------------------
 // ProjectCard — single project entry
 // ---------------------------------------------------------------------------
 
 function ProjectCard({ project }: { project: ProjectSummary }) {
+  const { t } = useTranslation();
   const [, navigate] = useLocation();
   const status = project.status;
   const hasStatus = status && "current_phase" in status;
+  const phaseLabels = usePhaseLabels();
 
   const pct = hasStatus ? Math.round((status as ProjectStatus).phase_progress * 100) : 0;
   const phase = hasStatus ? (status as ProjectStatus).current_phase : "";
-  const phaseLabel = PHASE_LABELS[phase] ?? phase;
+  const phaseLabel = phaseLabels[phase] ?? phase;
   const characters = hasStatus ? (status as ProjectStatus).characters : null;
   const clues = hasStatus ? (status as ProjectStatus).clues : null;
   const summary = hasStatus ? (status as ProjectStatus).episodes_summary : null;
@@ -191,7 +199,7 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
       <div>
         <h3 className="font-semibold text-gray-100 truncate">{project.title}</h3>
         <p className="text-xs text-gray-500 mt-0.5">
-          {project.style || "未设置风格"}
+          {project.style || t("proj.no_style")}
           {phaseLabel ? ` · ${phaseLabel}` : ""}
         </p>
       </div>
@@ -199,7 +207,7 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
       {/* Progress bar */}
       <div>
         <div className="flex justify-between text-xs text-gray-500 mb-1">
-          <span>{phaseLabel || "进度"}</span>
+          <span>{phaseLabel || t("proj.progress")}</span>
           <span>{pct}%</span>
         </div>
         <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
@@ -214,10 +222,10 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
       {(characters || clues) && (
         <div className="flex gap-3 text-xs text-gray-500">
           {characters && (
-            <span>角色 {characters.completed}/{characters.total}</span>
+            <span>{t("proj.char_count")} {characters.completed}/{characters.total}</span>
           )}
           {clues && (
-            <span>线索 {clues.completed}/{clues.total}</span>
+            <span>{t("proj.clue_count")} {clues.completed}/{clues.total}</span>
           )}
         </div>
       )}
@@ -225,10 +233,10 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
       {/* Episodes summary */}
       {summary && summary.total > 0 && (
         <div className="text-xs text-gray-500">
-          {summary.total} 集
-          {summary.scripted > 0 && ` · ${summary.scripted} 集剧本完成`}
-          {summary.in_production > 0 && ` · ${summary.in_production} 集制作中`}
-          {summary.completed > 0 && ` · ${summary.completed} 集已完成`}
+          {summary.total} {t("proj.ep_total")}
+          {summary.scripted > 0 && ` · ${summary.scripted} ${t("proj.ep_scripted")}`}
+          {summary.in_production > 0 && ` · ${summary.in_production} ${t("proj.ep_prod")}`}
+          {summary.completed > 0 && ` · ${summary.completed} ${t("proj.ep_done")}`}
         </div>
       )}
     </button>
@@ -240,6 +248,7 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
 // ---------------------------------------------------------------------------
 
 export function ProjectsPage() {
+  const { t } = useTranslation();
   const [, navigate] = useLocation();
   const { projects, projectsLoading, showCreateModal, setProjects, setProjectsLoading, setShowCreateModal } =
     useProjectsStore();
@@ -297,14 +306,14 @@ export function ProjectsPage() {
         const warningCount = result.diagnostics.warnings.length;
         useAppStore.getState().pushToast(
           autoFixedCount > 0
-            ? `项目 "${result.project.title || result.project_name}" 已导入，自动修复 ${autoFixedCount} 项`
-            : `项目 "${result.project.title || result.project_name}" 已导入`,
+            ? `${t("proj.import_success_fix")} ${autoFixedCount}`
+            : t("proj.import_success"),
           "success"
         );
         if (warningCount > 0) {
           const warningMessages = result.diagnostics.warnings.map((w) => w.message).join("；");
           useAppStore.getState().pushToast(
-            `导入警告: ${warningMessages}`,
+            `${t("proj.import_warning")} ${warningMessages}`,
             "warning"
           );
         }
@@ -343,9 +352,9 @@ export function ProjectsPage() {
         useAppStore
           .getState()
           .pushToast(
-            `导入失败: ${error.detail || error.message || "导入失败"}`
-            + (blockingCount > 0 ? `（${blockingCount} 个阻断问题` : "（0 个阻断问题")
-            + (autoFixableCount > 0 ? `，${autoFixableCount} 个可自动修复）` : "）"),
+            `${t("proj.import_fail")} ${error.detail || error.message || "Error"}`
+            + (blockingCount > 0 ? `（${blockingCount} ${t("proj.import_blocking")}` : `（0 ${t("proj.import_blocking")}`)
+            + (autoFixableCount > 0 ? `，${autoFixableCount} ${t("proj.import_auto")}）` : "）"),
             "error"
           );
       } finally {
@@ -405,7 +414,7 @@ export function ProjectsPage() {
               ) : (
                 <Upload className="h-4 w-4" />
               )}
-              {importingProject ? "导入中..." : "导入 ZIP"}
+              {importingProject ? t("proj.btn_importing") : t("proj.btn_import")}
             </button>
             <button
               type="button"
@@ -413,15 +422,15 @@ export function ProjectsPage() {
               className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 transition-colors cursor-pointer"
             >
               <Plus className="h-4 w-4" />
-              新建项目
+              {t("proj.btn_new")}
             </button>
             <div className="ml-1 flex items-center gap-1 border-l border-gray-800 pl-3">
               <button
                 type="button"
                 onClick={() => setShowOpenClaw(true)}
                 className="rounded-md px-2.5 py-1.5 text-sm text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
-                title="OpenClaw 集成"
-                aria-label="OpenClaw 集成指南"
+                title={t("proj.lbl_openclaw")}
+                aria-label={t("proj.lbl_openclaw_desc")}
               >
                 🦞
               </button>
@@ -429,12 +438,12 @@ export function ProjectsPage() {
                 type="button"
                 onClick={() => navigate("/app/settings")}
                 className="relative rounded-md p-1.5 text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
-                title="系统配置"
-                aria-label="系统配置"
+                title={t("proj.lbl_sys")}
+                aria-label={t("proj.lbl_sys")}
               >
                 <Settings className="h-4 w-4" />
                 {!isConfigComplete && (
-                  <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-rose-500" aria-label="配置不完整" />
+                  <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-rose-500" aria-label={t("proj.lbl_incomplete")} />
                 )}
               </button>
             </div>
@@ -454,13 +463,13 @@ export function ProjectsPage() {
         {projectsLoading ? (
           <div className="flex items-center justify-center py-20">
             <Loader2 className="h-6 w-6 animate-spin text-indigo-400" />
-            <span className="ml-2 text-gray-400">加载项目列表...</span>
+            <span className="ml-2 text-gray-400">{t("proj.loading")}</span>
           </div>
         ) : projects.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-gray-500">
             <FolderOpen className="h-16 w-16 mb-4" />
-            <p className="text-lg">暂无项目</p>
-            <p className="text-sm mt-1">点击右上角「新建项目」或「导入 ZIP」开始创作</p>
+            <p className="text-lg">{t("proj.empty")}</p>
+            <p className="text-sm mt-1">{t("proj.empty_sub")}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

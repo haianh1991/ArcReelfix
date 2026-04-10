@@ -24,11 +24,11 @@ router = APIRouter()
 
 assistant_service = AssistantService(project_root=PROJECT_ROOT)
 
-@router.post("/litellm_proxy/{path:path}")
-async def litellm_proxy(project_name: str, path: str, request: Request):
+@router.post("/gemini_proxy/{path:path}")
+async def gemini_proxy(project_name: str, path: str, request: Request):
     """
     Transparent proxy to intercept requests from claude_agent_sdk,
-    extract x-api-key, and inject it into the JSON body as api_key for LiteLLM.
+    extract x-api-key, and inject it into the JSON body as api_key for Gemini native streaming.
     """
     try:
         body = await request.json()
@@ -67,44 +67,19 @@ async def litellm_proxy(project_name: str, path: str, request: Request):
                     }
                 }
             )
-        
-    # Forward to litellm
-    target_url = f"http://litellm:4000/{path}"
-    
-    # We must stream the response back
-    client = httpx.AsyncClient()
-    
-    # We send the request and hold the response first to check status
-    req = client.build_request("POST", target_url, json=body)
-    response = await client.send(req, stream=True)
-    
-    if response.status_code != 200:
-        await response.aread()
-        return StreamingResponse(
-            iter([response.content]),
-            status_code=response.status_code,
-            media_type=response.headers.get("content-type", "application/json")
-        )
-    
-    # Forward exactly what was sent but with modified body
-    async def stream_generator():
-        import json
-        async for line in response.aiter_lines():
-            try:
-                # LiteLLM mid-stream errors don't follow Anthropic format
-                # Example chunk: 'data: {"error": {"message": "...'
-                if line.startswith("data: {\"error\""):
-                    parsed = json.loads(line[6:])
-                    err_msg = parsed.get("error", {}).get("message", "Unknown mid-stream error")
-                    # Format as proper Anthropic error
-                    yield f'event: error\ndata: {{"type": "error", "error": {{"type": "api_error", "message": {json.dumps(err_msg)}}}}}\n\n'.encode("utf-8")
-                    continue
-            except Exception:
-                pass
-            yield (line + "\n").encode("utf-8")
-        await response.aclose()
-
-    return StreamingResponse(stream_generator(), media_type="text/event-stream")
+            
+    # Nếu không phải Gemini model, trả về lỗi thay vì forward sang LiteLLM đã bị gỡ bỏ
+    from fastapi.responses import JSONResponse
+    return JSONResponse(
+        status_code=400,
+        content={
+            "type": "error",
+            "error": {
+                "type": "invalid_request_error",
+                "message": f"Unsupported model '{model}'. Only gemini models are supported by the gemini proxy."
+            }
+        }
+    )
 
 
 def get_assistant_service() -> AssistantService:

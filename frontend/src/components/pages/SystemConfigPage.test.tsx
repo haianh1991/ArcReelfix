@@ -34,8 +34,9 @@ function makeConfigResponse(
       gemini_agent_model: "gemini-2.5-flash",
       agent_session_cleanup_delay_seconds: 300,
       agent_max_concurrent_sessions: 5,
+      output_language: "zh",
       ...overrides,
-    },
+    } as GetSystemConfigResponse["settings"],
     options: {
       video_backends: ["gemini/veo-3"],
       image_backends: ["gemini/imagen-4"],
@@ -99,7 +100,7 @@ describe("SystemConfigPage", () => {
 
   it("renders the page header", () => {
     renderPage();
-    expect(screen.getByText("设置")).toBeInTheDocument();
+    expect(screen.getByText("系统设置")).toBeInTheDocument();
     expect(screen.getByText("系统配置与 API 访问管理")).toBeInTheDocument();
   });
 

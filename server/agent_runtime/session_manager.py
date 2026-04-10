@@ -830,7 +830,7 @@ However, you MUST KEEP English technical keywords (like JSON, Prompt, Character,
         if orchestrator == "gemini":
             model = os.environ.get("GEMINI_AGENT_MODEL", "gemini-2.5-flash")
             options.model = f"gemini/{model}"
-            env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{project_name}/assistant/litellm_proxy"
+            env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{project_name}/assistant/gemini_proxy"
             
             gemini_key = "sk-dummy"
             try:
@@ -961,7 +961,7 @@ However, you MUST KEEP English technical keywords (like JSON, Prompt, Character,
             if orchestrator == "gemini":
                 model = os.environ.get("GEMINI_AGENT_MODEL", "gemini-2.5-flash")
                 options.model = f"gemini/{model}"
-                env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{meta.project_name}/assistant/litellm_proxy"
+                env_updates["ANTHROPIC_BASE_URL"] = f"http://127.0.0.1:1241/api/v1/projects/{meta.project_name}/assistant/gemini_proxy"
                 
                 gemini_key = "sk-dummy"
                 try:

@@ -1,0 +1,106 @@
+2: * API 调用封装 (TypeScript)
+166: * 检查 fetch 响应状态，抛出包含后端错误信息的 Error。
+167: * 用于不经过 API.request() 的自定义 fetch 调用。
+184: throw new Error("认证已过期，请重新登录");
+187: /** 为 fetch options 注入 Authorization header */
+196: /** 为 URL 追加 token query param（用于 EventSource） */
+206: * 通用请求方法
+226: let message = "请求失败";
+241: // ==================== 系统配置 ====================
+257: // ==================== 项目管理 ====================
+297: throw new Error("项目创建后不支持修改 content_mode");
+340: /** 构造剪映草稿下载 URL */
+374: typeof payload.detail === "string" ? payload.detail : "导入失败"
+384: error.detail = typeof payload.detail === "string" ? payload.detail : "导入失败";
+404: // ==================== 角色管理 ====================
+451: // ==================== 线索管理 ====================
+500: // ==================== 场景管理 ====================
+526: // ==================== 片段管理（说书模式） ====================
+542: // ==================== 文件管理 ====================
+563: await throwIfNotOk(response, "上传失败");
+589: // ==================== Source 文件管理 ====================
+592: * 获取 source 文件内容
+602: await throwIfNotOk(response, "获取文件内容失败");
+607: * 保存 source 文件（新建或更新）
+622: await throwIfNotOk(response, "保存文件失败");
+627: * 删除 source 文件
+639: await throwIfNotOk(response, "删除文件失败");
+643: // ==================== 草稿文件管理 ====================
+646: * 获取项目的所有草稿
+657: * 获取草稿内容
+668: await throwIfNotOk(response, "获取草稿内容失败");
+673: * 保存草稿内容
+689: await throwIfNotOk(response, "保存草稿失败");
+694: * 删除草稿
+707: // ==================== 项目概述管理 ====================
+710: * 使用 AI 生成项目概述
+724: * 更新项目概述（手动编辑）
+739: // ==================== 生成 API ====================
+742: * 生成分镜图
+743: * @param projectName - 项目名称
+744: * @param segmentId - 片段/场景 ID
+745: * @param prompt - 图片生成 prompt（支持字符串或结构化对象）
+746: * @param scriptFile - 剧本文件名
+764: * 生成视频
+765: * @param projectName - 项目名称
+766: * @param segmentId - 片段/场景 ID
+767: * @param prompt - 视频生成 prompt（支持字符串或结构化对象）
+768: * @param scriptFile - 剧本文件名
+769: * @param durationSeconds - 时长（秒）
+792: * 生成角色设计图
+793: * @param projectName - 项目名称
+794: * @param charName - 角色名称
+795: * @param prompt - 角色描述 prompt
+816: * 生成线索设计图
+817: * @param projectName - 项目名称
+818: * @param clueName - 线索名称
+819: * @param prompt - 线索描述 prompt
+839: // ==================== 任务队列 API ====================
+901: console.error("解析 SSE 数据失败:", err, event.data);
+945: console.error("解析项目事件 SSE 数据失败:", err, event.data);
+974: // ==================== 版本管理 API ====================
+977: * 获取资源版本列表
+978: * @param projectName - 项目名称
+979: * @param resourceType - 资源类型 (storyboards, videos, characters, clues)
+980: * @param resourceId - 资源 ID
+998: * 还原到指定版本
+999: * @param projectName - 项目名称
+1000: * @param resourceType - 资源类型
+1001: * @param resourceId - 资源 ID
+1002: * @param version - 要还原的版本号
+1018: // ==================== 风格参考图 API ====================
+1021: * 上传风格参考图
+1022: * @param projectName - 项目名称
+1023: * @param file - 图片文件
+1024: * @returns 包含 style_image, style_description, url 的结果
+1046: await throwIfNotOk(response, "上传失败");
+1052: * 删除风格参考图
+1053: * @param projectName - 项目名称
+1067: * 更新风格描述
+1068: * @param projectName - 项目名称
+1069: * @param styleDescription - 风格描述
+1084: // ==================== 助手会话 API ====================
+1188: // ==================== 费用统计 API ====================
+1191: * 获取统计摘要
+1192: * @param filters - 筛选条件
+1207: * 获取调用记录列表
+1208: * @param filters - 筛选条件
+1227: * 获取有调用记录的项目列表
+1233: // ==================== API Key 管理 API ====================
+1235: /** 列出所有 API Key（不含完整 key）。 */
+1240: /** 创建新 API Key，返回含完整 key 的响应（仅此一次）。 */
+1248: /** 删除（吊销）指定 API Key。 */
+1253: // ==================== Provider 管理 API ====================
+1255: /** 获取所有 provider 列表及状态。 */
+1260: /** 获取指定 provider 的配置详情（含字段列表）。 */
+1265: /** 更新指定 provider 的配置字段。 */
+1276: /** 测试指定 provider 的连接。 */
+1284: // ==================== Provider 凭证管理 API ====================
+1332: await throwIfNotOk(response, "上传凭证失败");
+1336: // ==================== 自定义供应商 API ====================
+1378: // ==================== 用量统计（按 provider 分组）API ====================
+1381: * 获取按 provider 分组的用量统计。
+1382: * @param params - 可选筛选：provider、start、end（ISO 日期字符串）
+1395: // ==================== 费用估算 API ====================
+1398: * 获取项目费用估算。
+1399: * @param projectName - 项目名称

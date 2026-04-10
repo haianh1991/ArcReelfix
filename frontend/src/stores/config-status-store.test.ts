@@ -24,8 +24,9 @@ function makeConfigResponse(overrides?: Partial<GetSystemConfigResponse["setting
       gemini_agent_model: "gemini-2.5-flash",
       agent_session_cleanup_delay_seconds: 300,
       agent_max_concurrent_sessions: 5,
+      output_language: "zh",
       ...overrides,
-    },
+    } as GetSystemConfigResponse["settings"],
     options: {
       video_backends: ["gemini/veo-3"],
       image_backends: ["gemini/imagen-4"],
