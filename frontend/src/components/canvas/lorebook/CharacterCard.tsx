@@ -8,6 +8,8 @@ import { ImageFlipReveal } from "@/components/ui/ImageFlipReveal";
 import { PreviewableImageFrame } from "@/components/ui/PreviewableImageFrame";
 import { useProjectsStore } from "@/stores/projects-store";
 import type { Character } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface CharacterSavePayload {
   description: string;
@@ -34,6 +36,8 @@ export function CharacterCard({
   onRestoreVersion,
   generating = false,
 }: CharacterCardProps) {
+  const { t } = useTranslation();
+
   const sheetFp = useProjectsStore(
     (s) => character.character_sheet ? s.getAssetFingerprint(character.character_sheet) : null,
   );
@@ -158,7 +162,7 @@ export function CharacterCard({
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-              角色设计图
+              {t("auto.character_design_dra")}
             </span>
             <VersionTimeMachine
               projectName={projectName}
@@ -180,7 +184,7 @@ export function CharacterCard({
                 fallback={
                   <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-gray-500">
                     <User className="h-10 w-10" />
-                    <span className="text-xs">点击生成</span>
+                    <span className="text-xs">{t("auto.click_to_generate")}</span>
                   </div>
                 }
               />
@@ -191,7 +195,7 @@ export function CharacterCard({
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-              参考图
+              {t("auto.reference_picture")}
             </span>
             {(referenceFile || hasSavedReference) && (
               <button
@@ -203,7 +207,7 @@ export function CharacterCard({
                 }
                 className="text-xs text-gray-400 transition-colors hover:text-gray-200"
               >
-                {referenceFile ? "取消待上传" : "替换"}
+                {referenceFile ? t("auto.cancel_pending_uploa") : t("auto.replace_1")}
               </button>
             )}
           </div>
@@ -223,14 +227,14 @@ export function CharacterCard({
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/70 to-transparent px-3 py-2">
                   <span className="flex items-center gap-1.5 text-xs text-gray-200">
                     <ImagePlus className="h-3.5 w-3.5" />
-                    {referenceFile ? "待保存参考图" : "已保存参考图"}
+                    {referenceFile ? t("auto.reference_image_to_b") : t("auto.reference_image_save")}
                   </span>
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
                     className="rounded bg-black/40 px-2 py-1 text-xs text-gray-200 transition-colors hover:bg-black/60"
                   >
-                    更换
+                    {t("auto.replace")}
                   </button>
                 </div>
               </div>
@@ -242,7 +246,7 @@ export function CharacterCard({
               className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-gray-700 bg-gray-800/50 px-3 py-4 text-sm text-gray-500 transition-colors hover:border-gray-500 hover:text-gray-300"
             >
               <Upload className="h-4 w-4" />
-              上传参考图
+              {t("auto.upload_reference_ima")}
             </button>
           )}
           <input
@@ -255,7 +259,7 @@ export function CharacterCard({
         </div>
       </div>
 
-      <label className="text-xs font-medium text-gray-400">描述</label>
+      <label className="text-xs font-medium text-gray-400">{t("auto.describe")}</label>
       <textarea
         ref={textareaRef}
         value={description}
@@ -263,16 +267,16 @@ export function CharacterCard({
         onInput={autoResize}
         rows={3}
         className="mt-1 w-full resize-none overflow-hidden rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-200 placeholder-gray-500 focus:border-indigo-500 focus:outline-none"
-        placeholder="输入角色描述..."
+        placeholder={t("auto.enter_role_descripti")}
       />
 
-      <label className="mt-3 block text-xs font-medium text-gray-400">声音风格</label>
+      <label className="mt-3 block text-xs font-medium text-gray-400">{t("auto.sound_style")}</label>
       <input
         type="text"
         value={voiceStyle}
         onChange={(e) => setVoiceStyle(e.target.value)}
         className="mt-1 w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-200 placeholder-gray-500 focus:border-indigo-500 focus:outline-none"
-        placeholder="例如：温柔但有威严"
+        placeholder={t("auto.for_example_gentle_b")}
       />
 
       {isDirty && (
@@ -282,7 +286,7 @@ export function CharacterCard({
           disabled={saving}
           className="mt-3 rounded-lg bg-indigo-600 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {saving ? "保存中..." : "保存"}
+          {saving ? t("auto.saving") : t("auto.save")}
         </button>
       )}
 
@@ -290,7 +294,7 @@ export function CharacterCard({
         <GenerateButton
           onClick={() => onGenerate(name)}
           loading={generating}
-          label={character.character_sheet ? "重新生成设计图" : "生成设计图"}
+          label={character.character_sheet ? t("auto.regenerate_design_dr") : t("auto.generate_design_draw")}
           className="w-full justify-center"
         />
       </div>

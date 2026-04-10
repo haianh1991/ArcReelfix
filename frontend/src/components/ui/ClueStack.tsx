@@ -6,6 +6,8 @@ import { useProjectsStore } from "@/stores/projects-store";
 import type { Clue } from "@/types";
 
 import { colorForName } from "@/utils/color";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // CluePopover — shows clue detail on hover
@@ -24,9 +26,11 @@ function CluePopover({
   anchorRef: RefObject<HTMLElement | null>;
   sheetFp: number | null;
 }) {
+  const { t } = useTranslation();
+
 
   const firstLine = clue.description?.split("\n")[0] ?? "";
-  const typeLabel = clue.type === "location" ? "场景" : "道具";
+  const typeLabel = clue.type === "location" ? t("auto.scene") : t("auto.props");
   const typeBadgeClass =
     clue.type === "location"
       ? "bg-amber-800/60 text-amber-300"
@@ -87,6 +91,8 @@ function SingleClue({
   clue: Clue | undefined;
   projectName: string;
 }) {
+  const { t } = useTranslation();
+
   const [imgError, setImgError] = useState(false);
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -154,6 +160,8 @@ export function ClueStack({
   projectName,
   maxShow = 4,
 }: ClueStackProps) {
+  const { t } = useTranslation();
+
   if (names.length === 0) return null;
 
   const visible = names.slice(0, maxShow);

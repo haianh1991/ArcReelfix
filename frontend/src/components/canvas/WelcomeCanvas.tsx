@@ -2,6 +2,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import { Upload, FileText, Sparkles, Loader2, CheckCircle2, Plus } from "lucide-react";
 import { API } from "@/api";
 import { useAppStore } from "@/stores/app-store";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -30,6 +31,7 @@ export function WelcomeCanvas({
   onUpload,
   onAnalyze,
 }: WelcomeCanvasProps) {
+    const { t } = useTranslation();
   const [isDragging, setIsDragging] = useState(false);
   const [phase, setPhase] = useState<UploadPhase>("loading");
   const [sourceFiles, setSourceFiles] = useState<string[]>([]);
@@ -145,14 +147,14 @@ export function WelcomeCanvas({
         <div>
           <Sparkles className="mx-auto mb-3 h-10 w-10 text-indigo-400" />
           <h1 className="text-2xl font-bold text-gray-100">
-            欢迎来到 {displayProjectTitle}！
+            {t("auto.welcome_to")}{displayProjectTitle}！
           </h1>
           <p className="mt-2 text-sm text-gray-400">
-            {phase === "idle" && "请拖拽或上传您的小说源文件（txt/md），AI 将为您拆解设定。"}
-            {phase === "has_sources" && "源文件已就绪。您可以继续添加文件，或点击下方按钮开始 AI 分析。"}
+            {phase === "idle" && t("auto.please_drag_or_uploa")}
+            {phase === "has_sources" && t("auto.source_files_are_rea")}
             {phase === "uploading" && `正在上传 "${fileName}"...`}
-            {phase === "analyzing" && "AI 正在分析小说内容，提取角色、线索和世界观..."}
-            {phase === "done" && "分析完成！正在加载项目概述..."}
+            {phase === "analyzing" && t("auto.ai_is_analyzing_the_")}
+            {phase === "done" && t("auto.analysis_completed_l")}
           </p>
         </div>
 
@@ -173,10 +175,9 @@ export function WelcomeCanvas({
             <Upload
               className={`mx-auto h-8 w-8 ${isDragging ? "text-indigo-400" : "text-gray-500"}`}
             />
-            <p className="mt-3 text-sm text-gray-300">拖拽文件到此处</p>
+            <p className="mt-3 text-sm text-gray-300">{t("auto.drag_and_drop_files_")}</p>
             <p className="mt-1 text-xs text-gray-500">
-              或点击选择文件（支持 .txt / .md）
-            </p>
+              {t("auto.or_click_to_select_a")}</p>
             <input
               ref={fileInputRef}
               type="file"
@@ -193,8 +194,7 @@ export function WelcomeCanvas({
             {/* Source file list */}
             <div className="rounded-xl border border-gray-800 bg-gray-900 p-4 text-left">
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                已上传的源文件
-              </p>
+                {t("auto.uploaded_source_file")}</p>
               <div className="space-y-1.5">
                 {sourceFiles.map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm text-gray-300">
@@ -210,8 +210,7 @@ export function WelcomeCanvas({
                 className="mt-3 flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-300 transition-colors"
               >
                 <Plus className="h-3.5 w-3.5" />
-                添加更多文件
-              </button>
+                {t("auto.add_more_files")}</button>
               <input
                 ref={fileInputRef}
                 type="file"
@@ -233,8 +232,7 @@ export function WelcomeCanvas({
                   : "border-gray-700 text-gray-500 hover:border-gray-600"
               }`}
             >
-              或拖拽更多文件到此处
-            </button>
+              {t("auto.or_drag_more_files_h")}</button>
 
             {/* Analyze button */}
             <button
@@ -243,8 +241,7 @@ export function WelcomeCanvas({
               className="w-full rounded-xl bg-indigo-600 px-6 py-3 text-sm font-medium text-white hover:bg-indigo-500 transition-colors"
             >
               <Sparkles className="inline-block h-4 w-4 mr-2 -mt-0.5" />
-              开始 AI 分析
-            </button>
+              {t("auto.start_ai_analysis")}</button>
           </div>
         )}
 
@@ -252,7 +249,7 @@ export function WelcomeCanvas({
         {phase === "uploading" && (
           <div className="rounded-xl border border-gray-700 bg-gray-900/50 p-12">
             <Loader2 className="mx-auto h-8 w-8 text-indigo-400 animate-spin" />
-            <p className="mt-3 text-sm text-gray-300">上传中...</p>
+            <p className="mt-3 text-sm text-gray-300">{t("auto.uploading")}</p>
             <p className="mt-1 text-xs text-gray-500">{fileName}</p>
           </div>
         )}
@@ -261,8 +258,8 @@ export function WelcomeCanvas({
         {phase === "analyzing" && (
           <div className="rounded-xl border border-indigo-500/30 bg-indigo-500/5 p-12">
             <Sparkles className="mx-auto h-10 w-10 text-indigo-400 animate-pulse" />
-            <p className="mt-3 text-sm text-indigo-300 font-medium">AI 分析中...</p>
-            <p className="mt-1 text-xs text-gray-400">正在提取故事梗概、题材、主题和世界观设定</p>
+            <p className="mt-3 text-sm text-indigo-300 font-medium">{t("auto.ai_analysis_in_progr")}</p>
+            <p className="mt-1 text-xs text-gray-400">{t("auto.extracting_story_out")}</p>
             <div className="mt-4 mx-auto w-48 h-1 rounded-full bg-gray-800 overflow-hidden">
               <div className="h-full rounded-full bg-indigo-600 animate-progress" />
             </div>
@@ -273,7 +270,7 @@ export function WelcomeCanvas({
         {phase === "done" && (
           <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-12">
             <CheckCircle2 className="mx-auto h-8 w-8 text-green-400" />
-            <p className="mt-3 text-sm text-green-300">分析完成</p>
+            <p className="mt-3 text-sm text-green-300">{t("auto.analysis_completed")}</p>
           </div>
         )}
 
@@ -286,16 +283,15 @@ export function WelcomeCanvas({
         {phase === "idle" && (
           <div className="text-left space-y-2">
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-              接下来会发生什么？
-            </p>
+              {t("auto.what_happens_next")}</p>
             <div className="space-y-1.5 text-xs text-gray-400">
               <div className="flex items-start gap-2">
                 <FileText className="mt-0.5 h-3.5 w-3.5 text-gray-500 shrink-0" />
-                <span>AI 将分析您的小说，提取角色、线索和世界观设定</span>
+                <span>{t("auto.ai_will_analyze_your")}</span>
               </div>
               <div className="flex items-start gap-2">
                 <Sparkles className="mt-0.5 h-3.5 w-3.5 text-gray-500 shrink-0" />
-                <span>自动生成项目概述，然后您可以开始创建剧本和分镜</span>
+                <span>{t("auto.automatically_genera")}</span>
               </div>
             </div>
           </div>

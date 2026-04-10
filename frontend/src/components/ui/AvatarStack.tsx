@@ -6,6 +6,8 @@ import { useProjectsStore } from "@/stores/projects-store";
 import type { Character } from "@/types";
 
 import { colorForName } from "@/utils/color";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // AvatarPopover — shows character detail on hover
@@ -22,6 +24,8 @@ function AvatarPopover({
   projectName: string;
   anchorRef: RefObject<HTMLElement | null>;
 }) {
+  const { t } = useTranslation();
+
   const sheetFp = useProjectsStore(
     (s) => character.character_sheet ? s.getAssetFingerprint(character.character_sheet) : null,
   );
@@ -54,7 +58,7 @@ function AvatarPopover({
           <div className="flex items-center gap-1.5">
             <p className="truncate text-sm font-medium text-white">{name}</p>
             <span className="shrink-0 rounded bg-indigo-800/60 px-1 py-0.5 text-[10px] font-semibold text-indigo-300">
-              角色
+              {t("auto.role")}
             </span>
           </div>
           {firstLine && (
@@ -81,6 +85,8 @@ function SingleAvatar({
   character: Character | undefined;
   projectName: string;
 }) {
+  const { t } = useTranslation();
+
   const [imgError, setImgError] = useState(false);
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -147,6 +153,8 @@ export function AvatarStack({
   projectName,
   maxShow = 4,
 }: AvatarStackProps) {
+  const { t } = useTranslation();
+
   if (names.length === 0) return null;
 
   const visible = names.slice(0, maxShow);

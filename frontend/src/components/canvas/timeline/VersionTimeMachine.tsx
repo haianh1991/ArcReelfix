@@ -4,6 +4,8 @@ import { ChevronDown, ChevronRight, History } from "lucide-react";
 import { API, type VersionInfo } from "@/api";
 import { useAppStore } from "@/stores/app-store";
 import { useProjectsStore } from "@/stores/projects-store";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface VersionTimeMachineProps {
   projectName: string;
@@ -38,6 +40,8 @@ export function VersionTimeMachine({
   resourceId,
   onRestore,
 }: VersionTimeMachineProps) {
+  const { t } = useTranslation();
+
   const resourcePath =
     resourceType === "storyboards" ? `storyboards/scene_${resourceId}.png` :
     resourceType === "videos" ? `videos/scene_${resourceId}.mp4` :
@@ -187,7 +191,7 @@ export function VersionTimeMachine({
         className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-medium text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
       >
         <History className="h-3 w-3" />
-        <span>版本管理</span>
+        <span>{t("auto.version_management")}</span>
         {open ? <ChevronDown className="h-3 w-3" /> : <ChevronRight className="h-3 w-3" />}
       </button>
 
@@ -205,12 +209,12 @@ export function VersionTimeMachine({
             className="z-[9999] w-64 rounded-xl border border-gray-700 bg-gray-900/95 p-3 shadow-2xl shadow-black/40 backdrop-blur"
           >
             {loading ? (
-              <span className="text-xs text-gray-500">加载中...</span>
+              <span className="text-xs text-gray-500">{t("auto.loading")}</span>
             ) : versions.length === 0 ? (
               <div className="space-y-1">
-                <p className="text-[11px] font-medium text-gray-300">暂无历史版本</p>
+                <p className="text-[11px] font-medium text-gray-300">{t("auto.no_historical_versio")}</p>
                 <p className="text-[11px] leading-5 text-gray-500">
-                  生成或还原后，历史版本会出现在这里。
+                  {t("auto.after_building_or_re")}
                 </p>
               </div>
             ) : (
@@ -218,11 +222,11 @@ export function VersionTimeMachine({
                 {/* Header */}
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
-                    历史版本
+                    {t("auto.historical_version")}
                   </span>
                   {currentVersion > 0 && (
                     <span className="rounded-full border border-indigo-500/30 bg-indigo-500/10 px-2 py-0.5 text-[10px] font-medium text-indigo-200">
-                      当前 v{currentVersion}
+                      {t("auto.current_v")}{currentVersion}
                     </span>
                   )}
                 </div>
@@ -258,7 +262,7 @@ export function VersionTimeMachine({
 
                 {!selectedInfo && (
                   <p className="text-[10px] leading-4 text-gray-400">
-                    点击版本号预览，非当前版本可切换。
+                    {t("auto.click_the_version_nu")}
                   </p>
                 )}
 
@@ -274,7 +278,7 @@ export function VersionTimeMachine({
                       </span>
                       {selectedInfo.is_current ? (
                         <span className="shrink-0 rounded-full bg-indigo-500/10 px-2 py-0.5 text-[10px] font-medium text-indigo-300">
-                          当前
+                          {t("auto.current")}
                         </span>
                       ) : (
                         <button
@@ -283,7 +287,7 @@ export function VersionTimeMachine({
                           onClick={() => void handleRestore(selectedInfo.version)}
                           className="shrink-0 rounded-full bg-indigo-600 px-2.5 py-0.5 text-[10px] font-medium text-white transition-colors hover:bg-indigo-500 disabled:opacity-50"
                         >
-                          {restoringVersion === selectedInfo.version ? "切换中..." : "切换到此版本"}
+                          {restoringVersion === selectedInfo.version ? t("auto.switching") : t("auto.switch_to_this_versi")}
                         </button>
                       )}
                     </div>
@@ -312,7 +316,7 @@ export function VersionTimeMachine({
 
                     {/* Prompt text */}
                     <p className="line-clamp-4 text-[11px] leading-5 text-gray-400">
-                      {selectedInfo.prompt || "该版本没有记录额外说明。"}
+                      {selectedInfo.prompt || t("auto.no_additional_instru")}
                     </p>
 
 

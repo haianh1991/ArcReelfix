@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import { ProviderIcon } from "@/components/ui/ProviderIcon";
+import { useTranslation } from "@/utils/i18n";
+import { t as standaloneT } from "@/utils/i18n";
 
 interface ProviderModelSelectProps {
   value: string; // "gemini-aistudio/veo-3.1-generate-001"
@@ -43,13 +45,15 @@ export function ProviderModelSelect({
   options,
   providerNames,
   onChange,
-  placeholder = "选择模型…",
+  placeholder,
   className,
   allowDefault,
   defaultLabel,
   defaultHint,
   "aria-label": ariaLabel,
 }: ProviderModelSelectProps) {
+  const { t } = useTranslation();
+
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -161,7 +165,7 @@ export function ProviderModelSelect({
 
   const displayText = value
     ? `${providerNames[currentProvider] || currentProvider} · ${currentModel}`
-    : placeholder;
+    : (placeholder ?? t("auto.select_model"));
 
   const activeDescendantId =
     open && flatOptions.length > 0 ? `${LISTBOX_ID}-option-${activeIndex}` : undefined;
@@ -196,7 +200,7 @@ export function ProviderModelSelect({
         <div
           id={LISTBOX_ID}
           role="listbox"
-          aria-label="选择模型"
+          aria-label={t("auto.select_model_1")}
           className="absolute z-50 mt-1 w-full max-h-60 overflow-y-auto rounded-lg border border-gray-700 bg-gray-900 shadow-xl"
         >
           {allowDefault && (
@@ -215,7 +219,7 @@ export function ProviderModelSelect({
                 activeIndex === 0 ? "bg-gray-800 text-white" : "text-gray-300 hover:bg-gray-800/50"
               }`}
             >
-              <span>{defaultLabel ?? "跟随全局默认"}</span>
+              <span>{defaultLabel ?? t("auto.follow_global_defaul")}</span>
               {defaultHint && (
                 <span className="ml-auto text-xs text-gray-500">{defaultHint}</span>
               )}

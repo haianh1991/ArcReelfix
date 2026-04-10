@@ -1,0 +1,2667 @@
+{
+  "认证已过期，请重新登录": {
+    "key": "auto.the_certification_ha",
+    "en": "The certification has expired, please log in again",
+    "vi": "Chứng nhận đã hết hạn, vui lòng đăng nhập lại"
+  },
+  "请求失败": {
+    "key": "auto.request_failed",
+    "en": "Request failed",
+    "vi": "Yêu cầu không thành công"
+  },
+  "项目创建后不支持修改 content_mode": {
+    "key": "auto.modification_of_cont",
+    "en": "Modification of content_mode is not supported after the project is created.",
+    "vi": "Việc sửa đổi content_mode không được hỗ trợ sau khi dự án được tạo."
+  },
+  "导入失败": {
+    "key": "auto.import_failed",
+    "en": "Import failed",
+    "vi": "Nhập không thành công"
+  },
+  "上传失败": {
+    "key": "auto.upload_failed",
+    "en": "Upload failed",
+    "vi": "Tải lên không thành công"
+  },
+  "获取文件内容失败": {
+    "key": "auto.failed_to_get_file_c",
+    "en": "Failed to get file content",
+    "vi": "Không thể lấy nội dung tập tin"
+  },
+  "保存文件失败": {
+    "key": "auto.failed_to_save_file",
+    "en": "Failed to save file",
+    "vi": "Không lưu được tập tin"
+  },
+  "删除文件失败": {
+    "key": "auto.failed_to_delete_fil",
+    "en": "Failed to delete file",
+    "vi": "Không thể xóa tập tin"
+  },
+  "获取草稿内容失败": {
+    "key": "auto.failed_to_get_draft_",
+    "en": "Failed to get draft content",
+    "vi": "Không lấy được nội dung nháp"
+  },
+  "保存草稿失败": {
+    "key": "auto.failed_to_save_draft",
+    "en": "Failed to save draft",
+    "vi": "Không lưu được bản nháp"
+  },
+  "解析 SSE 数据失败:": {
+    "key": "auto.failed_to_parse_sse_",
+    "en": "Failed to parse SSE data:",
+    "vi": "Không thể phân tích dữ liệu SSE:"
+  },
+  "解析项目事件 SSE 数据失败:": {
+    "key": "auto.failed_to_parse_proj",
+    "en": "Failed to parse project event SSE data:",
+    "vi": "Không thể phân tích cú pháp dữ liệu SSE sự kiện dự án:"
+  },
+  "上传凭证失败": {
+    "key": "auto.failed_to_upload_cre",
+    "en": "Failed to upload credentials",
+    "vi": "Không thể tải lên thông tin xác thực"
+  },
+  "加载中...": {
+    "key": "auto.loading",
+    "en": "loading...",
+    "vi": "Đang tải..."
+  },
+  "图片消息": {
+    "key": "auto.picture_message",
+    "en": "Picture message",
+    "vi": "Tin nhắn hình ảnh"
+  },
+  "发送失败": {
+    "key": "auto.sending_failed",
+    "en": "Sending failed",
+    "vi": "Gửi không thành công"
+  },
+  "回答失败": {
+    "key": "auto.answer_failed",
+    "en": "Answer failed",
+    "vi": "Trả lời không thành công"
+  },
+  "中断失败": {
+    "key": "auto.interrupt_failed",
+    "en": "Interrupt failed",
+    "vi": "Ngắt không thành công"
+  },
+  "同步项目变更失败:": {
+    "key": "auto.failed_to_synchroniz",
+    "en": "Failed to synchronize project changes:",
+    "vi": "Không thể đồng bộ hóa các thay đổi của dự án:"
+  },
+  "未找到可定位的内容：": {
+    "key": "auto.no_targetable_conten",
+    "en": "No targetable content found:",
+    "vi": "Không tìm thấy nội dung có thể nhắm mục tiêu:"
+  },
+  "登录失败": {
+    "key": "auto.login_failed",
+    "en": "Login failed",
+    "vi": "Đăng nhập không thành công"
+  },
+  "用户名": {
+    "key": "auto.username",
+    "en": "username",
+    "vi": "Tên người dùng"
+  },
+  "密码": {
+    "key": "auto.password",
+    "en": "password",
+    "vi": "Mật khẩu"
+  },
+  "登录中...": {
+    "key": "auto.login",
+    "en": "Login...",
+    "vi": "Đăng nhập..."
+  },
+  "登录": {
+    "key": "auto.log_in",
+    "en": "Log in",
+    "vi": "Đăng nhập"
+  },
+  "页面未找到": {
+    "key": "auto.page_not_found",
+    "en": "Page not found",
+    "vi": "Không tìm thấy trang"
+  },
+  "返回首页": {
+    "key": "auto.return_to_home_page",
+    "en": "Return to home page",
+    "vi": "Trở về trang chủ"
+  },
+  "ArcReel 智能体 API Key（Anthropic）未配置": {
+    "key": "auto.arcreel_agent_api_ke",
+    "en": "ArcReel Agent API Key (Anthropic) is not configured",
+    "vi": "Khóa API ArcReel Agent (Anthropic) chưa được định cấu hình"
+  },
+  "未配置支持视频生成的供应商": {
+    "key": "auto.no_vendor_configured",
+    "en": "No vendor configured to support video generation",
+    "vi": "Không có nhà cung cấp nào được định cấu hình để hỗ trợ tạo video"
+  },
+  "未配置支持图片生成的供应商": {
+    "key": "auto.no_provider_configur",
+    "en": "No provider configured to support image generation",
+    "vi": "Không có nhà cung cấp nào được định cấu hình để hỗ trợ tạo hình ảnh"
+  },
+  "未配置支持文本生成的供应商": {
+    "key": "auto.no_vendor_configured_1",
+    "en": "No vendor configured to support text generation",
+    "vi": "Không có nhà cung cấp nào được định cấu hình để hỗ trợ tạo văn bản"
+  },
+  "项目": {
+    "key": "auto.project",
+    "en": "project",
+    "vi": "Dự án"
+  },
+  "角色": {
+    "key": "auto.role",
+    "en": "Role",
+    "vi": "Vai trò"
+  },
+  "线索": {
+    "key": "auto.clue",
+    "en": "clue",
+    "vi": "Đầu mối"
+  },
+  "分镜": {
+    "key": "auto.storyboard",
+    "en": "Storyboard",
+    "vi": "Bảng phân cảnh"
+  },
+  "剧集": {
+    "key": "auto.drama_series",
+    "en": "drama series",
+    "vi": "Loạt phim truyền hình"
+  },
+  "项目概览": {
+    "key": "auto.project_overview",
+    "en": "Project overview",
+    "vi": "Tổng quan dự án"
+  },
+  "预处理": {
+    "key": "auto.preprocessing",
+    "en": "preprocessing",
+    "vi": "Tiền xử lý"
+  },
+  "分镜图": {
+    "key": "auto.storyboards",
+    "en": "Storyboards",
+    "vi": "Bảng phân cảnh"
+  },
+  "视频": {
+    "key": "auto.video",
+    "en": "video",
+    "vi": "Băng hình"
+  },
+  "内容": {
+    "key": "auto.content",
+    "en": "content",
+    "vi": "Nội dung"
+  },
+  "…等": {
+    "key": "auto.wait",
+    "en": "…wait",
+    "vi": "…Chờ đợi"
+  },
+  "的分镜图已生成": {
+    "key": "auto.storyboards_have_bee",
+    "en": "Storyboards have been generated",
+    "vi": "Bảng phân cảnh đã được tạo"
+  },
+  "的视频已生成": {
+    "key": "auto.of_videos_has_been_g",
+    "en": "of videos has been generated",
+    "vi": "Số video đã được tạo"
+  },
+  "已创建": {
+    "key": "auto.created",
+    "en": "Created",
+    "vi": "Tạo"
+  },
+  "已删除": {
+    "key": "auto.deleted",
+    "en": "Deleted",
+    "vi": "Đã xóa"
+  },
+  "已更新": {
+    "key": "auto.updated",
+    "en": "updated",
+    "vi": "Đã cập nhật"
+  },
+  "AI 刚生成了": {
+    "key": "auto.ai_just_generated",
+    "en": "AI just generated",
+    "vi": "AI vừa tạo"
+  },
+  "的分镜图，点击查看": {
+    "key": "auto.storyboards_click_to",
+    "en": "Storyboards, click to view",
+    "vi": "Bảng phân cảnh, bấm vào để xem"
+  },
+  "的视频，点击查看": {
+    "key": "auto.video_click_to_view",
+    "en": "video, click to view",
+    "vi": "Video, bấm vào để xem"
+  },
+  "AI 刚新增了": {
+    "key": "auto.ai_just_added",
+    "en": "AI just added",
+    "vi": "AI vừa được thêm vào"
+  },
+  "，点击查看": {
+    "key": "auto.click_to_view",
+    "en": ", click to view",
+    "vi": ", bấm vào để xem"
+  },
+  "AI 刚删除了": {
+    "key": "auto.ai_just_deleted",
+    "en": "AI just deleted",
+    "vi": "AI vừa xóa"
+  },
+  "AI 刚更新了": {
+    "key": "auto.ai_just_updated",
+    "en": "AI just updated",
+    "vi": "AI vừa cập nhật"
+  },
+  "已生成": {
+    "key": "auto.generated",
+    "en": "Generated",
+    "vi": "Đã tạo"
+  },
+  "个": {
+    "key": "auto.indivual",
+    "en": "indivual",
+    "vi": "Cá nhân"
+  },
+  "新增了": {
+    "key": "auto.added",
+    "en": "Added",
+    "vi": "Đã thêm"
+  },
+  "删除了": {
+    "key": "auto.deleted_1",
+    "en": "deleted",
+    "vi": "Đã xóa"
+  },
+  "更新了": {
+    "key": "auto.updated_1",
+    "en": "updated",
+    "vi": "Đã cập nhật"
+  },
+  "源文件 \"": {
+    "key": "auto.source_file",
+    "en": "source file \"",
+    "vi": "Tập tin nguồn\""
+  },
+  "\" 上传成功": {
+    "key": "auto.upload_successful",
+    "en": "\"Upload successful",
+    "vi": "\"Tải lên thành công"
+  },
+  "项目概述已重新生成": {
+    "key": "auto.project_overview_has",
+    "en": "Project overview has been regenerated",
+    "vi": "Tổng quan dự án đã được tạo lại"
+  },
+  "重新生成失败:": {
+    "key": "auto.regeneration_failed",
+    "en": "Regeneration failed:",
+    "vi": "Tái tạo không thành công:"
+  },
+  "风格参考图已更新": {
+    "key": "auto.style_reference_char",
+    "en": "Style reference chart updated",
+    "vi": "Đã cập nhật biểu đồ tham chiếu kiểu"
+  },
+  "上传失败:": {
+    "key": "auto.upload_failed_1",
+    "en": "Upload failed:",
+    "vi": "Tải lên không thành công:"
+  },
+  "确定删除当前风格参考图吗？": {
+    "key": "auto.are_you_sure_you_wan",
+    "en": "Are you sure you want to delete the current style reference image?",
+    "vi": "Bạn có chắc chắn muốn xóa hình ảnh tham chiếu kiểu hiện tại không?"
+  },
+  "风格参考图已删除": {
+    "key": "auto.style_reference_imag",
+    "en": "Style reference image deleted",
+    "vi": "Đã xóa hình ảnh tham chiếu kiểu"
+  },
+  "删除失败:": {
+    "key": "auto.delete_failed",
+    "en": "Delete failed:",
+    "vi": "Xóa không thành công:"
+  },
+  "风格描述已保存": {
+    "key": "auto.style_description_sa",
+    "en": "Style description saved",
+    "vi": "Đã lưu mô tả kiểu"
+  },
+  "保存失败:": {
+    "key": "auto.save_failed",
+    "en": "Save failed:",
+    "vi": "Lưu không thành công:"
+  },
+  "加载项目数据中...": {
+    "key": "auto.loading_project_data",
+    "en": "Loading project data...",
+    "vi": "Đang tải dữ liệu dự án..."
+  },
+  "项目风格": {
+    "key": "auto.project_style",
+    "en": "Project style",
+    "vi": "Phong cách dự án"
+  },
+  "参考图会参与后续画面生成；风格描述用于补充视觉规则，校准整体调性、材质和镜头气质。": {
+    "key": "auto.the_reference_image_",
+    "en": "The reference image will participate in subsequent image generation; the style description is used to supplement the visual rules and calibrate the overall tone, material and lens temperament.",
+    "vi": "Hình ảnh tham chiếu sẽ tham gia vào quá trình tạo hình ảnh tiếp theo; mô tả kiểu dáng được sử dụng để bổ sung các quy tắc trực quan và hiệu chỉnh tông màu tổng thể, chất liệu và đặc tính của ống kính."
+  },
+  "未设置风格标签": {
+    "key": "auto.style_tag_not_set",
+    "en": "style tag not set",
+    "vi": "Thẻ kiểu chưa được đặt"
+  },
+  "项目风格参考图": {
+    "key": "auto.project_style_refere",
+    "en": "Project style reference chart",
+    "vi": "Biểu đồ tham khảo phong cách dự án"
+  },
+  "上传中...": {
+    "key": "auto.uploading",
+    "en": "Uploading...",
+    "vi": "Đang tải lên..."
+  },
+  "上传风格参考图": {
+    "key": "auto.upload_style_referen",
+    "en": "Upload style reference image",
+    "vi": "Tải lên hình ảnh tham khảo kiểu"
+  },
+  "支持 PNG / JPG / WEBP": {
+    "key": "auto.support_png_jpg_webp",
+    "en": "Support PNG/JPG/WEBP",
+    "vi": "Hỗ trợ PNG/JPG/WEBP"
+  },
+  "使用说明": {
+    "key": "auto.instructions_for_use",
+    "en": "Instructions for use",
+    "vi": "Hướng dẫn sử dụng"
+  },
+  "当前参考图会作为统一视觉基线，用于角色图、分镜图和视频生成。": {
+    "key": "auto.the_current_referenc",
+    "en": "The current reference image will serve as a unified visual baseline for character drawings, storyboards, and video generation.",
+    "vi": "Hình ảnh tham chiếu hiện tại sẽ đóng vai trò là đường cơ sở trực quan thống nhất cho các bản vẽ nhân vật, bảng phân cảnh và tạo video."
+  },
+  "还没有绑定项目级参考图，可以先上传一张目标风格样片作为统一基线。": {
+    "key": "auto.if_you_haven_t_bound",
+    "en": "If you haven't bound a project-level reference picture yet, you can first upload a target style sample as a unified baseline.",
+    "vi": "Nếu bạn chưa đóng khung ảnh tham chiếu cấp dự án, trước tiên bạn có thể tải lên mẫu kiểu mục tiêu làm đường cơ sở thống nhất."
+  },
+  "替换参考图": {
+    "key": "auto.replace_reference_im",
+    "en": "Replace reference image",
+    "vi": "Thay thế hình ảnh tham khảo"
+  },
+  "上传参考图": {
+    "key": "auto.upload_reference_ima",
+    "en": "Upload reference image",
+    "vi": "Tải lên hình ảnh tham khảo"
+  },
+  "删除中...": {
+    "key": "auto.deleting",
+    "en": "Deleting...",
+    "vi": "Đang xóa..."
+  },
+  "删除参考图": {
+    "key": "auto.delete_reference_ima",
+    "en": "Delete reference image",
+    "vi": "Xóa hình ảnh tham khảo"
+  },
+  "风格描述": {
+    "key": "auto.style_description",
+    "en": "style description",
+    "vi": "Mô tả phong cách"
+  },
+  "字": {
+    "key": "auto.character",
+    "en": "Character",
+    "vi": "Tính cách"
+  },
+  "上传参考图后系统会自动分析并填充风格描述；你也可以继续手动校准。": {
+    "key": "auto.after_uploading_the_",
+    "en": "After uploading the reference image, the system will automatically analyze and fill in the style description; you can also continue to calibrate manually.",
+    "vi": "Sau khi tải ảnh tham khảo lên, hệ thống sẽ tự động phân tích và điền mô tả kiểu dáng; bạn cũng có thể tiếp tục hiệu chỉnh thủ công."
+  },
+  "上传风格参考图后，系统会自动分析并填充风格描述；也可以手动编辑。": {
+    "key": "auto.after_uploading_the__1",
+    "en": "After uploading the style reference image, the system will automatically analyze and fill in the style description; it can also be edited manually.",
+    "vi": "Sau khi tải hình ảnh tham chiếu kiểu lên, hệ thống sẽ tự động phân tích và điền mô tả kiểu; nó cũng có thể được chỉnh sửa bằng tay."
+  },
+  "建议把风格描述用于补充光线、色彩、材质与镜头语言。": {
+    "key": "auto.it_is_recommended_th",
+    "en": "It is recommended that stylistic descriptions be used to complement the language of light, colour, material and shot.",
+    "vi": "Bạn nên sử dụng các mô tả về phong cách để bổ sung cho ngôn ngữ về ánh sáng, màu sắc, chất liệu và cảnh quay."
+  },
+  "没有参考图时，也可以先用文字明确画面风格和审美约束。": {
+    "key": "auto.when_there_is_no_ref",
+    "en": "When there is no reference picture, you can also use text to clarify the style and aesthetic constraints of the picture.",
+    "vi": "Khi không có hình ảnh tham khảo, bạn cũng có thể sử dụng văn bản để làm rõ phong cách và những hạn chế về mặt thẩm mỹ của hình ảnh."
+  },
+  "保存中...": {
+    "key": "auto.saving",
+    "en": "Saving...",
+    "vi": "Đang lưu..."
+  },
+  "保存风格描述": {
+    "key": "auto.save_style_descripti",
+    "en": "Save style description",
+    "vi": "Lưu mô tả kiểu"
+  },
+  "说书+画面模式": {
+    "key": "auto.storytelling_picture",
+    "en": "Storytelling + picture mode",
+    "vi": "Chế độ kể chuyện + hình ảnh"
+  },
+  "剧集动画模式": {
+    "key": "auto.episode_animation_mo",
+    "en": "Episode animation mode",
+    "vi": "Chế độ hoạt hình tập"
+  },
+  "未设置风格": {
+    "key": "auto.not_styled",
+    "en": "Not styled",
+    "vi": "Không theo kiểu"
+  },
+  "项目概述": {
+    "key": "auto.project_overview_1",
+    "en": "Project overview",
+    "vi": "Tổng quan dự án"
+  },
+  "重新生成概述": {
+    "key": "auto.rebuild_overview",
+    "en": "Rebuild overview",
+    "vi": "Xây dựng lại tổng quan"
+  },
+  "生成中...": {
+    "key": "auto.generating",
+    "en": "Generating...",
+    "vi": "Đang tạo..."
+  },
+  "重新生成": {
+    "key": "auto.regenerate",
+    "en": "Regenerate",
+    "vi": "Tái sinh"
+  },
+  "题材:": {
+    "key": "auto.theme",
+    "en": "theme:",
+    "vi": "Chủ đề:"
+  },
+  "主题:": {
+    "key": "auto.theme_1",
+    "en": "theme:",
+    "vi": "Chủ đề:"
+  },
+  "正在计算费用...": {
+    "key": "auto.calculating_fees",
+    "en": "Calculating fees...",
+    "vi": "Tính phí..."
+  },
+  "费用估算失败:": {
+    "key": "auto.cost_estimate_failed",
+    "en": "Cost estimate failed:",
+    "vi": "Ước tính chi phí không thành công:"
+  },
+  "项目总费用": {
+    "key": "auto.total_project_cost",
+    "en": "total project cost",
+    "vi": "Tổng chi phí dự án"
+  },
+  "预估": {
+    "key": "auto.estimate",
+    "en": "Estimate",
+    "vi": "Ước lượng"
+  },
+  "总计": {
+    "key": "auto.total",
+    "en": "total",
+    "vi": "Tổng cộng"
+  },
+  "实际": {
+    "key": "auto.actual",
+    "en": "actual",
+    "vi": "Thật sự"
+  },
+  "角色/线索": {
+    "key": "auto.character_clue",
+    "en": "Character/Clue",
+    "vi": "Nhân vật/Đầu mối"
+  },
+  "暂无剧集。使用 AI 助手生成剧本。": {
+    "key": "auto.there_are_no_episode",
+    "en": "There are no episodes yet. Use an AI assistant to generate scripts.",
+    "vi": "Chưa có tập nào. Sử dụng trợ lý AI để tạo tập lệnh."
+  },
+  "片段 ·": {
+    "key": "auto.snippet",
+    "en": "snippet ·",
+    "vi": "Đoạn trích ·"
+  },
+  "确定要删除文件 \"": {
+    "key": "auto.are_you_sure_you_wan_1",
+    "en": "Are you sure you want to delete the file\"",
+    "vi": "Bạn có chắc chắn muốn xóa tập tin\""
+  },
+  "\" 吗？此操作不可撤销。": {
+    "key": "auto.this_operation_is_ir",
+    "en": "\"? This operation is irreversible.",
+    "vi": "\"? Hoạt động này là không thể đảo ngược."
+  },
+  "加载文件中...": {
+    "key": "auto.loading_files",
+    "en": "Loading files...",
+    "vi": "Đang tải tập tin..."
+  },
+  "无法加载文件 \"": {
+    "key": "auto.unable_to_load_file",
+    "en": "Unable to load file\"",
+    "vi": "Không thể tải tập tin\""
+  },
+  "保存": {
+    "key": "auto.save",
+    "en": "save",
+    "vi": "Cứu"
+  },
+  "取消": {
+    "key": "auto.cancel",
+    "en": "Cancel",
+    "vi": "Hủy bỏ"
+  },
+  "编辑": {
+    "key": "auto.edit",
+    "en": "edit",
+    "vi": "Biên tập"
+  },
+  "删除": {
+    "key": "auto.delete",
+    "en": "delete",
+    "vi": "Xóa bỏ"
+  },
+  "更新 Prompt 失败:": {
+    "key": "auto.update_prompt_failed",
+    "en": "Update prompt failed:",
+    "vi": "Lời nhắc cập nhật không thành công:"
+  },
+  "已提交分镜 \"": {
+    "key": "auto.storyboard_submitted",
+    "en": "Storyboard submitted \"",
+    "vi": "Đã gửi bản phân cảnh \""
+  },
+  "\" 生成任务": {
+    "key": "auto.generate_tasks",
+    "en": "\" Generate tasks",
+    "vi": "\"Tạo nhiệm vụ"
+  },
+  "生成分镜失败:": {
+    "key": "auto.failed_to_generate_s",
+    "en": "Failed to generate storyboard:",
+    "vi": "Không tạo được bảng phân cảnh:"
+  },
+  "已提交视频 \"": {
+    "key": "auto.video_submitted",
+    "en": "Video submitted \"",
+    "vi": "Đã gửi video \""
+  },
+  "生成视频失败:": {
+    "key": "auto.failed_to_generate_v",
+    "en": "Failed to generate video:",
+    "vi": "Không tạo được video:"
+  },
+  "角色 \"": {
+    "key": "auto.role_1",
+    "en": "Role \"",
+    "vi": "Vai trò \""
+  },
+  "\" 已更新": {
+    "key": "auto.updated_2",
+    "en": "\"Updated",
+    "vi": "\"Đã cập nhật"
+  },
+  "更新角色失败:": {
+    "key": "auto.failed_to_update_rol",
+    "en": "Failed to update role:",
+    "vi": "Không cập nhật được vai trò:"
+  },
+  "\" 生成任务已提交": {
+    "key": "auto.the_build_task_has_b",
+    "en": "\"The build task has been submitted",
+    "vi": "\"Nhiệm vụ xây dựng đã được gửi"
+  },
+  "提交失败:": {
+    "key": "auto.submission_failed",
+    "en": "Submission failed:",
+    "vi": "Gửi không thành công:"
+  },
+  "\" 已添加": {
+    "key": "auto.added_1",
+    "en": "\"Added",
+    "vi": "\"Đã thêm"
+  },
+  "添加失败:": {
+    "key": "auto.add_failed",
+    "en": "Add failed:",
+    "vi": "Thêm không thành công:"
+  },
+  "更新线索失败:": {
+    "key": "auto.failed_to_update_clu",
+    "en": "Failed to update clue:",
+    "vi": "Không thể cập nhật manh mối:"
+  },
+  "线索 \"": {
+    "key": "auto.clue_1",
+    "en": "clue \"",
+    "vi": "Manh mối\""
+  },
+  "分析失败:": {
+    "key": "auto.analysis_failed",
+    "en": "Analysis failed:",
+    "vi": "Phân tích không thành công:"
+  },
+  "欢迎来到": {
+    "key": "auto.welcome_to",
+    "en": "welcome to",
+    "vi": "Chào mừng đến"
+  },
+  "请拖拽或上传您的小说源文件（txt/md），AI 将为您拆解设定。": {
+    "key": "auto.please_drag_or_uploa",
+    "en": "Please drag or upload your novel source file (txt/md), and AI will disassemble the settings for you.",
+    "vi": "Vui lòng kéo hoặc tải lên tệp nguồn mới của bạn (txt/md) và AI sẽ phân tách cài đặt cho bạn."
+  },
+  "源文件已就绪。您可以继续添加文件，或点击下方按钮开始 AI 分析。": {
+    "key": "auto.source_files_are_rea",
+    "en": "Source files are ready. You can continue adding files, or click the button below to start AI analysis.",
+    "vi": "Các tập tin nguồn đã sẵn sàng. Bạn có thể tiếp tục thêm tệp hoặc nhấp vào nút bên dưới để bắt đầu phân tích AI."
+  },
+  "正在上传 \"": {
+    "key": "auto.uploading_1",
+    "en": "Uploading \"",
+    "vi": "Đang tải lên \""
+  },
+  "AI 正在分析小说内容，提取角色、线索和世界观...": {
+    "key": "auto.ai_is_analyzing_the_",
+    "en": "AI is analyzing the content of the novel to extract characters, clues and worldview...",
+    "vi": "AI đang phân tích nội dung cuốn tiểu thuyết để rút ra các nhân vật, manh mối và thế giới quan..."
+  },
+  "分析完成！正在加载项目概述...": {
+    "key": "auto.analysis_completed_l",
+    "en": "Analysis completed! Loading project overview...",
+    "vi": "Phân tích hoàn tất! Đang tải tổng quan dự án..."
+  },
+  "拖拽文件到此处": {
+    "key": "auto.drag_and_drop_files_",
+    "en": "Drag and drop files here",
+    "vi": "Kéo và thả tập tin vào đây"
+  },
+  "或点击选择文件（支持 .txt / .md）": {
+    "key": "auto.or_click_to_select_a",
+    "en": "Or click to select a file (supports .txt / .md)",
+    "vi": "Hoặc click chọn file (hỗ trợ .txt/.md)"
+  },
+  "已上传的源文件": {
+    "key": "auto.uploaded_source_file",
+    "en": "Uploaded source file",
+    "vi": "Tệp nguồn đã tải lên"
+  },
+  "添加更多文件": {
+    "key": "auto.add_more_files",
+    "en": "Add more files",
+    "vi": "Thêm nhiều tập tin hơn"
+  },
+  "或拖拽更多文件到此处": {
+    "key": "auto.or_drag_more_files_h",
+    "en": "Or drag more files here",
+    "vi": "Hoặc kéo thêm file vào đây"
+  },
+  "开始 AI 分析": {
+    "key": "auto.start_ai_analysis",
+    "en": "Start AI analysis",
+    "vi": "Bắt đầu phân tích AI"
+  },
+  "AI 分析中...": {
+    "key": "auto.ai_analysis_in_progr",
+    "en": "AI analysis in progress...",
+    "vi": "Đang tiến hành phân tích AI..."
+  },
+  "正在提取故事梗概、题材、主题和世界观设定": {
+    "key": "auto.extracting_story_out",
+    "en": "Extracting story outline, subject matter, themes and world view settings",
+    "vi": "Trích xuất dàn ý câu chuyện, chủ đề, chủ đề và cài đặt thế giới quan"
+  },
+  "分析完成": {
+    "key": "auto.analysis_completed",
+    "en": "Analysis completed",
+    "vi": "Phân tích đã hoàn tất"
+  },
+  "接下来会发生什么？": {
+    "key": "auto.what_happens_next",
+    "en": "What happens next?",
+    "vi": "Điều gì xảy ra tiếp theo?"
+  },
+  "AI 将分析您的小说，提取角色、线索和世界观设定": {
+    "key": "auto.ai_will_analyze_your",
+    "en": "AI will analyze your novel to extract characters, clues, and world settings",
+    "vi": "AI sẽ phân tích cuốn tiểu thuyết của bạn để trích xuất các nhân vật, manh mối và bối cảnh thế giới"
+  },
+  "自动生成项目概述，然后您可以开始创建剧本和分镜": {
+    "key": "auto.automatically_genera",
+    "en": "Automatically generate a project overview so you can start creating scripts and storyboards",
+    "vi": "Tự động tạo tổng quan về dự án để bạn có thể bắt đầu tạo tập lệnh và bảng phân cảnh"
+  },
+  "新会话": {
+    "key": "auto.new_session",
+    "en": "new session",
+    "vi": "Phiên mới"
+  },
+  "切换会话": {
+    "key": "auto.switch_session",
+    "en": "Switch session",
+    "vi": "Chuyển phiên"
+  },
+  "无会话": {
+    "key": "auto.no_session",
+    "en": "No session",
+    "vi": "Không có phiên"
+  },
+  "确定要删除这个会话吗？此操作不可撤销。": {
+    "key": "auto.are_you_sure_you_wan_2",
+    "en": "Are you sure you want to delete this conversation? This action cannot be undone.",
+    "vi": "Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Không thể hoàn tác hành động này."
+  },
+  "删除会话": {
+    "key": "auto.delete_session",
+    "en": "Delete session",
+    "vi": "Xóa phiên"
+  },
+  "请先回答上方问题": {
+    "key": "auto.please_answer_the_qu",
+    "en": "Please answer the questions above first",
+    "vi": "Hãy trả lời các câu hỏi trên trước"
+  },
+  "助手正在生成中，可点击停止中断": {
+    "key": "auto.the_assistant_is_bei",
+    "en": "The assistant is being generated, click to stop the interruption.",
+    "vi": "Trợ lý đang được tạo, nhấp để dừng gián đoạn."
+  },
+  "输入消息，输入 / 查看可用技能": {
+    "key": "auto.enter_message_enter_",
+    "en": "Enter message, enter / view available skills",
+    "vi": "Nhập tin nhắn, nhập/xem kỹ năng có sẵn"
+  },
+  "图片 \"": {
+    "key": "auto.picture",
+    "en": "picture \"",
+    "vi": "Hình ảnh \""
+  },
+  "\" 超过 5MB，已跳过": {
+    "key": "auto.over_5mb_skipped",
+    "en": "\"Over 5MB, skipped",
+    "vi": "\"Trên 5 MB, bị bỏ qua"
+  },
+  "收起助手面板": {
+    "key": "auto.collapse_assistant_p",
+    "en": "Collapse assistant panel",
+    "vi": "Thu gọn bảng trợ lý"
+  },
+  "ArcReel 智能体": {
+    "key": "auto.arcreel_agent",
+    "en": "ArcReel Agent",
+    "vi": "Đại lý ArcReel"
+  },
+  "思考中": {
+    "key": "auto.thinking",
+    "en": "Thinking",
+    "vi": "Suy nghĩ"
+  },
+  "新建会话": {
+    "key": "auto.new_session_1",
+    "en": "New session",
+    "vi": "Phiên mới"
+  },
+  "在下方输入消息开始对话": {
+    "key": "auto.enter_a_message_belo",
+    "en": "Enter a message below to start a conversation",
+    "vi": "Nhập tin nhắn bên dưới để bắt đầu cuộc trò chuyện"
+  },
+  "输入 / 可快速调用技能": {
+    "key": "auto.input_quickly_call_s",
+    "en": "Input / Quickly call skills",
+    "vi": "Kỹ năng nhập/gọi nhanh"
+  },
+  "点击放大图片": {
+    "key": "auto.click_to_enlarge_ima",
+    "en": "Click to enlarge image",
+    "vi": "Bấm vào để phóng to hình ảnh"
+  },
+  "附件预览": {
+    "key": "auto.attachment_preview",
+    "en": "Attachment preview",
+    "vi": "Xem trước tệp đính kèm"
+  },
+  "移除图片": {
+    "key": "auto.remove_image",
+    "en": "Remove image",
+    "vi": "Xóa hình ảnh"
+  },
+  "助手输入": {
+    "key": "auto.assistant_input",
+    "en": "Assistant input",
+    "vi": "Đầu vào của trợ lý"
+  },
+  "最多附加": {
+    "key": "auto.at_most_additional",
+    "en": "At most additional",
+    "vi": "Tối đa bổ sung"
+  },
+  "张图片": {
+    "key": "auto.pictures",
+    "en": "pictures",
+    "vi": "Hình ảnh"
+  },
+  "附加图片": {
+    "key": "auto.attach_pictures",
+    "en": "Attach pictures",
+    "vi": "Đính kèm hình ảnh"
+  },
+  "中断会话": {
+    "key": "auto.interrupt_session",
+    "en": "Interrupt session",
+    "vi": "Phiên ngắt"
+  },
+  "发送消息": {
+    "key": "auto.send_message",
+    "en": "Send message",
+    "vi": "Gửi tin nhắn"
+  },
+  "片段": {
+    "key": "auto.fragment",
+    "en": "fragment",
+    "vi": "Mảnh vỡ"
+  },
+  "其他": {
+    "key": "auto.other",
+    "en": "other",
+    "vi": "Khác"
+  },
+  "选项": {
+    "key": "auto.options",
+    "en": "Options",
+    "vi": "Tùy chọn"
+  },
+  "若以上选项都不符合，可自行输入": {
+    "key": "auto.if_none_of_the_above",
+    "en": "If none of the above options match, you can enter your own",
+    "vi": "Nếu không có tùy chọn nào ở trên phù hợp, bạn có thể nhập tùy chọn của riêng mình"
+  },
+  "需要你的选择": {
+    "key": "auto.need_your_choice",
+    "en": "need your choice",
+    "vi": "Cần sự lựa chọn của bạn"
+  },
+  "问题": {
+    "key": "auto.question",
+    "en": "question",
+    "vi": "Câu hỏi"
+  },
+  "可多选": {
+    "key": "auto.multiple_selections_",
+    "en": "Multiple selections possible",
+    "vi": "Có thể có nhiều lựa chọn"
+  },
+  "单选": {
+    "key": "auto.single_choice",
+    "en": "Single choice",
+    "vi": "Lựa chọn duy nhất"
+  },
+  "请选择一个选项": {
+    "key": "auto.please_select_an_opt",
+    "en": "Please select an option",
+    "vi": "Vui lòng chọn một tùy chọn"
+  },
+  "请输入其他内容": {
+    "key": "auto.please_enter_other_c",
+    "en": "Please enter other content",
+    "vi": "Vui lòng nhập nội dung khác"
+  },
+  "上一步": {
+    "key": "auto.previous_step",
+    "en": "Previous step",
+    "vi": "Bước trước"
+  },
+  "提交中...": {
+    "key": "auto.submitting",
+    "en": "Submitting...",
+    "vi": "Đang gửi..."
+  },
+  "完成并提交": {
+    "key": "auto.complete_and_submit",
+    "en": "Complete and submit",
+    "vi": "Hoàn thành và gửi"
+  },
+  "下一题": {
+    "key": "auto.next_question",
+    "en": "Next question",
+    "vi": "Câu hỏi tiếp theo"
+  },
+  "视频工作流": {
+    "key": "auto.video_workflow",
+    "en": "Video workflow",
+    "vi": "Quy trình làm việc video"
+  },
+  "生成剧本": {
+    "key": "auto.generate_script",
+    "en": "Generate script",
+    "vi": "Tạo tập lệnh"
+  },
+  "生成分镜图": {
+    "key": "auto.generate_storyboards",
+    "en": "Generate storyboards",
+    "vi": "Tạo bảng phân cảnh"
+  },
+  "生成视频": {
+    "key": "auto.generate_video",
+    "en": "Generate video",
+    "vi": "Tạo video"
+  },
+  "生成角色图": {
+    "key": "auto.generate_character_d",
+    "en": "Generate character diagram",
+    "vi": "Tạo sơ đồ ký tự"
+  },
+  "生成线索图": {
+    "key": "auto.generate_clue_map",
+    "en": "Generate clue map",
+    "vi": "Tạo bản đồ đầu mối"
+  },
+  "合成视频": {
+    "key": "auto.synthetic_video",
+    "en": "Synthetic video",
+    "vi": "Video tổng hợp"
+  },
+  "技能命令菜单": {
+    "key": "auto.skill_command_menu",
+    "en": "Skill command menu",
+    "vi": "Menu lệnh kỹ năng"
+  },
+  "任务进行中": {
+    "key": "auto.task_in_progress",
+    "en": "Task in progress",
+    "vi": "Nhiệm vụ đang được tiến hành"
+  },
+  "确定要删除 \"": {
+    "key": "auto.are_you_sure_you_wan_3",
+    "en": "Are you sure you want to delete \"",
+    "vi": "Bạn có chắc chắn muốn xóa \""
+  },
+  "\" 吗？": {
+    "key": "auto.text",
+    "en": "\"?\"",
+    "vi": "\"?\""
+  },
+  "源文件": {
+    "key": "auto.source_file_1",
+    "en": "source file",
+    "vi": "Tập tin nguồn"
+  },
+  "上传源文件": {
+    "key": "auto.upload_source_file",
+    "en": "Upload source file",
+    "vi": "Tải lên tập tin nguồn"
+  },
+  "暂无文件": {
+    "key": "auto.no_files_yet",
+    "en": "No files yet",
+    "vi": "Chưa có tập tin nào"
+  },
+  "删除文件": {
+    "key": "auto.delete_files",
+    "en": "Delete files",
+    "vi": "Xóa tập tin"
+  },
+  "设定集": {
+    "key": "auto.settings_set",
+    "en": "settings set",
+    "vi": "Thiết lập cài đặt"
+  },
+  "暂无角色": {
+    "key": "auto.no_role_yet",
+    "en": "No role yet",
+    "vi": "Chưa có vai trò nào"
+  },
+  "暂无线索": {
+    "key": "auto.no_clue_yet",
+    "en": "No clue yet",
+    "vi": "Chưa có manh mối"
+  },
+  "暂无剧集": {
+    "key": "auto.no_episodes_yet",
+    "en": "No episodes yet",
+    "vi": "Chưa có tập nào"
+  },
+  "C:Users你的用户名AppDataLocalJianyingProUser DataProjectscom.lveditor.draft": {
+    "key": "auto.c_usersyour_username",
+    "en": "C:UsersYour usernameAppDataLocalJianyingProUser DataProjectscom.lveditor.draft",
+    "vi": "C:Người dùngTên người dùng của bạnAppDataLocalJianyingProDữ liệu người dùngProjectscom.lveditor.draft"
+  },
+  "/Users/你的用户名/Movies/JianyingPro/User Data/Projects/com.lveditor.draft": {
+    "key": "auto.users_yourusername_m",
+    "en": "/Users/yourusername/Movies/JianyingPro/User Data/Projects/com.lveditor.draft",
+    "vi": "/Người dùng/tên người dùng của bạn/Phim/JianyingPro/Dữ liệu người dùng/Dự án/com.lveditor.draft"
+  },
+  "选择导出范围": {
+    "key": "auto.select_export_scope",
+    "en": "Select export scope",
+    "vi": "Chọn phạm vi xuất"
+  },
+  "仅当前版本": {
+    "key": "auto.current_version_only",
+    "en": "Current version only",
+    "vi": "Chỉ phiên bản hiện tại"
+  },
+  "推荐": {
+    "key": "auto.recommend",
+    "en": "recommend",
+    "vi": "Gợi ý"
+  },
+  "不含版本历史，体积更小": {
+    "key": "auto.does_not_contain_ver",
+    "en": "Does not contain version history and is smaller in size",
+    "vi": "Không chứa lịch sử phiên bản và có kích thước nhỏ hơn"
+  },
+  "全部数据": {
+    "key": "auto.all_data",
+    "en": "All data",
+    "vi": "Tất cả dữ liệu"
+  },
+  "包含完整版本历史": {
+    "key": "auto.contains_full_versio",
+    "en": "Contains full version history",
+    "vi": "Chứa lịch sử phiên bản đầy đủ"
+  },
+  "导出为剪映草稿": {
+    "key": "auto.export_as_draft_clip",
+    "en": "Export as draft clip",
+    "vi": "Xuất dưới dạng clip nháp"
+  },
+  "生成剪映可导入的草稿 ZIP": {
+    "key": "auto.generate_a_draft_zip",
+    "en": "Generate a draft ZIP of the clip that can be imported",
+    "vi": "Tạo bản nháp ZIP của clip có thể được nhập"
+  },
+  "返回": {
+    "key": "auto.return",
+    "en": "return",
+    "vi": "Trở lại"
+  },
+  "选择集数": {
+    "key": "auto.select_number_of_epi",
+    "en": "Select number of episodes",
+    "vi": "Chọn số tập"
+  },
+  "第": {
+    "key": "auto.no",
+    "en": "No.",
+    "vi": "KHÔNG."
+  },
+  "集 —": {
+    "key": "auto.set",
+    "en": "set —",
+    "vi": "Bộ -"
+  },
+  "剪映版本": {
+    "key": "auto.cut_version",
+    "en": "cut version",
+    "vi": "Phiên bản cắt"
+  },
+  "剪映 6.0 及以上（推荐）": {
+    "key": "auto.clip_6_0_and_above_r",
+    "en": "Clip 6.0 and above (recommended)",
+    "vi": "Clip 6.0 trở lên (khuyên dùng)"
+  },
+  "剪映 5.x": {
+    "key": "auto.cutout_5_x",
+    "en": "Cutout 5.x",
+    "vi": "Cắt bỏ 5.x"
+  },
+  "草稿目录路径": {
+    "key": "auto.draft_directory_path",
+    "en": "Draft directory path",
+    "vi": "Đường dẫn thư mục dự thảo"
+  },
+  "剪映草稿目录路径": {
+    "key": "auto.clip_draft_directory",
+    "en": "Clip draft directory path",
+    "vi": "Clip đường dẫn thư mục dự thảo"
+  },
+  "请填入剪映草稿目录的完整路径。打开剪映 → 设置 → 草稿位置 可查看。": {
+    "key": "auto.please_enter_the_ful",
+    "en": "Please enter the full path to the draft clipping directory. Open the clipping → Settings → Draft position to view.",
+    "vi": "Vui lòng nhập đường dẫn đầy đủ tới thư mục cắt bản nháp. Mở đoạn cắt → Cài đặt → Vị trí nháp để xem."
+  },
+  "导出中...": {
+    "key": "auto.exporting",
+    "en": "Exporting...",
+    "vi": "Đang xuất..."
+  },
+  "导出草稿": {
+    "key": "auto.export_draft",
+    "en": "Export draft",
+    "vi": "Xuất bản nháp"
+  },
+  "工作流阶段": {
+    "key": "auto.workflow_stage",
+    "en": "workflow stage",
+    "vi": "Giai đoạn quy trình làm việc"
+  },
+  "准备中": {
+    "key": "auto.in_preparation",
+    "en": "In preparation",
+    "vi": "Đang chuẩn bị"
+  },
+  "展开助手面板": {
+    "key": "auto.expand_assistant_pan",
+    "en": "Expand assistant panel",
+    "vi": "Mở rộng bảng trợ lý"
+  },
+  "关闭提示": {
+    "key": "auto.close_prompt",
+    "en": "Close prompt",
+    "vi": "Đóng lời nhắc"
+  },
+  "文本": {
+    "key": "auto.text_1",
+    "en": "text",
+    "vi": "Chữ"
+  },
+  "图片": {
+    "key": "auto.picture_1",
+    "en": "picture",
+    "vi": "Hình ảnh"
+  },
+  "费用明细": {
+    "key": "auto.cost_details",
+    "en": "Cost details",
+    "vi": "Chi tiết chi phí"
+  },
+  "总费用": {
+    "key": "auto.total_cost",
+    "en": "total cost",
+    "vi": "Tổng chi phí"
+  },
+  "失败": {
+    "key": "auto.fail",
+    "en": "fail",
+    "vi": "Thất bại"
+  },
+  "暂无调用记录": {
+    "key": "auto.no_call_record_yet",
+    "en": "No call record yet",
+    "vi": "Chưa có bản ghi cuộc gọi nào"
+  },
+  "输入": {
+    "key": "auto.enter",
+    "en": "enter",
+    "vi": "Đi vào"
+  },
+  "输出": {
+    "key": "auto.output",
+    "en": "output",
+    "vi": "Đầu ra"
+  },
+  "条记录": {
+    "key": "auto.records",
+    "en": "records",
+    "vi": "Hồ sơ"
+  },
+  "条通知": {
+    "key": "auto.notification",
+    "en": "notification",
+    "vi": "Thông báo"
+  },
+  "未读": {
+    "key": "auto.unread",
+    "en": "unread",
+    "vi": "Chưa đọc"
+  },
+  "关闭通知面板": {
+    "key": "auto.close_notification_p",
+    "en": "Close notification panel",
+    "vi": "Đóng bảng thông báo"
+  },
+  "当前没有通知": {
+    "key": "auto.there_are_currently_",
+    "en": "There are currently no notifications",
+    "vi": "Hiện tại không có thông báo nào"
+  },
+  "项目刷新、生成完成和可定位变更会出现在这里": {
+    "key": "auto.project_refreshes_bu",
+    "en": "Project refreshes, build completions, and targetable changes will appear here",
+    "vi": "Làm mới dự án, hoàn thành bản dựng và các thay đổi có thể nhắm mục tiêu sẽ xuất hiện ở đây"
+  },
+  "已读": {
+    "key": "auto.read",
+    "en": "Read",
+    "vi": "Đọc"
+  },
+  "新通知": {
+    "key": "auto.new_notification",
+    "en": "new notification",
+    "vi": "Thông báo mới"
+  },
+  "查看定位": {
+    "key": "auto.view_positioning",
+    "en": "View positioning",
+    "vi": "Xem định vị"
+  },
+  "仅通知": {
+    "key": "auto.notify_only",
+    "en": "Notify only",
+    "vi": "Chỉ thông báo"
+  },
+  "移除": {
+    "key": "auto.remove",
+    "en": "Remove",
+    "vi": "Di dời"
+  },
+  "打开面板会自动标记为已读": {
+    "key": "auto.opening_a_panel_will",
+    "en": "Opening a panel will automatically mark it as read",
+    "vi": "Mở một bảng sẽ tự động đánh dấu nó là đã đọc"
+  },
+  "临时会话记录": {
+    "key": "auto.temporary_session_re",
+    "en": "Temporary session recording",
+    "vi": "Ghi phiên tạm thời"
+  },
+  "刚刚": {
+    "key": "auto.just",
+    "en": "just",
+    "vi": "Chỉ"
+  },
+  "分钟前": {
+    "key": "auto.minutes_ago",
+    "en": "minutes ago",
+    "vi": "Phút trước"
+  },
+  "清除已保存的 Anthropic API Key": {
+    "key": "auto.clear_saved_anthropi",
+    "en": "Clear saved Anthropic API Key",
+    "vi": "Xóa khóa API Anthropic đã lưu"
+  },
+  "写实摄影": {
+    "key": "auto.realistic_photograph",
+    "en": "Realistic photography",
+    "vi": "Chụp ảnh thực tế"
+  },
+  "动漫风格": {
+    "key": "auto.anime_style",
+    "en": "anime style",
+    "vi": "Phong cách hoạt hình"
+  },
+  "3D 动画": {
+    "key": "auto.3d_animation",
+    "en": "3D animation",
+    "vi": "Hoạt hình 3D"
+  },
+  "项目标题不能为空": {
+    "key": "auto.project_title_cannot",
+    "en": "Project title cannot be empty",
+    "vi": "Tiêu đề dự án không được để trống"
+  },
+  "风格参考图上传失败，可稍后在项目设置中重新上传": {
+    "key": "auto.the_upload_of_the_st",
+    "en": "The upload of the style reference image failed. You can upload it again in the project settings later.",
+    "vi": "Việc tải lên hình ảnh tham chiếu kiểu không thành công. Bạn có thể tải lại nó lên trong cài đặt dự án sau."
+  },
+  "创建项目失败:": {
+    "key": "auto.failed_to_create_pro",
+    "en": "Failed to create project:",
+    "vi": "Không thể tạo dự án:"
+  },
+  "新建项目": {
+    "key": "auto.new_project",
+    "en": "New project",
+    "vi": "Dự án mới"
+  },
+  "项目标题": {
+    "key": "auto.project_title",
+    "en": "Project title",
+    "vi": "Tên dự án"
+  },
+  "例如：重生之皇后威武": {
+    "key": "auto.for_example_the_quee",
+    "en": "For example: The Queen of Rebirth is Mighty",
+    "vi": "Ví dụ: Nữ hoàng tái sinh rất hùng mạnh"
+  },
+  "系统会自动生成内部项目标识并用于 URL 与文件存储": {
+    "key": "auto.internal_project_ids",
+    "en": "Internal project IDs are automatically generated and used for URL and file storage",
+    "vi": "ID dự án nội bộ được tự động tạo và sử dụng để lưu trữ URL và tệp"
+  },
+  "内容模式": {
+    "key": "auto.content_mode",
+    "en": "content mode",
+    "vi": "Chế độ nội dung"
+  },
+  "说书+画面": {
+    "key": "auto.storytelling_picture_1",
+    "en": "Storytelling + picture",
+    "vi": "Kể chuyện + tranh ảnh"
+  },
+  "剧集动画": {
+    "key": "auto.episode_animation",
+    "en": "Episode animation",
+    "vi": "Tập phim hoạt hình"
+  },
+  "画面比例": {
+    "key": "auto.aspect_ratio",
+    "en": "aspect ratio",
+    "vi": "Tỷ lệ khung hình"
+  },
+  "竖屏 9:16": {
+    "key": "auto.vertical_screen_9_16",
+    "en": "Vertical screen 9:16",
+    "vi": "Màn hình dọc 9:16"
+  },
+  "横屏 16:9": {
+    "key": "auto.landscape_16_9",
+    "en": "Landscape 16:9",
+    "vi": "Phong cảnh 16:9"
+  },
+  "默认时长": {
+    "key": "auto.default_duration",
+    "en": "Default duration",
+    "vi": "Thời lượng mặc định"
+  },
+  "由 AI 根据内容自动决定时长，或指定固定时长": {
+    "key": "auto.ai_automatically_det",
+    "en": "AI automatically determines the duration based on the content, or specifies a fixed duration",
+    "vi": "AI tự động xác định thời lượng dựa trên nội dung hoặc chỉ định thời lượng cố định"
+  },
+  "自动": {
+    "key": "auto.automatic",
+    "en": "automatic",
+    "vi": "Tự động"
+  },
+  "视觉风格": {
+    "key": "auto.visual_style",
+    "en": "visual style",
+    "vi": "Phong cách trực quan"
+  },
+  "风格参考图": {
+    "key": "auto.style_reference_char_1",
+    "en": "Style reference chart",
+    "vi": "Biểu đồ tham khảo phong cách"
+  },
+  "（可选）": {
+    "key": "auto.optional",
+    "en": "(optional)",
+    "vi": "(không bắt buộc)"
+  },
+  "风格参考图预览": {
+    "key": "auto.style_reference_imag_1",
+    "en": "Style reference image preview",
+    "vi": "Xem trước hình ảnh tham khảo phong cách"
+  },
+  "上传参考图片": {
+    "key": "auto.upload_reference_ima_1",
+    "en": "Upload reference image",
+    "vi": "Tải lên hình ảnh tham khảo"
+  },
+  "上传后将自动分析风格特征，用于生成一致的画面": {
+    "key": "auto.after_uploading_the__2",
+    "en": "After uploading, the style characteristics will be automatically analyzed to generate consistent images.",
+    "vi": "Sau khi tải lên, các đặc điểm về kiểu dáng sẽ được tự động phân tích để tạo ra hình ảnh nhất quán."
+  },
+  "创建中...": {
+    "key": "auto.creating",
+    "en": "Creating...",
+    "vi": "Đang tạo..."
+  },
+  "创建项目": {
+    "key": "auto.create_project",
+    "en": "Create project",
+    "vi": "Tạo dự án"
+  },
+  "当前使用中": {
+    "key": "auto.currently_in_use",
+    "en": "Currently in use",
+    "vi": "Hiện đang được sử dụng"
+  },
+  "激活": {
+    "key": "auto.activation",
+    "en": "activation",
+    "vi": "Kích hoạt"
+  },
+  "使用中": {
+    "key": "auto.in_use",
+    "en": "In use",
+    "vi": "Đang sử dụng"
+  },
+  "测试": {
+    "key": "auto.test",
+    "en": "test",
+    "vi": "Bài kiểm tra"
+  },
+  "连接": {
+    "key": "auto.connect",
+    "en": "connect",
+    "vi": "Kết nối"
+  },
+  "确认": {
+    "key": "auto.confirm",
+    "en": "confirm",
+    "vi": "Xác nhận"
+  },
+  "可用模型:": {
+    "key": "auto.available_models",
+    "en": "Available models:",
+    "vi": "Các mô hình có sẵn:"
+  },
+  "名称": {
+    "key": "auto.name",
+    "en": "name",
+    "vi": "Tên"
+  },
+  "API Key（留空保留现有值）": {
+    "key": "auto.api_key_leave_blank_",
+    "en": "API Key (leave blank to retain existing value)",
+    "vi": "Khóa API (để trống để giữ lại giá trị hiện có)"
+  },
+  "留空保留现有值…": {
+    "key": "auto.leave_blank_to_retai",
+    "en": "Leave blank to retain existing values…",
+    "vi": "Để trống để giữ lại các giá trị hiện có…"
+  },
+  "Base URL（可选）": {
+    "key": "auto.base_url_optional",
+    "en": "Base URL (optional)",
+    "vi": "URL cơ sở (tùy chọn)"
+  },
+  "默认使用官方地址…": {
+    "key": "auto.use_official_address",
+    "en": "Use official address by default…",
+    "vi": "Sử dụng địa chỉ chính thức theo mặc định…"
+  },
+  "请选择凭证文件": {
+    "key": "auto.please_select_a_cred",
+    "en": "Please select a credential file",
+    "vi": "Vui lòng chọn một tệp thông tin xác thực"
+  },
+  "请输入 API Key": {
+    "key": "auto.please_enter_api_key",
+    "en": "Please enter API Key",
+    "vi": "Vui lòng nhập Khóa API"
+  },
+  "例如：个人账号…": {
+    "key": "auto.for_example_personal",
+    "en": "For example: personal account...",
+    "vi": "Ví dụ: tài khoản cá nhân..."
+  },
+  "凭证文件": {
+    "key": "auto.credential_file",
+    "en": "Credential file",
+    "vi": "Tệp thông tin xác thực"
+  },
+  "选择 JSON 文件…": {
+    "key": "auto.select_json_file",
+    "en": "Select JSON file…",
+    "vi": "Chọn tệp JSON…"
+  },
+  "添加": {
+    "key": "auto.add_to",
+    "en": "Add to",
+    "vi": "Thêm vào"
+  },
+  "加载中…": {
+    "key": "auto.loading_1",
+    "en": "loading…",
+    "vi": "Đang tải…"
+  },
+  "密钥管理": {
+    "key": "auto.key_management",
+    "en": "Key management",
+    "vi": "Quản lý khóa"
+  },
+  "添加密钥": {
+    "key": "auto.add_key",
+    "en": "Add key",
+    "vi": "Thêm khóa"
+  },
+  "暂无密钥": {
+    "key": "auto.no_key_yet",
+    "en": "No key yet",
+    "vi": "Chưa có chìa khóa"
+  },
+  "添加第一个密钥": {
+    "key": "auto.add_first_key",
+    "en": "Add first key",
+    "vi": "Thêm khóa đầu tiên"
+  },
+  "向你的 OpenClaw 发送上述提示词": {
+    "key": "auto.send_the_above_promp",
+    "en": "Send the above prompt word to your OpenClaw",
+    "vi": "Gửi lời nhắc trên tới OpenClaw của bạn"
+  },
+  "复制提示词，粘贴给 OpenClaw 发送": {
+    "key": "auto.copy_the_prompt_word",
+    "en": "Copy the prompt word, paste it and send it to OpenClaw",
+    "vi": "Sao chép lời nhắc, dán và gửi đến OpenClaw"
+  },
+  "OpenClaw 从 Skill 文档学习能力": {
+    "key": "auto.openclaw_learns_capa",
+    "en": "OpenClaw learns capabilities from Skill documents",
+    "vi": "OpenClaw học các khả năng từ tài liệu Kỹ năng"
+  },
+  "OpenClaw 会自动读取 ArcReel Skill 文档，获取所有可用工具与 API 的使用方式": {
+    "key": "auto.openclaw_will_automa",
+    "en": "OpenClaw will automatically read the ArcReel Skill documentation to obtain how to use all available tools and APIs",
+    "vi": "OpenClaw sẽ tự động đọc tài liệu ArcReel Skill để biết cách sử dụng tất cả các công cụ và API có sẵn"
+  },
+  "OpenClaw 与 ArcReel 交互并创建视频": {
+    "key": "auto.openclaw_interacts_w",
+    "en": "OpenClaw interacts with ArcReel and creates videos",
+    "vi": "OpenClaw tương tác với ArcReel và tạo video"
+  },
+  "描述你的创作需求，OpenClaw 将调用 ArcReel 完成项目管理、剧本生成和视频创作": {
+    "key": "auto.describe_your_creati",
+    "en": "Describe your creative needs, and OpenClaw will call ArcReel to complete project management, script generation and video creation.",
+    "vi": "Mô tả nhu cầu sáng tạo của bạn và OpenClaw sẽ gọi ArcReel để hoàn thành việc quản lý dự án, tạo tập lệnh và tạo video."
+  },
+  "学习": {
+    "key": "auto.study",
+    "en": "study",
+    "vi": "Học"
+  },
+  "然后遵循 skill，了解如何使用 ArcReel 创作视频": {
+    "key": "auto.then_follow_the_skil",
+    "en": "Then follow the skill to learn how to create videos with ArcReel",
+    "vi": "Sau đó học theo kỹ năng để học cách tạo video bằng ArcReel"
+  },
+  "OpenClaw 集成指南": {
+    "key": "auto.openclaw_integration",
+    "en": "OpenClaw Integration Guide",
+    "vi": "Hướng dẫn tích hợp OpenClaw"
+  },
+  "将 ArcReel 接入 OpenClaw AI Agent": {
+    "key": "auto.connect_arcreel_to_o",
+    "en": "Connect ArcReel to OpenClaw AI Agent",
+    "vi": "Kết nối ArcReel với OpenClaw AI Agent"
+  },
+  "关闭": {
+    "key": "auto.closure",
+    "en": "closure",
+    "vi": "Đóng cửa"
+  },
+  "已复制": {
+    "key": "auto.copied",
+    "en": "Copied",
+    "vi": "Đã sao chép"
+  },
+  "复制": {
+    "key": "auto.copy",
+    "en": "copy",
+    "vi": "Sao chép"
+  },
+  "Skill 文档地址：": {
+    "key": "auto.skill_document_addre",
+    "en": "Skill document address:",
+    "vi": "Địa chỉ tài liệu kỹ năng:"
+  },
+  "使用步骤": {
+    "key": "auto.usage_steps",
+    "en": "Usage steps",
+    "vi": "Các bước sử dụng"
+  },
+  "获取 API 令牌": {
+    "key": "auto.get_api_token",
+    "en": "Get API token",
+    "vi": "Nhận mã thông báo API"
+  },
+  "有未保存的修改，确定要离开吗？": {
+    "key": "auto.there_are_unsaved_ch",
+    "en": "There are unsaved changes. Are you sure you want to leave?",
+    "vi": "Có những thay đổi chưa được lưu. Bạn có chắc chắn muốn rời đi không?"
+  },
+  "已保存": {
+    "key": "auto.saved",
+    "en": "saved",
+    "vi": "Đã lưu"
+  },
+  "保存失败": {
+    "key": "auto.save_failed_1",
+    "en": "Save failed",
+    "vi": "Lưu không thành công"
+  },
+  "返回项目": {
+    "key": "auto.return_items",
+    "en": "Return items",
+    "vi": "Trả lại mặt hàng"
+  },
+  "项目设置": {
+    "key": "auto.project_settings",
+    "en": "Project settings",
+    "vi": "Cài đặt dự án"
+  },
+  "模型配置": {
+    "key": "auto.model_configuration",
+    "en": "Model configuration",
+    "vi": "Cấu hình mô hình"
+  },
+  "为此项目单独选择生成模型，留空则跟随全局默认": {
+    "key": "auto.select_the_generated",
+    "en": "Select the generated model individually for this project, leave it blank to follow the global default",
+    "vi": "Chọn mô hình được tạo riêng cho dự án này, để trống để tuân theo mặc định chung"
+  },
+  "视频模型": {
+    "key": "auto.video_model",
+    "en": "video model",
+    "vi": "Mô hình video"
+  },
+  "当前全局:": {
+    "key": "auto.current_global_situa",
+    "en": "Current global situation:",
+    "vi": "Tình hình thế giới hiện nay:"
+  },
+  "已生成的分镜图/视频仍为原比例，建议重新生成": {
+    "key": "auto.the_generated_storyb",
+    "en": "The generated storyboards/videos are still in their original proportions and it is recommended to regenerate them.",
+    "vi": "Bảng phân cảnh/video được tạo vẫn ở tỷ lệ ban đầu và bạn nên tạo lại chúng."
+  },
+  "新分镜的默认视频时长，「自动」表示由 AI 根据内容决定": {
+    "key": "auto.the_default_video_du",
+    "en": "The default video duration for new storyboards, \"automatic\" means it is determined by AI based on the content",
+    "vi": "Thời lượng video mặc định cho bảng phân cảnh mới, \"tự động\" nghĩa là được AI xác định dựa trên nội dung"
+  },
+  "默认时长选择": {
+    "key": "auto.default_duration_sel",
+    "en": "Default duration selection",
+    "vi": "Lựa chọn thời lượng mặc định"
+  },
+  "图片模型": {
+    "key": "auto.picture_model",
+    "en": "Picture model",
+    "vi": "Mô hình hình ảnh"
+  },
+  "生成音频": {
+    "key": "auto.generate_audio",
+    "en": "Generate audio",
+    "vi": "Tạo âm thanh"
+  },
+  "生成音频设置": {
+    "key": "auto.generate_audio_setti",
+    "en": "Generate audio settings",
+    "vi": "Tạo cài đặt âm thanh"
+  },
+  "跟随全局默认": {
+    "key": "auto.follow_global_defaul",
+    "en": "Follow global default",
+    "vi": "Thực hiện theo mặc định toàn cầu"
+  },
+  "开启": {
+    "key": "auto.turn_on",
+    "en": "turn on",
+    "vi": "Bật lên"
+  },
+  "文本模型": {
+    "key": "auto.text_model",
+    "en": "text model",
+    "vi": "Mô hình văn bản"
+  },
+  "按任务类型覆盖，留空跟随全局默认": {
+    "key": "auto.override_by_task_typ",
+    "en": "Override by task type, leave blank to follow global default",
+    "vi": "Ghi đè theo loại tác vụ, để trống để tuân theo mặc định chung"
+  },
+  "剧本生成": {
+    "key": "auto.script_generation",
+    "en": "script generation",
+    "vi": "Tạo kịch bản"
+  },
+  "概述生成": {
+    "key": "auto.overview_generation",
+    "en": "Overview generation",
+    "vi": "Tạo tổng quan"
+  },
+  "风格分析": {
+    "key": "auto.style_analysis",
+    "en": "style analysis",
+    "vi": "Phân tích phong cách"
+  },
+  "加载配置中…": {
+    "key": "auto.loading_configuratio",
+    "en": "Loading configuration...",
+    "vi": "Đang tải cấu hình..."
+  },
+  "保存中…": {
+    "key": "auto.saving_1",
+    "en": "Saving…",
+    "vi": "Đang lưu…"
+  },
+  "已就绪": {
+    "key": "auto.ready",
+    "en": "Ready",
+    "vi": "Sẵn sàng"
+  },
+  "未配置": {
+    "key": "auto.not_configured",
+    "en": "Not configured",
+    "vi": "Chưa được định cấu hình"
+  },
+  "异常": {
+    "key": "auto.abnormal",
+    "en": "abnormal",
+    "vi": "Bất thường"
+  },
+  "输入密钥": {
+    "key": "auto.enter_key",
+    "en": "Enter key",
+    "vi": "Nhập phím"
+  },
+  "隐藏": {
+    "key": "auto.hide",
+    "en": "hide",
+    "vi": "Trốn"
+  },
+  "显示": {
+    "key": "auto.show",
+    "en": "show",
+    "vi": "Trình diễn"
+  },
+  "清除密钥": {
+    "key": "auto.clear_key",
+    "en": "clear key",
+    "vi": "Phím xóa"
+  },
+  "清除": {
+    "key": "auto.clear",
+    "en": "Clear",
+    "vi": "Thông thoáng"
+  },
+  "确认清除": {
+    "key": "auto.confirm_clear",
+    "en": "Confirm clear",
+    "vi": "Xác nhận rõ ràng"
+  },
+  "已设置（留空则保留现有值）": {
+    "key": "auto.set_leave_blank_to_r",
+    "en": "Set (leave blank to retain existing value)",
+    "vi": "Đặt (để trống để giữ lại giá trị hiện có)"
+  },
+  "高级配置": {
+    "key": "auto.advanced_configurati",
+    "en": "Advanced configuration",
+    "vi": "Cấu hình nâng cao"
+  },
+  "加载供应商列表…": {
+    "key": "auto.loading_supplier_lis",
+    "en": "Loading supplier list…",
+    "vi": "Đang tải danh sách nhà cung cấp…"
+  },
+  "供应商列表": {
+    "key": "auto.supplier_list",
+    "en": "Supplier list",
+    "vi": "Danh sách nhà cung cấp"
+  },
+  "预置供应商": {
+    "key": "auto.on_premise_provider",
+    "en": "On-Premise Provider",
+    "vi": "Nhà cung cấp tại chỗ"
+  },
+  "请选择供应商": {
+    "key": "auto.please_select_a_supp",
+    "en": "Please select a supplier",
+    "vi": "Vui lòng chọn nhà cung cấp"
+  },
+  "有未保存的更改": {
+    "key": "auto.there_are_unsaved_ch_1",
+    "en": "There are unsaved changes",
+    "vi": "Có những thay đổi chưa được lưu"
+  },
+  "撤销": {
+    "key": "auto.cancel_1",
+    "en": "Cancel",
+    "vi": "Hủy bỏ"
+  },
+  "排队中": {
+    "key": "auto.queuing",
+    "en": "Queuing",
+    "vi": "Xếp hàng"
+  },
+  "已完成": {
+    "key": "auto.completed",
+    "en": "Completed",
+    "vi": "Hoàn thành"
+  },
+  "运行中": {
+    "key": "auto.running",
+    "en": "Running",
+    "vi": "Đang chạy"
+  },
+  "暂无任务": {
+    "key": "auto.no_tasks_yet",
+    "en": "No tasks yet",
+    "vi": "Chưa có nhiệm vụ nào"
+  },
+  "排队": {
+    "key": "auto.queue",
+    "en": "queue",
+    "vi": "Xếp hàng"
+  },
+  "运行": {
+    "key": "auto.run",
+    "en": "run",
+    "vi": "Chạy"
+  },
+  "完成": {
+    "key": "auto.finish",
+    "en": "Finish",
+    "vi": "Hoàn thành"
+  },
+  "图片通道": {
+    "key": "auto.picture_channel",
+    "en": "Picture channel",
+    "vi": "Kênh hình ảnh"
+  },
+  "视频通道": {
+    "key": "auto.video_channel",
+    "en": "video channel",
+    "vi": "Kênh video"
+  },
+  "场景": {
+    "key": "auto.scene",
+    "en": "scene",
+    "vi": "Bối cảnh"
+  },
+  "道具": {
+    "key": "auto.props",
+    "en": "Props",
+    "vi": "Đạo cụ"
+  },
+  "生成": {
+    "key": "auto.generate",
+    "en": "generate",
+    "vi": "Phát ra"
+  },
+  "关闭全屏预览": {
+    "key": "auto.turn_off_full_screen",
+    "en": "Turn off full screen preview",
+    "vi": "Tắt xem trước toàn màn hình"
+  },
+  "全屏预览": {
+    "key": "auto.full_screen_preview",
+    "en": "Full screen preview",
+    "vi": "Xem trước toàn màn hình"
+  },
+  "火山方舟": {
+    "key": "auto.volcano_ark",
+    "en": "Volcano Ark",
+    "vi": "Hòm núi lửa"
+  },
+  "选择模型…": {
+    "key": "auto.select_model",
+    "en": "Select model…",
+    "vi": "Chọn mô hình…"
+  },
+  "选择模型": {
+    "key": "auto.select_model_1",
+    "en": "Select model",
+    "vi": "Chọn mô hình"
+  },
+  "添加角色": {
+    "key": "auto.add_role",
+    "en": "Add role",
+    "vi": "Thêm vai trò"
+  },
+  "角色名称": {
+    "key": "auto.character_name",
+    "en": "Character name",
+    "vi": "Tên nhân vật"
+  },
+  "描述": {
+    "key": "auto.describe",
+    "en": "describe",
+    "vi": "Mô tả"
+  },
+  "角色外貌、性格、背景等描述...": {
+    "key": "auto.description_of_the_c",
+    "en": "Description of the character's appearance, personality, background, etc...",
+    "vi": "Miêu tả ngoại hình, tính cách, hoàn cảnh của nhân vật, v.v..."
+  },
+  "声音风格": {
+    "key": "auto.sound_style",
+    "en": "sound style",
+    "vi": "Phong cách âm thanh"
+  },
+  "可选，例如：温柔但有威严": {
+    "key": "auto.optional_for_example",
+    "en": "Optional, for example: Gentle but dignified",
+    "vi": "Tùy chọn, ví dụ: Nhẹ nhàng nhưng trang nghiêm"
+  },
+  "参考图": {
+    "key": "auto.reference_picture",
+    "en": "Reference picture",
+    "vi": "Hình ảnh tham khảo"
+  },
+  "角色参考图预览": {
+    "key": "auto.character_reference_",
+    "en": "Character reference picture preview",
+    "vi": "Xem trước hình ảnh tham khảo nhân vật"
+  },
+  "已选择参考图": {
+    "key": "auto.reference_image_sele",
+    "en": "Reference image selected",
+    "vi": "Đã chọn hình ảnh tham khảo"
+  },
+  "更换": {
+    "key": "auto.replace",
+    "en": "replace",
+    "vi": "Thay thế"
+  },
+  "用于后续角色设计图生成时保持角色一致性": {
+    "key": "auto.used_to_maintain_cha",
+    "en": "Used to maintain character consistency when generating subsequent character design drawings",
+    "vi": "Được sử dụng để duy trì tính nhất quán của ký tự khi tạo các bản vẽ thiết kế ký tự tiếp theo"
+  },
+  "添加中...": {
+    "key": "auto.adding",
+    "en": "Adding...",
+    "vi": "Đang thêm..."
+  },
+  "添加线索": {
+    "key": "auto.add_clues",
+    "en": "add clues",
+    "vi": "Thêm manh mối"
+  },
+  "线索名称": {
+    "key": "auto.clue_name",
+    "en": "clue name",
+    "vi": "Tên đầu mối"
+  },
+  "类型": {
+    "key": "auto.type",
+    "en": "type",
+    "vi": "Kiểu"
+  },
+  "环境": {
+    "key": "auto.environment",
+    "en": "environment",
+    "vi": "Môi trường"
+  },
+  "重要性": {
+    "key": "auto.importance",
+    "en": "importance",
+    "vi": "Tầm quan trọng"
+  },
+  "重要": {
+    "key": "auto.important",
+    "en": "important",
+    "vi": "Quan trọng"
+  },
+  "次要": {
+    "key": "auto.secondary",
+    "en": "secondary",
+    "vi": "Sơ trung"
+  },
+  "线索的外观、特征、重要性等描述...": {
+    "key": "auto.description_of_the_c_1",
+    "en": "Description of the clue's appearance, characteristics, importance, etc...",
+    "vi": "Mô tả hình thức, đặc điểm, tầm quan trọng của manh mối, v.v..."
+  },
+  "角色设计图": {
+    "key": "auto.character_design_dra",
+    "en": "character design drawings",
+    "vi": "Bản vẽ thiết kế nhân vật"
+  },
+  "设计图": {
+    "key": "auto.design_drawing",
+    "en": "Design drawing",
+    "vi": "Bản vẽ thiết kế"
+  },
+  "点击生成": {
+    "key": "auto.click_to_generate",
+    "en": "Click to generate",
+    "vi": "Bấm để tạo"
+  },
+  "取消待上传": {
+    "key": "auto.cancel_pending_uploa",
+    "en": "Cancel pending upload",
+    "vi": "Hủy tải lên đang chờ xử lý"
+  },
+  "替换": {
+    "key": "auto.replace_1",
+    "en": "replace",
+    "vi": "Thay thế"
+  },
+  "待保存参考图": {
+    "key": "auto.reference_image_to_b",
+    "en": "Reference image to be saved",
+    "vi": "Hình ảnh tham khảo sẽ được lưu"
+  },
+  "已保存参考图": {
+    "key": "auto.reference_image_save",
+    "en": "Reference image saved",
+    "vi": "Đã lưu hình ảnh tham khảo"
+  },
+  "输入角色描述...": {
+    "key": "auto.enter_role_descripti",
+    "en": "Enter role description...",
+    "vi": "Nhập mô tả vai trò..."
+  },
+  "例如：温柔但有威严": {
+    "key": "auto.for_example_gentle_b",
+    "en": "For example: gentle but dignified",
+    "vi": "Ví dụ: hiền lành nhưng đàng hoàng"
+  },
+  "重新生成设计图": {
+    "key": "auto.regenerate_design_dr",
+    "en": "Regenerate design drawings",
+    "vi": "Tái tạo bản vẽ thiết kế"
+  },
+  "生成设计图": {
+    "key": "auto.generate_design_draw",
+    "en": "Generate design drawings",
+    "vi": "Tạo bản vẽ thiết kế"
+  },
+  "线索设计图": {
+    "key": "auto.clue_design_drawing",
+    "en": "clue design drawing",
+    "vi": "Bản vẽ thiết kế đầu mối"
+  },
+  "输入线索描述...": {
+    "key": "auto.enter_lead_descripti",
+    "en": "Enter lead description...",
+    "vi": "Nhập mô tả khách hàng tiềm năng..."
+  },
+  "角色 (": {
+    "key": "auto.role_2",
+    "en": "Role (",
+    "vi": "Vai trò ("
+  },
+  "线索 (": {
+    "key": "auto.clue_2",
+    "en": "clue (",
+    "vi": "Manh mối ("
+  },
+  "暂无角色，点击下方按钮添加": {
+    "key": "auto.there_is_no_role_yet",
+    "en": "There is no role yet, click the button below to add it",
+    "vi": "Chưa có vai trò nào, nhấp vào nút bên dưới để thêm vai trò đó"
+  },
+  "暂无线索，点击下方按钮添加": {
+    "key": "auto.no_clues_yet_click_t",
+    "en": "No clues yet, click the button below to add",
+    "vi": "Chưa có manh mối nào, nhấp vào nút bên dưới để thêm"
+  },
+  "对话": {
+    "key": "auto.dialogue",
+    "en": "dialogue",
+    "vi": "Đối thoại"
+  },
+  "台词": {
+    "key": "auto.lines",
+    "en": "Lines",
+    "vi": "Dòng"
+  },
+  "添加对话": {
+    "key": "auto.add_conversation",
+    "en": "Add conversation",
+    "vi": "Thêm cuộc trò chuyện"
+  },
+  "分镜图描述...": {
+    "key": "auto.storyboard_descripti",
+    "en": "Storyboard description...",
+    "vi": "Mô tả cốt truyện..."
+  },
+  "构图参数": {
+    "key": "auto.composition_paramete",
+    "en": "Composition parameters",
+    "vi": "Thông số thành phần"
+  },
+  "镜头": {
+    "key": "auto.lens",
+    "en": "lens",
+    "vi": "Ống kính"
+  },
+  "光线": {
+    "key": "auto.light",
+    "en": "light",
+    "vi": "Ánh sáng"
+  },
+  "光线描述...": {
+    "key": "auto.light_description",
+    "en": "Light description...",
+    "vi": "Mô tả nhẹ nhàng..."
+  },
+  "氛围": {
+    "key": "auto.atmosphere",
+    "en": "atmosphere",
+    "vi": "Bầu không khí"
+  },
+  "氛围描述...": {
+    "key": "auto.description_of_atmos",
+    "en": "Description of atmosphere...",
+    "vi": "Mô tả bầu không khí..."
+  },
+  "预处理内容已保存": {
+    "key": "auto.preprocessing_conten",
+    "en": "Preprocessing content has been saved",
+    "vi": "Nội dung tiền xử lý đã được lưu"
+  },
+  "片段拆分已完成": {
+    "key": "auto.fragment_splitting_c",
+    "en": "Fragment splitting completed",
+    "vi": "Việc tách mảnh đã hoàn tất"
+  },
+  "规范化剧本已完成": {
+    "key": "auto.the_standardized_scr",
+    "en": "The standardized script has been completed",
+    "vi": "Kịch bản chuẩn hóa đã được hoàn thành"
+  },
+  "加载预处理内容...": {
+    "key": "auto.loading_preprocessed",
+    "en": "Loading preprocessed content...",
+    "vi": "Đang tải nội dung được xử lý trước..."
+  },
+  "暂无预处理内容": {
+    "key": "auto.no_preprocessing_con",
+    "en": "No preprocessing content yet",
+    "vi": "Chưa có nội dung tiền xử lý nào"
+  },
+  "时长选择": {
+    "key": "auto.duration_selection",
+    "en": "Duration selection",
+    "vi": "Lựa chọn thời lượng"
+  },
+  "备注": {
+    "key": "auto.remark",
+    "en": "Remark",
+    "vi": "Nhận xét"
+  },
+  "添加备注...": {
+    "key": "auto.add_note",
+    "en": "Add note...",
+    "vi": "Thêm ghi chú..."
+  },
+  "原文": {
+    "key": "auto.original",
+    "en": "original",
+    "vi": "Nguyên bản"
+  },
+  "（暂无原文）": {
+    "key": "auto.no_original_text_yet",
+    "en": "(No original text yet)",
+    "vi": "(Chưa có văn bản gốc)"
+  },
+  "（暂无对话）": {
+    "key": "auto.no_conversation_yet",
+    "en": "(No conversation yet)",
+    "vi": "(Chưa có cuộc trò chuyện nào)"
+  },
+  "提示词": {
+    "key": "auto.prompt_word",
+    "en": "prompt word",
+    "vi": "Lời nhắc"
+  },
+  "视频动作描述...": {
+    "key": "auto.video_action_descrip",
+    "en": "Video action description...",
+    "vi": "Mô tả hành động video..."
+  },
+  "暂无分镜": {
+    "key": "auto.no_storyboard_yet",
+    "en": "No storyboard yet",
+    "vi": "Chưa có bảng phân cảnh"
+  },
+  "生成分镜": {
+    "key": "auto.generate_storyboards_1",
+    "en": "Generate storyboards",
+    "vi": "Tạo bảng phân cảnh"
+  },
+  "可生成视频": {
+    "key": "auto.video_can_be_generat",
+    "en": "Video can be generated",
+    "vi": "Video có thể được tạo ra"
+  },
+  "需先生成分镜": {
+    "key": "auto.mr_needs_a_component",
+    "en": "Mr. Needs a component lens",
+    "vi": "Ông Cần một ống kính thành phần"
+  },
+  "请在左侧选择剧集": {
+    "key": "auto.please_select_an_epi",
+    "en": "Please select an episode on the left",
+    "vi": "Vui lòng chọn một tập ở bên trái"
+  },
+  "个片段": {
+    "key": "auto.fragments",
+    "en": "fragments",
+    "vi": "Mảnh vỡ"
+  },
+  "个场景": {
+    "key": "auto.scenes",
+    "en": "scenes",
+    "vi": "Cảnh"
+  },
+  "· 约": {
+    "key": "auto.about",
+    "en": "· about",
+    "vi": "· Về"
+  },
+  "剧本时间线": {
+    "key": "auto.script_timeline",
+    "en": "Script timeline",
+    "vi": "Dòng thời gian của kịch bản"
+  },
+  "已切换到 v": {
+    "key": "auto.switched_to_v",
+    "en": "Switched to v",
+    "vi": "Đã chuyển sang v"
+  },
+  "切换版本失败:": {
+    "key": "auto.failed_to_switch_ver",
+    "en": "Failed to switch versions:",
+    "vi": "Không thể chuyển đổi phiên bản:"
+  },
+  "版本管理": {
+    "key": "auto.version_management",
+    "en": "Version management",
+    "vi": "Quản lý phiên bản"
+  },
+  "暂无历史版本": {
+    "key": "auto.no_historical_versio",
+    "en": "No historical version yet",
+    "vi": "Chưa có phiên bản lịch sử"
+  },
+  "生成或还原后，历史版本会出现在这里。": {
+    "key": "auto.after_building_or_re",
+    "en": "After building or restoring, historical versions will appear here.",
+    "vi": "Sau khi xây dựng hoặc khôi phục, các phiên bản lịch sử sẽ xuất hiện tại đây."
+  },
+  "历史版本": {
+    "key": "auto.historical_version",
+    "en": "Historical version",
+    "vi": "Phiên bản lịch sử"
+  },
+  "当前 v": {
+    "key": "auto.current_v",
+    "en": "current v",
+    "vi": "Hiện tại v"
+  },
+  "点击版本号预览，非当前版本可切换。": {
+    "key": "auto.click_the_version_nu",
+    "en": "Click the version number to preview and switch to non-current versions.",
+    "vi": "Nhấp vào số phiên bản để xem trước và chuyển sang các phiên bản không hiện hành."
+  },
+  "当前": {
+    "key": "auto.current",
+    "en": "current",
+    "vi": "Hiện hành"
+  },
+  "切换中...": {
+    "key": "auto.switching",
+    "en": "Switching...",
+    "vi": "Đang chuyển đổi..."
+  },
+  "切换到此版本": {
+    "key": "auto.switch_to_this_versi",
+    "en": "Switch to this version",
+    "vi": "Chuyển sang phiên bản này"
+  },
+  "版本 v": {
+    "key": "auto.version_v",
+    "en": "version v",
+    "vi": "Phiên bản v"
+  },
+  "预览": {
+    "key": "auto.preview",
+    "en": "Preview",
+    "vi": "Xem trước"
+  },
+  "该版本没有记录额外说明。": {
+    "key": "auto.no_additional_instru",
+    "en": "No additional instructions are documented in this version.",
+    "vi": "Không có hướng dẫn bổ sung nào được ghi lại trong phiên bản này."
+  },
+  "运镜 / 音效 / 对话": {
+    "key": "auto.camera_movement_soun",
+    "en": "Camera movement/sound effects/dialogue",
+    "vi": "Chuyển động của camera/hiệu ứng âm thanh/đối thoại"
+  },
+  "镜头运动": {
+    "key": "auto.camera_movement",
+    "en": "camera movement",
+    "vi": "Chuyển động của máy ảnh"
+  },
+  "环境音效": {
+    "key": "auto.ambient_sound_effect",
+    "en": "Ambient sound effects",
+    "vi": "Hiệu ứng âm thanh xung quanh"
+  },
+  "环境音效描述...": {
+    "key": "auto.ambient_sound_effect_1",
+    "en": "Ambient sound effects description...",
+    "vi": "Mô tả hiệu ứng âm thanh xung quanh..."
+  },
+  "执行失败": {
+    "key": "auto.execution_failed",
+    "en": "Execution failed",
+    "vi": "Thực thi không thành công"
+  },
+  "工具结果": {
+    "key": "auto.tool_results",
+    "en": "Tool results",
+    "vi": "Kết quả công cụ"
+  },
+  "用户中断了会话": {
+    "key": "auto.user_interrupted_ses",
+    "en": "User interrupted session",
+    "vi": "Phiên bị gián đoạn của người dùng"
+  },
+  "附件图片": {
+    "key": "auto.attachment_picture",
+    "en": "Attachment picture",
+    "vi": "Hình ảnh đính kèm"
+  },
+  "Skill 内容": {
+    "key": "auto.skill_content",
+    "en": "Skill content",
+    "vi": "Nội dung kỹ năng"
+  },
+  "▼ 收起": {
+    "key": "auto.collapse",
+    "en": "▼Collapse",
+    "vi": "▼Thu gọn"
+  },
+  "▶ 展开": {
+    "key": "auto.expand",
+    "en": "▶ Expand",
+    "vi": "▶ Mở rộng"
+  },
+  "(已取消)": {
+    "key": "auto.cancelled",
+    "en": "(Cancelled)",
+    "vi": "(Đã hủy)"
+  },
+  "子任务开始:": {
+    "key": "auto.subtask_starts",
+    "en": "Subtask starts:",
+    "vi": "Nhiệm vụ phụ bắt đầu:"
+  },
+  "子任务": {
+    "key": "auto.subtask",
+    "en": "subtask",
+    "vi": "Nhiệm vụ phụ"
+  },
+  "结束": {
+    "key": "auto.finish_1",
+    "en": "Finish",
+    "vi": "Hoàn thành"
+  },
+  "思考过程": {
+    "key": "auto.thought_process",
+    "en": "thought process",
+    "vi": "Quá trình suy nghĩ"
+  },
+  "输入参数": {
+    "key": "auto.input_parameters",
+    "en": "input parameters",
+    "vi": "Thông số đầu vào"
+  },
+  "执行结果": {
+    "key": "auto.execution_result",
+    "en": "Execution result",
+    "vi": "Kết quả thực hiện"
+  },
+  "任务清单": {
+    "key": "auto.task_list",
+    "en": "task list",
+    "vi": "Danh sách nhiệm vụ"
+  },
+  "任务清单已更新": {
+    "key": "auto.to_do_list_updated",
+    "en": "To-do list updated",
+    "vi": "Đã cập nhật danh sách việc cần làm"
+  },
+  "助手": {
+    "key": "auto.assistant",
+    "en": "assistant",
+    "vi": "Trợ lý"
+  },
+  "你": {
+    "key": "auto.you",
+    "en": "you",
+    "vi": "Bạn"
+  },
+  "工具": {
+    "key": "auto.tool",
+    "en": "tool",
+    "vi": "Dụng cụ"
+  },
+  "系统": {
+    "key": "auto.system",
+    "en": "system",
+    "vi": "Hệ thống"
+  },
+  "流式更新": {
+    "key": "auto.streaming_updates",
+    "en": "Streaming updates",
+    "vi": "Truyền phát nội dung cập nhật"
+  },
+  "消息": {
+    "key": "auto.information",
+    "en": "information",
+    "vi": "Thông tin"
+  },
+  "删除失败": {
+    "key": "auto.delete_failed_1",
+    "en": "Delete failed",
+    "vi": "Xóa không thành công"
+  },
+  "连接测试失败": {
+    "key": "auto.connection_test_fail",
+    "en": "Connection test failed",
+    "vi": "Kiểm tra kết nối không thành công"
+  },
+  "已连接": {
+    "key": "auto.connected",
+    "en": "Connected",
+    "vi": "Đã kết nối"
+  },
+  "API 格式": {
+    "key": "auto.api_format",
+    "en": "API format",
+    "vi": "Định dạng API"
+  },
+  "未设置": {
+    "key": "auto.not_set",
+    "en": "not set",
+    "vi": "Chưa được đặt"
+  },
+  "创建时间": {
+    "key": "auto.creation_time",
+    "en": "creation time",
+    "vi": "Thời gian sáng tạo"
+  },
+  "模型列表": {
+    "key": "auto.model_list",
+    "en": "Model list",
+    "vi": "Danh sách người mẫu"
+  },
+  "默认": {
+    "key": "auto.default",
+    "en": "default",
+    "vi": "Mặc định"
+  },
+  "已禁用": {
+    "key": "auto.disabled",
+    "en": "Disabled",
+    "vi": "Tàn tật"
+  },
+  "测试中…": {
+    "key": "auto.testing",
+    "en": "Testing…",
+    "vi": "Đang thử nghiệm…"
+  },
+  "测试连接": {
+    "key": "auto.test_connection",
+    "en": "test connection",
+    "vi": "Kết nối thử nghiệm"
+  },
+  "确认删除": {
+    "key": "auto.confirm_deletion",
+    "en": "Confirm deletion",
+    "vi": "Xác nhận xóa"
+  },
+  "自定义供应商": {
+    "key": "auto.custom_supplier",
+    "en": "custom supplier",
+    "vi": "Nhà cung cấp tùy chỉnh"
+  },
+  "添加自定义供应商": {
+    "key": "auto.add_custom_supplier",
+    "en": "Add custom supplier",
+    "vi": "Thêm nhà cung cấp tùy chỉnh"
+  },
+  "媒体模型配置已保存": {
+    "key": "auto.media_model_configur",
+    "en": "Media model configuration saved",
+    "vi": "Đã lưu cấu hình mô hình phương tiện"
+  },
+  "模型选择": {
+    "key": "auto.model_selection",
+    "en": "Model selection",
+    "vi": "Lựa chọn mô hình"
+  },
+  "设置全局默认的生成模型，项目内可单独覆盖": {
+    "key": "auto.set_the_global_defau",
+    "en": "Set the global default generation model, which can be overridden individually within the project",
+    "vi": "Đặt mô hình tạo mặc định toàn cầu, có thể được ghi đè riêng lẻ trong dự án"
+  },
+  "默认视频模型": {
+    "key": "auto.default_video_model",
+    "en": "Default video model",
+    "vi": "Mô hình video mặc định"
+  },
+  "自动选择": {
+    "key": "auto.automatic_selection",
+    "en": "automatic selection",
+    "vi": "Lựa chọn tự động"
+  },
+  "暂无可用视频供应商，请先在「供应商」页面配置 API 密钥": {
+    "key": "auto.there_is_currently_n",
+    "en": "There is currently no available video provider. Please configure the API key on the \"Supplier\" page first.",
+    "vi": "Hiện tại không có nhà cung cấp video có sẵn. Trước tiên, vui lòng định cấu hình khóa API trên trang \"Nhà cung cấp\"."
+  },
+  "（仅部分供应商支持）": {
+    "key": "auto.only_supported_by_so",
+    "en": "(Only supported by some vendors)",
+    "vi": "(Chỉ được hỗ trợ bởi một số nhà cung cấp)"
+  },
+  "默认图片模型": {
+    "key": "auto.default_image_model",
+    "en": "Default image model",
+    "vi": "Mô hình hình ảnh mặc định"
+  },
+  "暂无可用图片供应商，请先在「供应商」页面配置 API 密钥": {
+    "key": "auto.there_is_currently_n_1",
+    "en": "There is currently no image supplier available. Please configure the API key on the \"Suppliers\" page first.",
+    "vi": "Hiện tại chưa có nhà cung cấp hình ảnh nào. Trước tiên, vui lòng định cấu hình khóa API trên trang \"Nhà cung cấp\"."
+  },
+  "按任务类型配置文本模型，留空表示自动选择": {
+    "key": "auto.configure_text_model",
+    "en": "Configure text model according to task type, leave blank to indicate automatic selection",
+    "vi": "Định cấu hình mô hình văn bản theo loại nhiệm vụ, để trống để biểu thị lựa chọn tự động"
+  },
+  "暂无可用文本供应商，请先在「供应商」页面配置 API 密钥": {
+    "key": "auto.there_is_currently_n_2",
+    "en": "There is currently no text provider available. Please configure the API key on the \"Suppliers\" page first.",
+    "vi": "Hiện tại không có nhà cung cấp văn bản nào. Trước tiên, vui lòng định cấu hình khóa API trên trang \"Nhà cung cấp\"."
+  },
+  "重置": {
+    "key": "auto.reset",
+    "en": "reset",
+    "vi": "Cài lại"
+  },
+  "最近 7 天": {
+    "key": "auto.last_7_days",
+    "en": "last 7 days",
+    "vi": "7 ngày qua"
+  },
+  "最近 30 天": {
+    "key": "auto.last_30_days",
+    "en": "Last 30 days",
+    "vi": "30 ngày qua"
+  },
+  "全部": {
+    "key": "auto.all",
+    "en": "all",
+    "vi": "Tất cả"
+  },
+  "用量统计": {
+    "key": "auto.usage_statistics",
+    "en": "Usage statistics",
+    "vi": "Thống kê sử dụng"
+  },
+  "查看各供应商的 API 调用统计": {
+    "key": "auto.view_api_call_statis",
+    "en": "View API call statistics for each vendor",
+    "vi": "Xem thống kê cuộc gọi API cho từng nhà cung cấp"
+  },
+  "按供应商筛选": {
+    "key": "auto.filter_by_supplier",
+    "en": "Filter by supplier",
+    "vi": "Lọc theo nhà cung cấp"
+  },
+  "全部供应商": {
+    "key": "auto.all_suppliers",
+    "en": "All suppliers",
+    "vi": "Tất cả nhà cung cấp"
+  },
+  "暂无数据": {
+    "key": "auto.no_data_yet",
+    "en": "No data yet",
+    "vi": "Chưa có dữ liệu"
+  },
+  "调用:": {
+    "key": "auto.call",
+    "en": "Call:",
+    "vi": "Gọi:"
+  },
+  "成功:": {
+    "key": "auto.success",
+    "en": "success:",
+    "vi": "Thành công:"
+  },
+  "成功率:": {
+    "key": "auto.success_rate",
+    "en": "Success rate:",
+    "vi": "Tỷ lệ thành công:"
+  },
+  "类型: 文本生成": {
+    "key": "auto.type_text_generation",
+    "en": "Type: text generation",
+    "vi": "Kiểu: tạo văn bản"
+  },
+  "时长:": {
+    "key": "auto.duration",
+    "en": "Duration:",
+    "vi": "Khoảng thời gian:"
+  }
+}

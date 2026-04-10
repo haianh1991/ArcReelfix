@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { X, Loader2 } from "lucide-react";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface AddClueFormProps {
   onSubmit: (name: string, clueType: string, description: string, importance: string) => Promise<void>;
@@ -7,6 +9,8 @@ interface AddClueFormProps {
 }
 
 export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
+  const { t } = useTranslation();
+
   const [name, setName] = useState("");
   const [clueType, setClueType] = useState<"prop" | "location">("prop");
   const [description, setDescription] = useState("");
@@ -30,7 +34,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
       data-workspace-editing="true"
     >
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-gray-200">添加线索</h3>
+        <h3 className="text-sm font-semibold text-gray-200">{t("auto.add_clues")}</h3>
         <button
           type="button"
           onClick={onCancel}
@@ -43,13 +47,13 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
       <form onSubmit={handleSubmit} className="space-y-3">
         <div>
           <label className="block text-xs font-medium text-gray-400 mb-1">
-            名称 <span className="text-red-400">*</span>
+            {t("auto.name")} <span className="text-red-400">*</span>
           </label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="线索名称"
+            placeholder={t("auto.clue_name")}
             className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-200 placeholder-gray-500 outline-none focus:border-indigo-500"
             autoFocus
           />
@@ -57,7 +61,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
 
         <div className="flex gap-3">
           <div className="flex-1">
-            <label className="block text-xs font-medium text-gray-400 mb-1">类型</label>
+            <label className="block text-xs font-medium text-gray-400 mb-1">{t("auto.type")}</label>
             <div className="flex gap-2">
               <label className={`flex-1 cursor-pointer rounded-lg border px-3 py-1.5 text-center text-xs transition-colors ${
                 clueType === "prop"
@@ -65,7 +69,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
                   : "border-gray-700 bg-gray-800 text-gray-400 hover:border-gray-600"
               }`}>
                 <input type="radio" name="clueType" value="prop" checked={clueType === "prop"} onChange={() => setClueType("prop")} className="sr-only" />
-                道具
+                {t("auto.props")}
               </label>
               <label className={`flex-1 cursor-pointer rounded-lg border px-3 py-1.5 text-center text-xs transition-colors ${
                 clueType === "location"
@@ -73,13 +77,13 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
                   : "border-gray-700 bg-gray-800 text-gray-400 hover:border-gray-600"
               }`}>
                 <input type="radio" name="clueType" value="location" checked={clueType === "location"} onChange={() => setClueType("location")} className="sr-only" />
-                环境
+                {t("auto.environment")}
               </label>
             </div>
           </div>
 
           <div className="flex-1">
-            <label className="block text-xs font-medium text-gray-400 mb-1">重要性</label>
+            <label className="block text-xs font-medium text-gray-400 mb-1">{t("auto.importance")}</label>
             <div className="flex gap-2">
               <label className={`flex-1 cursor-pointer rounded-lg border px-3 py-1.5 text-center text-xs transition-colors ${
                 importance === "major"
@@ -87,7 +91,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
                   : "border-gray-700 bg-gray-800 text-gray-400 hover:border-gray-600"
               }`}>
                 <input type="radio" name="importance" value="major" checked={importance === "major"} onChange={() => setImportance("major")} className="sr-only" />
-                重要
+                {t("auto.important")}
               </label>
               <label className={`flex-1 cursor-pointer rounded-lg border px-3 py-1.5 text-center text-xs transition-colors ${
                 importance === "minor"
@@ -95,7 +99,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
                   : "border-gray-700 bg-gray-800 text-gray-400 hover:border-gray-600"
               }`}>
                 <input type="radio" name="importance" value="minor" checked={importance === "minor"} onChange={() => setImportance("minor")} className="sr-only" />
-                次要
+                {t("auto.secondary")}
               </label>
             </div>
           </div>
@@ -103,12 +107,12 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
 
         <div>
           <label className="block text-xs font-medium text-gray-400 mb-1">
-            描述 <span className="text-red-400">*</span>
+            {t("auto.describe")} <span className="text-red-400">*</span>
           </label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="线索的外观、特征、重要性等描述..."
+            placeholder={t("auto.description_of_the_c_1")}
             rows={3}
             className="w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm text-gray-200 placeholder-gray-500 outline-none focus:border-indigo-500 resize-none"
           />
@@ -120,7 +124,7 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
             onClick={onCancel}
             className="rounded-lg px-3 py-1.5 text-sm text-gray-400 hover:text-gray-200 transition-colors"
           >
-            取消
+            {t("auto.cancel")}
           </button>
           <button
             type="submit"
@@ -130,10 +134,10 @@ export function AddClueForm({ onSubmit, onCancel }: AddClueFormProps) {
             {submitting ? (
               <span className="inline-flex items-center gap-1.5">
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                添加中...
+                {t("auto.adding")}
               </span>
             ) : (
-              "添加"
+              t("auto.add_to")
             )}
           </button>
         </div>

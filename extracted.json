@@ -1,0 +1,1732 @@
+{
+  "认证已过期，请重新登录": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "请求失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "项目创建后不支持修改 content_mode": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "导入失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "上传失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "获取文件内容失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "保存文件失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "删除文件失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "获取草稿内容失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "保存草稿失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "解析 SSE 数据失败:": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "解析项目事件 SSE 数据失败:": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "上传凭证失败": [
+    "D:/Video/12/frontend/src/api.ts"
+  ],
+  "加载中...": [
+    "D:/Video/12/frontend/src/router.tsx",
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx",
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "图片消息": [
+    "D:/Video/12/frontend/src/hooks/useAssistantSession.ts"
+  ],
+  "发送失败": [
+    "D:/Video/12/frontend/src/hooks/useAssistantSession.ts"
+  ],
+  "回答失败": [
+    "D:/Video/12/frontend/src/hooks/useAssistantSession.ts"
+  ],
+  "中断失败": [
+    "D:/Video/12/frontend/src/hooks/useAssistantSession.ts"
+  ],
+  "同步项目变更失败:": [
+    "D:/Video/12/frontend/src/hooks/useProjectEventsSSE.ts"
+  ],
+  "未找到可定位的内容：": [
+    "D:/Video/12/frontend/src/hooks/useScrollTarget.ts"
+  ],
+  "登录失败": [
+    "D:/Video/12/frontend/src/pages/LoginPage.tsx"
+  ],
+  "用户名": [
+    "D:/Video/12/frontend/src/pages/LoginPage.tsx"
+  ],
+  "密码": [
+    "D:/Video/12/frontend/src/pages/LoginPage.tsx"
+  ],
+  "登录中...": [
+    "D:/Video/12/frontend/src/pages/LoginPage.tsx"
+  ],
+  "登录": [
+    "D:/Video/12/frontend/src/pages/LoginPage.tsx"
+  ],
+  "页面未找到": [
+    "D:/Video/12/frontend/src/pages/NotFoundPage.tsx"
+  ],
+  "返回首页": [
+    "D:/Video/12/frontend/src/pages/NotFoundPage.tsx"
+  ],
+  "ArcReel 智能体 API Key（Anthropic）未配置": [
+    "D:/Video/12/frontend/src/stores/config-status-store.ts"
+  ],
+  "未配置支持视频生成的供应商": [
+    "D:/Video/12/frontend/src/stores/config-status-store.ts"
+  ],
+  "未配置支持图片生成的供应商": [
+    "D:/Video/12/frontend/src/stores/config-status-store.ts"
+  ],
+  "未配置支持文本生成的供应商": [
+    "D:/Video/12/frontend/src/stores/config-status-store.ts"
+  ],
+  "项目": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/pages/ProjectsPage.tsx"
+  ],
+  "角色": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/copilot/ContextBanner.tsx",
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx",
+    "D:/Video/12/frontend/src/components/ui/AvatarStack.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/DialogueListEditor.tsx"
+  ],
+  "线索": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/copilot/ContextBanner.tsx",
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "分镜": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "剧集": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "项目概览": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "预处理": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "分镜图": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "视频": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts",
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "内容": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "…等": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "的分镜图已生成": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "的视频已生成": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "已创建": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "已删除": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "已更新": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "AI 刚生成了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "的分镜图，点击查看": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "的视频，点击查看": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "AI 刚新增了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "，点击查看": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "AI 刚删除了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "AI 刚更新了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "已生成": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "个": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "新增了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "删除了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "更新了": [
+    "D:/Video/12/frontend/src/utils/project-changes.ts"
+  ],
+  "源文件 \"": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "\" 上传成功": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "项目概述已重新生成": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "重新生成失败:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "风格参考图已更新": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "上传失败:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "确定删除当前风格参考图吗？": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "风格参考图已删除": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "删除失败:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "风格描述已保存": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "保存失败:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "加载项目数据中...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "项目风格": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "参考图会参与后续画面生成；风格描述用于补充视觉规则，校准整体调性、材质和镜头气质。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "未设置风格标签": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "项目风格参考图": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "上传中...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "上传风格参考图": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "支持 PNG / JPG / WEBP": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "使用说明": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "当前参考图会作为统一视觉基线，用于角色图、分镜图和视频生成。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "还没有绑定项目级参考图，可以先上传一张目标风格样片作为统一基线。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "替换参考图": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "上传参考图": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "删除中...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "删除参考图": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "风格描述": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "字": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "上传参考图后系统会自动分析并填充风格描述；你也可以继续手动校准。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "上传风格参考图后，系统会自动分析并填充风格描述；也可以手动编辑。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "建议把风格描述用于补充光线、色彩、材质与镜头语言。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "没有参考图时，也可以先用文字明确画面风格和审美约束。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "保存中...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "保存风格描述": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "说书+画面模式": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "剧集动画模式": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "未设置风格": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "项目概述": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "重新生成概述": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "生成中...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx",
+    "D:/Video/12/frontend/src/components/ui/GenerateButton.tsx"
+  ],
+  "重新生成": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "题材:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "主题:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "正在计算费用...": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "费用估算失败:": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "项目总费用": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "预估": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "总计": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "实际": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "角色/线索": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "暂无剧集。使用 AI 助手生成剧本。": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "片段 ·": [
+    "D:/Video/12/frontend/src/components/canvas/OverviewCanvas.tsx"
+  ],
+  "确定要删除文件 \"": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx"
+  ],
+  "\" 吗？此操作不可撤销。": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx"
+  ],
+  "加载文件中...": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx"
+  ],
+  "无法加载文件 \"": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx"
+  ],
+  "保存": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx",
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/TabSaveFooter.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "取消": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx",
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "编辑": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx",
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "删除": [
+    "D:/Video/12/frontend/src/components/canvas/SourceFileViewer.tsx",
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "更新 Prompt 失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "已提交分镜 \"": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "\" 生成任务": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "生成分镜失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "已提交视频 \"": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "生成视频失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "角色 \"": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "\" 已更新": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "更新角色失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "\" 生成任务已提交": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "提交失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "\" 已添加": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "添加失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "更新线索失败:": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "线索 \"": [
+    "D:/Video/12/frontend/src/components/canvas/StudioCanvasRouter.tsx"
+  ],
+  "分析失败:": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "欢迎来到": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "请拖拽或上传您的小说源文件（txt/md），AI 将为您拆解设定。": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "源文件已就绪。您可以继续添加文件，或点击下方按钮开始 AI 分析。": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "正在上传 \"": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "AI 正在分析小说内容，提取角色、线索和世界观...": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "分析完成！正在加载项目概述...": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "拖拽文件到此处": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "或点击选择文件（支持 .txt / .md）": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "已上传的源文件": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "添加更多文件": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "或拖拽更多文件到此处": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "开始 AI 分析": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "AI 分析中...": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "正在提取故事梗概、题材、主题和世界观设定": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "分析完成": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "接下来会发生什么？": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "AI 将分析您的小说，提取角色、线索和世界观设定": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "自动生成项目概述，然后您可以开始创建剧本和分镜": [
+    "D:/Video/12/frontend/src/components/canvas/WelcomeCanvas.tsx"
+  ],
+  "新会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "切换会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "无会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "确定要删除这个会话吗？此操作不可撤销。": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "删除会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "请先回答上方问题": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "助手正在生成中，可点击停止中断": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "输入消息，输入 / 查看可用技能": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "图片 \"": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "\" 超过 5MB，已跳过": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "收起助手面板": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "ArcReel 智能体": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "思考中": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "新建会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "在下方输入消息开始对话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "输入 / 可快速调用技能": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "点击放大图片": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/ContentBlockRenderer.tsx"
+  ],
+  "附件预览": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "移除图片": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "助手输入": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "最多附加": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "张图片": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "附加图片": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "中断会话": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "发送消息": [
+    "D:/Video/12/frontend/src/components/copilot/AgentCopilot.tsx"
+  ],
+  "片段": [
+    "D:/Video/12/frontend/src/components/copilot/ContextBanner.tsx"
+  ],
+  "其他": [
+    "D:/Video/12/frontend/src/components/copilot/pending-question.ts"
+  ],
+  "选项": [
+    "D:/Video/12/frontend/src/components/copilot/pending-question.ts"
+  ],
+  "若以上选项都不符合，可自行输入": [
+    "D:/Video/12/frontend/src/components/copilot/pending-question.ts"
+  ],
+  "需要你的选择": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "问题": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "可多选": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "单选": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "请选择一个选项": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "请输入其他内容": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "上一步": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "提交中...": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "完成并提交": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "下一题": [
+    "D:/Video/12/frontend/src/components/copilot/PendingQuestionWizard.tsx"
+  ],
+  "视频工作流": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "生成剧本": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "生成分镜图": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "生成视频": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "生成角色图": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "生成线索图": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "合成视频": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "技能命令菜单": [
+    "D:/Video/12/frontend/src/components/copilot/SlashCommandMenu.tsx"
+  ],
+  "任务进行中": [
+    "D:/Video/12/frontend/src/components/copilot/TodoListPanel.tsx"
+  ],
+  "确定要删除 \"": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "\" 吗？": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "源文件": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "上传源文件": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "暂无文件": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "删除文件": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "设定集": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "暂无角色": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "暂无线索": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "暂无剧集": [
+    "D:/Video/12/frontend/src/components/layout/AssetSidebar.tsx"
+  ],
+  "C:Users你的用户名AppDataLocalJianyingProUser DataProjectscom.lveditor.draft": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "/Users/你的用户名/Movies/JianyingPro/User Data/Projects/com.lveditor.draft": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "选择导出范围": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "仅当前版本": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "推荐": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "不含版本历史，体积更小": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "全部数据": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "包含完整版本历史": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "导出为剪映草稿": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "生成剪映可导入的草稿 ZIP": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "返回": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "选择集数": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "第": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "集 —": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "剪映版本": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "剪映 6.0 及以上（推荐）": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "剪映 5.x": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "草稿目录路径": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "剪映草稿目录路径": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "请填入剪映草稿目录的完整路径。打开剪映 → 设置 → 草稿位置 可查看。": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "导出中...": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "导出草稿": [
+    "D:/Video/12/frontend/src/components/layout/ExportScopeDialog.tsx"
+  ],
+  "工作流阶段": [
+    "D:/Video/12/frontend/src/components/layout/GlobalHeader.tsx"
+  ],
+  "准备中": [
+    "D:/Video/12/frontend/src/components/layout/GlobalHeader.tsx"
+  ],
+  "展开助手面板": [
+    "D:/Video/12/frontend/src/components/layout/StudioLayout.tsx"
+  ],
+  "关闭提示": [
+    "D:/Video/12/frontend/src/components/layout/ToastOverlay.tsx"
+  ],
+  "文本": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "图片": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "费用明细": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "总费用": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "失败": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx",
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx"
+  ],
+  "暂无调用记录": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "输入": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "输出": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "条记录": [
+    "D:/Video/12/frontend/src/components/layout/UsageDrawer.tsx"
+  ],
+  "条通知": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "未读": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "关闭通知面板": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "当前没有通知": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "项目刷新、生成完成和可定位变更会出现在这里": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "已读": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "新通知": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "查看定位": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "仅通知": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "移除": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "打开面板会自动标记为已读": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "临时会话记录": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "刚刚": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "分钟前": [
+    "D:/Video/12/frontend/src/components/layout/WorkspaceNotificationsDrawer.tsx"
+  ],
+  "清除已保存的 Anthropic API Key": [
+    "D:/Video/12/frontend/src/components/pages/AgentConfigTab.tsx"
+  ],
+  "写实摄影": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "动漫风格": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "3D 动画": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "项目标题不能为空": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "风格参考图上传失败，可稍后在项目设置中重新上传": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "创建项目失败:": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "新建项目": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "项目标题": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "例如：重生之皇后威武": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "系统会自动生成内部项目标识并用于 URL 与文件存储": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "内容模式": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "说书+画面": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "剧集动画": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "画面比例": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "竖屏 9:16": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "横屏 16:9": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "默认时长": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "由 AI 根据内容自动决定时长，或指定固定时长": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "自动": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "视觉风格": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "风格参考图": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "（可选）": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "风格参考图预览": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "上传参考图片": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "上传后将自动分析风格特征，用于生成一致的画面": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "创建中...": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "创建项目": [
+    "D:/Video/12/frontend/src/components/pages/CreateProjectModal.tsx"
+  ],
+  "当前使用中": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "激活": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "使用中": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "测试": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "连接": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "确认": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "可用模型:": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "名称": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "API Key（留空保留现有值）": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "留空保留现有值…": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "Base URL（可选）": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "默认使用官方地址…": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "请选择凭证文件": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "请输入 API Key": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "例如：个人账号…": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "凭证文件": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "选择 JSON 文件…": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "添加": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "加载中…": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "密钥管理": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "添加密钥": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "暂无密钥": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "添加第一个密钥": [
+    "D:/Video/12/frontend/src/components/pages/CredentialList.tsx"
+  ],
+  "向你的 OpenClaw 发送上述提示词": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "复制提示词，粘贴给 OpenClaw 发送": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "OpenClaw 从 Skill 文档学习能力": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "OpenClaw 会自动读取 ArcReel Skill 文档，获取所有可用工具与 API 的使用方式": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "OpenClaw 与 ArcReel 交互并创建视频": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "描述你的创作需求，OpenClaw 将调用 ArcReel 完成项目管理、剧本生成和视频创作": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "学习": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "然后遵循 skill，了解如何使用 ArcReel 创作视频": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "OpenClaw 集成指南": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "将 ArcReel 接入 OpenClaw AI Agent": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "关闭": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/shared/ArchiveDiagnosticsDialog.tsx"
+  ],
+  "已复制": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "复制": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "Skill 文档地址：": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "使用步骤": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "获取 API 令牌": [
+    "D:/Video/12/frontend/src/components/pages/OpenClawModal.tsx"
+  ],
+  "有未保存的修改，确定要离开吗？": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "已保存": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "保存失败": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "返回项目": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "项目设置": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "模型配置": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "为此项目单独选择生成模型，留空则跟随全局默认": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "视频模型": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "当前全局:": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "已生成的分镜图/视频仍为原比例，建议重新生成": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "新分镜的默认视频时长，「自动」表示由 AI 根据内容决定": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "默认时长选择": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "图片模型": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "生成音频": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "生成音频设置": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "跟随全局默认": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/ui/ProviderModelSelect.tsx"
+  ],
+  "开启": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "文本模型": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "按任务类型覆盖，留空跟随全局默认": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "剧本生成": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "概述生成": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "风格分析": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "加载配置中…": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx"
+  ],
+  "保存中…": [
+    "D:/Video/12/frontend/src/components/pages/ProjectSettingsPage.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/TabSaveFooter.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "已就绪": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "未配置": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderSection.tsx"
+  ],
+  "异常": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "输入密钥": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "隐藏": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "显示": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "清除密钥": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "清除": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "确认清除": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "已设置（留空则保留现有值）": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "高级配置": [
+    "D:/Video/12/frontend/src/components/pages/ProviderDetail.tsx"
+  ],
+  "加载供应商列表…": [
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "供应商列表": [
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "预置供应商": [
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "请选择供应商": [
+    "D:/Video/12/frontend/src/components/pages/ProviderSection.tsx"
+  ],
+  "有未保存的更改": [
+    "D:/Video/12/frontend/src/components/pages/TabSaveFooter.tsx"
+  ],
+  "撤销": [
+    "D:/Video/12/frontend/src/components/pages/TabSaveFooter.tsx"
+  ],
+  "排队中": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "已完成": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "运行中": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "暂无任务": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "排队": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "运行": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "完成": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "图片通道": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "视频通道": [
+    "D:/Video/12/frontend/src/components/task-hud/TaskHud.tsx"
+  ],
+  "场景": [
+    "D:/Video/12/frontend/src/components/ui/ClueStack.tsx"
+  ],
+  "道具": [
+    "D:/Video/12/frontend/src/components/ui/ClueStack.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "生成": [
+    "D:/Video/12/frontend/src/components/ui/GenerateButton.tsx"
+  ],
+  "关闭全屏预览": [
+    "D:/Video/12/frontend/src/components/ui/ImageLightbox.tsx"
+  ],
+  "全屏预览": [
+    "D:/Video/12/frontend/src/components/ui/ImageLightbox.tsx",
+    "D:/Video/12/frontend/src/components/ui/PreviewableImageFrame.tsx"
+  ],
+  "火山方舟": [
+    "D:/Video/12/frontend/src/components/ui/ProviderIcon.tsx"
+  ],
+  "选择模型…": [
+    "D:/Video/12/frontend/src/components/ui/ProviderModelSelect.tsx"
+  ],
+  "选择模型": [
+    "D:/Video/12/frontend/src/components/ui/ProviderModelSelect.tsx"
+  ],
+  "添加角色": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "角色名称": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "描述": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "角色外貌、性格、背景等描述...": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "声音风格": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "可选，例如：温柔但有威严": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "参考图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "角色参考图预览": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "已选择参考图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "更换": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "用于后续角色设计图生成时保持角色一致性": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx"
+  ],
+  "添加中...": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddCharacterForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "添加线索": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "线索名称": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "类型": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "环境": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "重要性": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "重要": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "次要": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "线索的外观、特征、重要性等描述...": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/AddClueForm.tsx"
+  ],
+  "角色设计图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "设计图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "点击生成": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "取消待上传": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "替换": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "待保存参考图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "已保存参考图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "输入角色描述...": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "例如：温柔但有威严": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx"
+  ],
+  "重新生成设计图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "生成设计图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/CharacterCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "线索设计图": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "输入线索描述...": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/ClueCard.tsx"
+  ],
+  "角色 (": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "线索 (": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "暂无角色，点击下方按钮添加": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "暂无线索，点击下方按钮添加": [
+    "D:/Video/12/frontend/src/components/canvas/lorebook/LorebookGallery.tsx"
+  ],
+  "对话": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/DialogueListEditor.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "台词": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/DialogueListEditor.tsx"
+  ],
+  "添加对话": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/DialogueListEditor.tsx"
+  ],
+  "分镜图描述...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "构图参数": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "镜头": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "光线": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "光线描述...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "氛围": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "氛围描述...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/ImagePromptEditor.tsx"
+  ],
+  "预处理内容已保存": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "片段拆分已完成": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "规范化剧本已完成": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "加载预处理内容...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "暂无预处理内容": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/PreprocessingView.tsx"
+  ],
+  "时长选择": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "备注": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "添加备注...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "原文": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "（暂无原文）": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "（暂无对话）": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "提示词": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "视频动作描述...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx",
+    "D:/Video/12/frontend/src/components/canvas/timeline/VideoPromptEditor.tsx"
+  ],
+  "暂无分镜": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "生成分镜": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "可生成视频": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "需先生成分镜": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/SegmentCard.tsx"
+  ],
+  "请在左侧选择剧集": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "个片段": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "个场景": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "· 约": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "剧本时间线": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/TimelineCanvas.tsx"
+  ],
+  "已切换到 v": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "切换版本失败:": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "版本管理": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "暂无历史版本": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "生成或还原后，历史版本会出现在这里。": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "历史版本": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "当前 v": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "点击版本号预览，非当前版本可切换。": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "当前": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "切换中...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "切换到此版本": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "版本 v": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "预览": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "该版本没有记录额外说明。": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VersionTimeMachine.tsx"
+  ],
+  "运镜 / 音效 / 对话": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VideoPromptEditor.tsx"
+  ],
+  "镜头运动": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VideoPromptEditor.tsx"
+  ],
+  "环境音效": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VideoPromptEditor.tsx"
+  ],
+  "环境音效描述...": [
+    "D:/Video/12/frontend/src/components/canvas/timeline/VideoPromptEditor.tsx"
+  ],
+  "执行失败": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ContentBlockRenderer.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "工具结果": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ContentBlockRenderer.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "用户中断了会话": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ContentBlockRenderer.tsx"
+  ],
+  "附件图片": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ContentBlockRenderer.tsx"
+  ],
+  "Skill 内容": [
+    "D:/Video/12/frontend/src/components/copilot/chat/SkillContentBlock.tsx",
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "▼ 收起": [
+    "D:/Video/12/frontend/src/components/copilot/chat/SkillContentBlock.tsx"
+  ],
+  "▶ 展开": [
+    "D:/Video/12/frontend/src/components/copilot/chat/SkillContentBlock.tsx"
+  ],
+  "(已取消)": [
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx"
+  ],
+  "子任务开始:": [
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx"
+  ],
+  "子任务": [
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx"
+  ],
+  "结束": [
+    "D:/Video/12/frontend/src/components/copilot/chat/TaskProgressBlock.tsx"
+  ],
+  "思考过程": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ThinkingBlock.tsx"
+  ],
+  "输入参数": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "执行结果": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "任务清单": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "任务清单已更新": [
+    "D:/Video/12/frontend/src/components/copilot/chat/ToolCallWithResult.tsx"
+  ],
+  "助手": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "你": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "工具": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "系统": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "流式更新": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "消息": [
+    "D:/Video/12/frontend/src/components/copilot/chat/utils.ts"
+  ],
+  "删除失败": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "连接测试失败": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "已连接": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx",
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderSection.tsx"
+  ],
+  "API 格式": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "未设置": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "创建时间": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "模型列表": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "默认": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "已禁用": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "测试中…": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "测试连接": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "确认删除": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderDetail.tsx"
+  ],
+  "自定义供应商": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderSection.tsx"
+  ],
+  "添加自定义供应商": [
+    "D:/Video/12/frontend/src/components/pages/settings/CustomProviderSection.tsx"
+  ],
+  "媒体模型配置已保存": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "模型选择": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "设置全局默认的生成模型，项目内可单独覆盖": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "默认视频模型": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "自动选择": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "暂无可用视频供应商，请先在「供应商」页面配置 API 密钥": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "（仅部分供应商支持）": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "默认图片模型": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "暂无可用图片供应商，请先在「供应商」页面配置 API 密钥": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "按任务类型配置文本模型，留空表示自动选择": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "暂无可用文本供应商，请先在「供应商」页面配置 API 密钥": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "重置": [
+    "D:/Video/12/frontend/src/components/pages/settings/MediaModelSection.tsx"
+  ],
+  "最近 7 天": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "最近 30 天": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "全部": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "用量统计": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "查看各供应商的 API 调用统计": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "按供应商筛选": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "全部供应商": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "暂无数据": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "调用:": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "成功:": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "成功率:": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "类型: 文本生成": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ],
+  "时长:": [
+    "D:/Video/12/frontend/src/components/pages/settings/UsageStatsSection.tsx"
+  ]
+}

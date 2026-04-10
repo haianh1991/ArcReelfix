@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { UI_LAYERS } from "@/utils/ui-layers";
+import { useTranslation } from "@/utils/i18n";
+
 
 export interface ImageLightboxProps {
   src: string;
@@ -10,6 +12,8 @@ export interface ImageLightboxProps {
 }
 
 export function ImageLightbox({ src, alt, onClose }: ImageLightboxProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -43,7 +47,7 @@ export function ImageLightbox({ src, alt, onClose }: ImageLightboxProps) {
             event.stopPropagation();
             onClose();
           }}
-          aria-label="关闭全屏预览"
+          aria-label={t("auto.turn_off_full_screen")}
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-black/55 text-white shadow-lg shadow-black/30 backdrop-blur transition-colors hover:bg-black/75"
         >
           <X className="h-5 w-5" />

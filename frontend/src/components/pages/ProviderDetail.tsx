@@ -5,18 +5,22 @@ import { API } from "@/api";
 import { ProviderIcon } from "@/components/ui/ProviderIcon";
 import { CredentialList } from "@/components/pages/CredentialList";
 import type { ProviderConfigDetail, ProviderField } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+import { t as standaloneT } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // Status badge
 // ---------------------------------------------------------------------------
 
 const STATUS_BADGE_MAP: Record<string, { label: string; cls: string }> = {
-  ready: { label: "已就绪", cls: "bg-green-900/30 text-green-400 border border-green-800/50" },
-  unconfigured: { label: "未配置", cls: "bg-gray-800 text-gray-400 border border-gray-700" },
-  error: { label: "异常", cls: "bg-red-900/30 text-red-400 border border-red-800/50" },
+  ready: { label: standaloneT("auto.ready"), cls: "bg-green-900/30 text-green-400 border border-green-800/50" },
+  unconfigured: { label: standaloneT("auto.not_configured"), cls: "bg-gray-800 text-gray-400 border border-gray-700" },
+  error: { label: standaloneT("auto.abnormal"), cls: "bg-red-900/30 text-red-400 border border-red-800/50" },
 };
 
 function StatusBadge({ status }: { status: string }) {
+  const { t } = useTranslation();
+
   const { label, cls } = STATUS_BADGE_MAP[status] ?? STATUS_BADGE_MAP.unconfigured;
   return (
     <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${cls}`}>
@@ -36,6 +40,8 @@ interface FieldEditorProps {
 }
 
 function FieldEditor({ field, draft, setDraft }: FieldEditorProps) {
+  const { t } = useTranslation();
+
   const [showSecret, setShowSecret] = useState(false);
   const [confirmingClear, setConfirmingClear] = useState(false);
 
@@ -76,14 +82,14 @@ function FieldEditor({ field, draft, setDraft }: FieldEditorProps) {
               type={showSecret ? "text" : "password"}
               value={displayValue}
               onChange={(e) => handleChange(e.target.value)}
-              placeholder={field.is_set ? field.value_masked ?? "••••••••••" : (field.placeholder ?? "输入密钥")}
+              placeholder={field.is_set ? field.value_masked ?? "••••••••••" : (field.placeholder ?? t("auto.enter_key"))}
               className="w-full rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 pr-9 text-sm text-gray-100 placeholder-gray-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
             />
             <button
               type="button"
               onClick={() => setShowSecret((v) => !v)}
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded text-gray-500 hover:text-gray-300 focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:outline-none"
-              aria-label={showSecret ? "隐藏" : "显示"}
+              aria-label={showSecret ? t("auto.hide") : t("auto.show")}
             >
               {showSecret ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
             </button>
@@ -92,11 +98,11 @@ function FieldEditor({ field, draft, setDraft }: FieldEditorProps) {
             <button
               type="button"
               onClick={handleClear}
-              title="清除密钥"
+              title={t("auto.clear_key")}
               className="flex items-center gap-1 rounded-lg border border-gray-700 px-3 py-2 text-xs text-gray-400 hover:border-gray-600 hover:text-gray-200 focus-visible:ring-2 focus-visible:ring-indigo-500/60 focus-visible:outline-none"
             >
               <X className="h-3 w-3" />
-              清除
+              {t("auto.clear")}
             </button>
           )}
           {confirmingClear && (
@@ -106,20 +112,20 @@ function FieldEditor({ field, draft, setDraft }: FieldEditorProps) {
                 onClick={handleClear}
                 className="rounded-lg border border-red-800 bg-red-900/30 px-3 py-2 text-xs text-red-400 hover:bg-red-900/50"
               >
-                确认清除
+                {t("auto.confirm_clear")}
               </button>
               <button
                 type="button"
                 onClick={() => setConfirmingClear(false)}
                 className="rounded-lg border border-gray-700 px-3 py-2 text-xs text-gray-400 hover:border-gray-600 hover:text-gray-200"
               >
-                取消
+                {t("auto.cancel")}
               </button>
             </div>
           )}
         </div>
         {field.is_set && !(field.key in draft) && (
-          <p className="mt-1 text-xs text-gray-600">已设置（留空则保留现有值）</p>
+          <p className="mt-1 text-xs text-gray-600">{t("auto.set_leave_blank_to_r")}</p>
         )}
       </div>
     );
@@ -177,6 +183,8 @@ interface Props {
 }
 
 export function ProviderDetail({ providerId, onSaved }: Props) {
+  const { t } = useTranslation();
+
   const [detail, setDetail] = useState<ProviderConfigDetail | null>(null);
   const [draft, setDraft] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
@@ -224,7 +232,7 @@ export function ProviderDetail({ providerId, onSaved }: Props) {
     return (
       <div className="flex items-center gap-2 text-sm text-gray-500">
         <Loader2 className="h-4 w-4 animate-spin" />
-        加载中…
+        {t("auto.loading_1")}
       </div>
     );
   }
@@ -248,9 +256,9 @@ export function ProviderDetail({ providerId, onSaved }: Props) {
       {/* Capabilities */}
       {detail.media_types && detail.media_types.length > 0 && (
         <div className="mb-5 flex flex-wrap gap-1.5">
-          {detail.media_types.map((t) => (
-            <span key={t} className="rounded-md bg-gray-800 px-2 py-0.5 text-xs text-gray-400">
-              {t === "video" ? "视频" : t === "image" ? "图片" : t === "text" ? "文本" : t}
+          {detail.media_types.map((mt) => (
+            <span key={mt} className="rounded-md bg-gray-800 px-2 py-0.5 text-xs text-gray-400">
+              {mt === "video" ? t("auto.video") : mt === "image" ? t("auto.picture_1") : mt === "text" ? t("auto.text_1") : mt}
             </span>
           ))}
         </div>
@@ -270,7 +278,7 @@ export function ProviderDetail({ providerId, onSaved }: Props) {
             <ChevronRight
               className={`h-4 w-4 transition-transform ${showAdvanced ? "rotate-90" : ""}`}
             />
-            高级配置
+            {t("auto.advanced_configurati")}
           </button>
           {showAdvanced && (
             <div className="mt-3 space-y-4">
@@ -288,10 +296,10 @@ export function ProviderDetail({ providerId, onSaved }: Props) {
                     {saving ? (
                       <>
                         <Loader2 className="h-4 w-4 animate-spin" />
-                        保存中…
+                        {t("auto.saving_1")}
                       </>
                     ) : (
-                      "保存"
+                      t("auto.save")
                     )}
                   </button>
                 </div>

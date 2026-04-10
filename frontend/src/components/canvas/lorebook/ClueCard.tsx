@@ -7,6 +7,8 @@ import { GenerateButton } from "@/components/ui/GenerateButton";
 import { PreviewableImageFrame } from "@/components/ui/PreviewableImageFrame";
 import { useProjectsStore } from "@/stores/projects-store";
 import type { Clue } from "@/types";
+import { useTranslation, t as standaloneT } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // Props
@@ -27,8 +29,8 @@ interface ClueCardProps {
 // ---------------------------------------------------------------------------
 
 const TYPE_LABELS: Record<string, string> = {
-  prop: "道具",
-  location: "环境",
+  prop: standaloneT("auto.props"),
+  location: standaloneT("auto.environment"),
 };
 
 // ---------------------------------------------------------------------------
@@ -44,6 +46,8 @@ export function ClueCard({
   onRestoreVersion,
   generating = false,
 }: ClueCardProps) {
+  const { t } = useTranslation();
+
   const sheetFp = useProjectsStore(
     (s) => clue.clue_sheet ? s.getAssetFingerprint(clue.clue_sheet) : null,
   );
@@ -107,11 +111,11 @@ export function ClueCard({
 
         {clue.importance === "major" ? (
           <span className="shrink-0 rounded-full bg-indigo-500/10 px-2 py-0.5 text-xs font-medium text-indigo-400 border border-indigo-500/20">
-            重要
+            {t("auto.important")}
           </span>
         ) : (
           <span className="shrink-0 rounded-full bg-gray-700 px-2 py-0.5 text-xs font-medium text-gray-400">
-            次要
+            {t("auto.secondary")}
           </span>
         )}
       </div>
@@ -120,7 +124,7 @@ export function ClueCard({
       <div className="mb-4">
         <div className="mb-1.5 flex items-center justify-between">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
-            线索设计图
+            {t("auto.clue_design_drawing")}
           </span>
           <VersionTimeMachine
             projectName={projectName}
@@ -144,7 +148,7 @@ export function ClueCard({
             ) : (
               <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-gray-500">
                 <Puzzle className="h-10 w-10" />
-                <span className="text-xs">点击生成</span>
+                <span className="text-xs">{t("auto.click_to_generate")}</span>
               </div>
             )}
           </AspectFrame>
@@ -159,7 +163,7 @@ export function ClueCard({
         onInput={autoResize}
         rows={2}
         className="mb-3 w-full resize-none overflow-hidden bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-gray-200 placeholder-gray-500 focus:border-indigo-500 focus:outline-none"
-        placeholder="输入线索描述..."
+        placeholder={t("auto.enter_lead_descripti")}
       />
 
       {isDirty && (
@@ -168,7 +172,7 @@ export function ClueCard({
           onClick={handleSave}
           className="mb-3 rounded-lg bg-indigo-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-indigo-500 transition-colors"
         >
-          保存
+          {t("auto.save")}
         </button>
       )}
 
@@ -176,7 +180,7 @@ export function ClueCard({
         <GenerateButton
           onClick={() => onGenerate(name)}
           loading={generating}
-          label={clue.clue_sheet ? "重新生成设计图" : "生成设计图"}
+          label={clue.clue_sheet ? t("auto.regenerate_design_dr") : t("auto.generate_design_draw")}
           className="w-full justify-center"
         />
       )}

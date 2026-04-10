@@ -141,6 +141,8 @@ const inlineClearClassName =
 // ---------------------------------------------------------------------------
 
 function SectionHeading({ title, description }: { title: string; description: string }) {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-4">
       <h3 className="text-base font-semibold text-gray-100">{title}</h3>
@@ -441,7 +443,7 @@ export function AgentConfigTab({ visible }: AgentConfigTabProps) {
                       }
                       disabled={isBusy}
                       className={inlineClearClassName}
-                      aria-label="清除已保存的 Anthropic API Key"
+                      aria-label={t("auto.clear_saved_anthropi")}
                     >
                       {clearingField === "anthropic_api_key" ? (
                         <Loader2 className="h-3 w-3 animate-spin" />

@@ -1,5 +1,7 @@
 import { Sparkles, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "@/utils/i18n";
+import { t as standaloneT } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // GenerateButton — 带 framer-motion 平滑状态过渡的生成按钮
@@ -17,11 +19,13 @@ interface GenerateButtonProps {
 export function GenerateButton({
   onClick,
   loading = false,
-  label = "生成",
+  label,
   className,
   disabled = false,
   layoutId,
 }: GenerateButtonProps) {
+  const { t } = useTranslation();
+
   const isDisabled = disabled || loading;
 
   return (
@@ -70,7 +74,7 @@ export function GenerateButton({
           </motion.span>
         )}
       </AnimatePresence>
-      <span>{loading ? "生成中..." : label}</span>
+      <span>{loading ? t("auto.generating") : (label ?? t("auto.generate"))}</span>
     </motion.button>
   );
 }

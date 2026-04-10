@@ -3,6 +3,8 @@ import { Edit3, Save, X } from "lucide-react";
 import { API } from "@/api";
 import { useAppStore } from "@/stores/app-store";
 import { StreamMarkdown } from "@/components/copilot/StreamMarkdown";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface PreprocessingViewProps {
   projectName: string;
@@ -15,6 +17,8 @@ export function PreprocessingView({
   episode,
   contentMode,
 }: PreprocessingViewProps) {
+  const { t } = useTranslation();
+
   const pushToast = useAppStore((s) => s.pushToast);
   const draftRevisionKey = `draft:episode_${episode}_step1`;
   const draftRevision = useAppStore((s) => s.getEntityRevision(draftRevisionKey));
@@ -54,21 +58,21 @@ export function PreprocessingView({
       await API.saveDraft(projectName, episode, 1, editContent);
       setContent(editContent);
       setEditing(false);
-      pushToast("预处理内容已保存", "success");
+      pushToast(t("auto.preprocessing_conten"), "success");
     } catch {
-      pushToast("保存失败", "error");
+      pushToast(t("auto.save_failed_1"), "error");
     } finally {
       setSaving(false);
     }
   }, [projectName, episode, editContent, pushToast]);
 
   const statusLabel =
-    contentMode === "narration" ? "片段拆分已完成" : "规范化剧本已完成";
+    contentMode === "narration" ? t("auto.fragment_splitting_c") : t("auto.the_standardized_scr");
 
   if (loading) {
     return (
       <div className="flex h-64 items-center justify-center text-gray-500">
-        加载预处理内容...
+        {t("auto.loading_preprocessed")}
       </div>
     );
   }
@@ -76,7 +80,7 @@ export function PreprocessingView({
   if (content === null) {
     return (
       <div className="flex h-64 items-center justify-center text-gray-500">
-        暂无预处理内容
+        {t("auto.no_preprocessing_con")}
       </div>
     );
   }
@@ -99,7 +103,7 @@ export function PreprocessingView({
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-green-400 transition-colors hover:bg-gray-800 disabled:opacity-50"
               >
                 <Save className="h-3.5 w-3.5" />
-                {saving ? "保存中..." : "保存"}
+                {saving ? t("auto.saving") : t("auto.save")}
               </button>
               <button
                 type="button"
@@ -110,7 +114,7 @@ export function PreprocessingView({
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800"
               >
                 <X className="h-3.5 w-3.5" />
-                取消
+                {t("auto.cancel")}
               </button>
             </>
           ) : (
@@ -120,7 +124,7 @@ export function PreprocessingView({
               className="flex items-center gap-1 rounded px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
             >
               <Edit3 className="h-3.5 w-3.5" />
-              编辑
+              {t("auto.edit")}
             </button>
           )}
         </div>

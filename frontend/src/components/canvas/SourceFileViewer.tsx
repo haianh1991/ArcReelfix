@@ -3,6 +3,7 @@ import { FileText, Edit3, Save, X, Trash2 } from "lucide-react";
 import { useLocation } from "wouter";
 import { API } from "@/api";
 import { useAppStore } from "@/stores/app-store";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // SourceFileViewer — 源文件预览/编辑组件
@@ -14,6 +15,7 @@ interface SourceFileViewerProps {
 }
 
 export function SourceFileViewer({ projectName, filename }: SourceFileViewerProps) {
+    const { t } = useTranslation();
   const [, setLocation] = useLocation();
   const [content, setContent] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -73,15 +75,14 @@ export function SourceFileViewer({ projectName, filename }: SourceFileViewerProp
   if (loading) {
     return (
       <div className="flex h-full items-center justify-center text-gray-500">
-        加载文件中...
-      </div>
+        {t("auto.loading_files")}</div>
     );
   }
 
   if (content === null) {
     return (
       <div className="flex h-full items-center justify-center text-gray-500">
-        无法加载文件 "{filename}"
+        {t("auto.unable_to_load_file")}{filename}"
       </div>
     );
   }
@@ -104,7 +105,7 @@ export function SourceFileViewer({ projectName, filename }: SourceFileViewerProp
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-green-400 transition-colors hover:bg-gray-800 disabled:opacity-50"
               >
                 <Save className="h-3.5 w-3.5" />
-                {saving ? "保存中..." : "保存"}
+                {saving ? t("auto.saving") : t("auto.save")}
               </button>
               <button
                 type="button"
@@ -112,8 +113,7 @@ export function SourceFileViewer({ projectName, filename }: SourceFileViewerProp
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800"
               >
                 <X className="h-3.5 w-3.5" />
-                取消
-              </button>
+                {t("auto.cancel")}</button>
             </>
           ) : (
             <>
@@ -123,16 +123,14 @@ export function SourceFileViewer({ projectName, filename }: SourceFileViewerProp
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800 hover:text-gray-200"
               >
                 <Edit3 className="h-3.5 w-3.5" />
-                编辑
-              </button>
+                {t("auto.edit")}</button>
               <button
                 type="button"
                 onClick={handleDelete}
                 className="flex items-center gap-1 rounded px-2 py-1 text-xs text-gray-400 transition-colors hover:bg-gray-800 hover:text-red-400"
               >
                 <Trash2 className="h-3.5 w-3.5" />
-                删除
-              </button>
+                {t("auto.delete")}</button>
             </>
           )}
         </div>

@@ -14,19 +14,20 @@ import { API } from "@/api";
 import { useProjectsStore } from "@/stores/projects-store";
 import { useAssistantStore } from "@/stores/assistant-store";
 import { useAuthStore } from "@/stores/auth-store";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // AuthGuard — redirects to /login when not authenticated
 // ---------------------------------------------------------------------------
 
 function AuthGuard({ children }: { children: React.ReactNode }) {
+    const { t } = useTranslation();
   const { isAuthenticated, isLoading } = useAuthStore();
 
   if (isLoading) {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-950 text-gray-500">
-        加载中...
-      </div>
+        {t("auto.loading")}</div>
     );
   }
 
@@ -42,6 +43,7 @@ function AuthGuard({ children }: { children: React.ReactNode }) {
 // ---------------------------------------------------------------------------
 
 function StudioWorkspace() {
+    const { t } = useTranslation();
   const params = useParams<{ projectName: string }>();
   const projectName = params.projectName ?? null;
   const { setCurrentProject, setProjectDetailLoading } = useProjectsStore();
@@ -94,6 +96,7 @@ function StudioWorkspace() {
 // ---------------------------------------------------------------------------
 
 export function AppRoutes() {
+    const { t } = useTranslation();
   return (
     <>
       <Switch>

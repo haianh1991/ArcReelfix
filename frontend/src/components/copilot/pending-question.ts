@@ -1,7 +1,8 @@
 import type { PendingQuestion } from "@/types";
+import { t } from "@/utils/i18n";
 
 export const ASSISTANT_OTHER_OPTION_VALUE = "__assistant_option_other__";
-export const ASSISTANT_OTHER_OPTION_LABEL = "其他";
+export const ASSISTANT_OTHER_OPTION_LABEL = t("auto.other");
 
 type Question = PendingQuestion["questions"][number];
 
@@ -14,7 +15,7 @@ export interface QuestionOption {
 
 function isOtherOptionLabel(label: string | undefined): boolean {
   const normalized = String(label || "").trim().toLowerCase();
-  return normalized === "其他" || normalized === "other";
+  return normalized === t("auto.other") || normalized === "other";
 }
 
 function isOtherOptionValue(value: string): boolean {
@@ -46,7 +47,7 @@ export function buildQuestionOptions(options: Question["options"]): QuestionOpti
     ...normalized,
     {
       label: ASSISTANT_OTHER_OPTION_LABEL,
-      description: "若以上选项都不符合，可自行输入",
+      description: t("auto.if_none_of_the_above"),
       value: ASSISTANT_OTHER_OPTION_VALUE,
       isOther: true,
     },

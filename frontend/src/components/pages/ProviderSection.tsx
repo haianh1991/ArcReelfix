@@ -8,18 +8,22 @@ import { ProviderDetail } from "./ProviderDetail";
 import { CustomProviderSection } from "./settings/CustomProviderSection";
 import { CustomProviderDetail } from "./settings/CustomProviderDetail";
 import { CustomProviderForm } from "./settings/CustomProviderForm";
+import { useTranslation } from "@/utils/i18n";
+import { t as standaloneT } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // Status dot
 // ---------------------------------------------------------------------------
 
 const STATUS_MAP: Record<string, { color: string; label: string }> = {
-  ready: { color: "bg-green-400", label: "已就绪" },
-  error: { color: "bg-yellow-400", label: "异常" },
-  unconfigured: { color: "bg-gray-500", label: "未配置" },
+  ready: { color: "bg-green-400", label: standaloneT("auto.ready") },
+  error: { color: "bg-yellow-400", label: standaloneT("auto.abnormal") },
+  unconfigured: { color: "bg-gray-500", label: standaloneT("auto.not_configured") },
 };
 
 function StatusDot({ status }: { status: string }) {
+  const { t } = useTranslation();
+
   const { color, label } = STATUS_MAP[status] ?? { color: "bg-gray-500", label: status };
   return <span className={`h-2 w-2 shrink-0 rounded-full ${color}`} role="img" aria-label={label} />;
 }
@@ -36,6 +40,8 @@ type Selection =
   | null;
 
 export function ProviderSection() {
+  const { t } = useTranslation();
+
   const [providers, setProviders] = useState<ProviderInfo[]>([]);
   const [customProviders, setCustomProviders] = useState<CustomProviderInfo[]>([]);
   const [loading, setLoading] = useState(true);
@@ -104,7 +110,7 @@ export function ProviderSection() {
     return (
       <div className="flex items-center gap-2 px-6 py-8 text-sm text-gray-500">
         <Loader2 className="h-4 w-4 animate-spin" />
-        加载供应商列表…
+        {t("auto.loading_supplier_lis")}
       </div>
     );
   }
@@ -112,10 +118,10 @@ export function ProviderSection() {
   return (
     <div className="flex h-full">
       {/* Provider list sidebar */}
-      <nav aria-label="供应商列表" className="w-52 shrink-0 overflow-y-auto border-r border-gray-800 py-3">
+      <nav aria-label={t("auto.supplier_list")} className="w-52 shrink-0 overflow-y-auto border-r border-gray-800 py-3">
         {/* Preset providers */}
         <div className="px-4 pb-2 text-xs uppercase tracking-wide text-gray-500">
-          预置供应商
+          {t("auto.on_premise_provider")}
         </div>
         {providers.map((p) => (
           <button
@@ -190,7 +196,7 @@ export function ProviderSection() {
         )}
         {!selection && (
           <div className="flex-1 overflow-y-auto p-6">
-            <div className="text-sm text-gray-500">请选择供应商</div>
+            <div className="text-sm text-gray-500">{t("auto.please_select_a_supp")}</div>
           </div>
         )}
       </div>

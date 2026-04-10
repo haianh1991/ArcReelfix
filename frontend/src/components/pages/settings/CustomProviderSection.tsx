@@ -1,14 +1,18 @@
 import { Plus } from "lucide-react";
 import type { CustomProviderInfo } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // Status dot (replicates preset provider pattern)
 // ---------------------------------------------------------------------------
 
 function CustomStatusDot({ provider }: { provider: CustomProviderInfo }) {
+  const { t } = useTranslation();
+
   const ready = provider.base_url && provider.api_key_masked;
   const color = ready ? "bg-green-400" : "bg-gray-500";
-  const label = ready ? "已连接" : "未配置";
+  const label = ready ? t("auto.connected") : t("auto.not_configured");
   return <span className={`h-2 w-2 shrink-0 rounded-full ${color}`} role="img" aria-label={label} />;
 }
 
@@ -24,10 +28,12 @@ interface CustomProviderSectionProps {
 }
 
 export function CustomProviderSection({ providers, selectedId, onSelect, onAdd }: CustomProviderSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="mt-3 border-t border-gray-800 pt-3">
       <div className="px-4 pb-2 text-xs uppercase tracking-wide text-gray-500">
-        自定义供应商
+        {t("auto.custom_supplier")}
       </div>
       {providers.map((p) => (
         <button
@@ -53,7 +59,7 @@ export function CustomProviderSection({ providers, selectedId, onSelect, onAdd }
         className="flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-sm text-gray-500 transition-colors hover:bg-gray-800/30 hover:text-gray-300"
       >
         <Plus className="h-4 w-4 shrink-0" aria-hidden="true" />
-        <span>添加自定义供应商</span>
+        <span>{t("auto.add_custom_supplier")}</span>
       </button>
     </div>
   );

@@ -33,7 +33,7 @@ function triggerBrowserDownload(url: string) {
 function usePhases() {
   const { t } = useTranslation();
   return [
-    { key: "setup", label: t("header.workflow_phase") === "工作流阶段" ? "准备中" : t("proj.phase_setup") }, // fallback logic if needed, but since we have proj.phase_* we can use those directly
+    { key: "setup", label: t("header.workflow_phase") === t("auto.workflow_stage") ? t("auto.in_preparation") : t("proj.phase_setup") }, // fallback logic if needed, but since we have proj.phase_* we can use those directly
     { key: "worldbuilding", label: t("proj.phase_world") },
     { key: "scripting", label: t("proj.phase_script") },
     { key: "production", label: t("proj.phase_prod") },

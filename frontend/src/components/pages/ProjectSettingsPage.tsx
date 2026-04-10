@@ -7,8 +7,12 @@ import { ProviderModelSelect } from "@/components/ui/ProviderModelSelect";
 import { PROVIDER_NAMES } from "@/components/ui/ProviderIcon";
 import { getProviderModels, getCustomProviderModels, lookupSupportedDurations, DEFAULT_DURATIONS } from "@/utils/provider-models";
 import type { CustomProviderInfo, ProviderInfo } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 export function ProjectSettingsPage() {
+  const { t } = useTranslation();
+
   const params = useParams<{ projectName: string }>();
   const projectName = params.projectName || "";
   const [, navigate] = useLocation();
@@ -146,7 +150,7 @@ export function ProjectSettingsPage() {
   }, [isDirty]);
 
   const guardedNavigate = useCallback((path: string) => {
-    if (isDirty && !window.confirm("有未保存的修改，确定要离开吗？")) return;
+    if (isDirty && !window.confirm(t("auto.there_are_unsaved_ch"))) return;
     navigate(path);
   }, [isDirty, navigate]);
 
@@ -168,9 +172,9 @@ export function ProjectSettingsPage() {
         textScript, textOverview, textStyle,
         aspectRatio, defaultDuration,
       };
-      useAppStore.getState().pushToast("已保存", "success");
+      useAppStore.getState().pushToast(t("auto.saved"), "success");
     } catch (e: unknown) {
-      useAppStore.getState().pushToast(e instanceof Error ? e.message : "保存失败", "error");
+      useAppStore.getState().pushToast(e instanceof Error ? e.message : t("auto.save_failed_1"), "error");
     } finally {
       setSaving(false);
     }
@@ -183,19 +187,19 @@ export function ProjectSettingsPage() {
         <button
           onClick={() => guardedNavigate(`/app/projects/${projectName}`)}
           className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-800 hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-          aria-label="返回项目"
+          aria-label={t("auto.return_items")}
         >
           <ArrowLeft className="h-5 w-5" />
         </button>
-        <h1 className="text-lg font-semibold text-gray-100">项目设置</h1>
+        <h1 className="text-lg font-semibold text-gray-100">{t("auto.project_settings")}</h1>
       </div>
 
       {/* Content */}
       <div className="mx-auto max-w-2xl px-6 py-8 space-y-6">
         <div>
-          <h2 className="text-lg font-semibold text-gray-100">模型配置</h2>
+          <h2 className="text-lg font-semibold text-gray-100">{t("auto.model_configuration")}</h2>
           <p className="mt-1 text-sm text-gray-500">
-            为此项目单独选择生成模型，留空则跟随全局默认
+            {t("auto.select_the_generated")}
           </p>
         </div>
 
@@ -203,7 +207,7 @@ export function ProjectSettingsPage() {
           <>
             {/* Video model override */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
-              <div className="mb-3 text-sm font-medium text-gray-100">视频模型</div>
+              <div className="mb-3 text-sm font-medium text-gray-100">{t("auto.video_model")}</div>
               <ProviderModelSelect
                 value={videoBackend}
                 options={options.video_backends}
@@ -219,7 +223,7 @@ export function ProjectSettingsPage() {
             {/* Aspect ratio */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
               <fieldset>
-                <legend className="mb-3 text-sm font-medium text-gray-100">画面比例</legend>
+                <legend className="mb-3 text-sm font-medium text-gray-100">{t("auto.aspect_ratio")}</legend>
                 <div className="flex gap-3">
                   {(["9:16", "16:9"] as const).map((ar) => (
                     <label
@@ -239,14 +243,14 @@ export function ProjectSettingsPage() {
                           setAspectRatio(ar);
                           if (initialRef.current.aspectRatio && ar !== initialRef.current.aspectRatio) {
                             useAppStore.getState().pushToast(
-                              "已生成的分镜图/视频仍为原比例，建议重新生成",
+                              t("auto.the_generated_storyb"),
                               "warning",
                             );
                           }
                         }}
                         className="sr-only"
                       />
-                      {ar === "9:16" ? "竖屏 9:16" : "横屏 16:9"}
+                      {ar === "9:16" ? t("auto.vertical_screen_9_16") : t("auto.landscape_16_9")}
                     </label>
                   ))}
                 </div>
@@ -255,11 +259,11 @@ export function ProjectSettingsPage() {
 
             {/* Default duration */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
-              <div className="mb-3 text-sm font-medium text-gray-100">默认时长</div>
+              <div className="mb-3 text-sm font-medium text-gray-100">{t("auto.default_duration")}</div>
               <p className="mb-2 text-xs text-gray-500">
-                新分镜的默认视频时长，「自动」表示由 AI 根据内容决定
+                {t("auto.the_default_video_du")}
               </p>
-              <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="默认时长选择">
+              <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={t("auto.default_duration_sel")}>
                 <button
                   type="button"
                   role="radio"
@@ -271,7 +275,7 @@ export function ProjectSettingsPage() {
                       : "border-gray-700 bg-gray-800 text-gray-400 hover:border-gray-600"
                   }`}
                 >
-                  自动
+                  {t("auto.automatic")}
                 </button>
                 {(supportedDurations ?? DEFAULT_DURATIONS).map((d) => (
                   <button
@@ -294,7 +298,7 @@ export function ProjectSettingsPage() {
 
             {/* Image model override */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
-              <div className="mb-3 text-sm font-medium text-gray-100">图片模型</div>
+              <div className="mb-3 text-sm font-medium text-gray-100">{t("auto.picture_model")}</div>
               <ProviderModelSelect
                 value={imageBackend}
                 options={options.image_backends}
@@ -309,35 +313,35 @@ export function ProjectSettingsPage() {
 
             {/* Audio override */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
-              <div className="mb-3 text-sm font-medium text-gray-100">生成音频</div>
+              <div className="mb-3 text-sm font-medium text-gray-100">{t("auto.generate_audio")}</div>
               <fieldset className="flex gap-4">
-                <legend className="sr-only">生成音频设置</legend>
+                <legend className="sr-only">{t("auto.generate_audio_setti")}</legend>
                 <label className="flex items-center gap-2 text-sm text-gray-300">
                   <input type="radio" name="audio" value="" checked={audioOverride === null}
                     onChange={() => setAudioOverride(null)} />
-                  跟随全局默认
+                  {t("auto.follow_global_defaul")}
                 </label>
                 <label className="flex items-center gap-2 text-sm text-gray-300">
                   <input type="radio" name="audio" value="true" checked={audioOverride === true}
                     onChange={() => setAudioOverride(true)} />
-                  开启
+                  {t("auto.turn_on")}
                 </label>
                 <label className="flex items-center gap-2 text-sm text-gray-300">
                   <input type="radio" name="audio" value="false" checked={audioOverride === false}
                     onChange={() => setAudioOverride(false)} />
-                  关闭
+                  {t("auto.closure")}
                 </label>
               </fieldset>
             </div>
             {/* Text model overrides */}
             <div className="rounded-xl border border-gray-800 bg-gray-950/40 p-4">
-              <div className="mb-3 text-sm font-medium text-gray-100">文本模型</div>
-              <p className="mb-2 text-xs text-gray-500">按任务类型覆盖，留空跟随全局默认</p>
+              <div className="mb-3 text-sm font-medium text-gray-100">{t("auto.text_model")}</div>
+              <p className="mb-2 text-xs text-gray-500">{t("auto.override_by_task_typ")}</p>
               <div className="space-y-3">
                 {([
-                  [textScript, setTextScript, "剧本生成"] as const,
-                  [textOverview, setTextOverview, "概述生成"] as const,
-                  [textStyle, setTextStyle, "风格分析"] as const,
+                  [textScript, setTextScript, t("auto.script_generation")] as const,
+                  [textOverview, setTextOverview, t("auto.overview_generation")] as const,
+                  [textStyle, setTextStyle, t("auto.style_analysis")] as const,
                 ]).map(([value, setter, label]) => (
                   <div key={label}>
                     <div className="mb-1 text-xs text-gray-400">{label}</div>
@@ -347,7 +351,7 @@ export function ProjectSettingsPage() {
                       providerNames={allProviderNames}
                       onChange={setter}
                       allowDefault
-                      defaultHint="跟随全局默认"
+                      defaultHint={t("auto.follow_global_defaul")}
                       aria-label={label}
                     />
                   </div>
@@ -358,7 +362,7 @@ export function ProjectSettingsPage() {
         )}
 
         {!options && (
-          <div className="text-sm text-gray-500">加载配置中…</div>
+          <div className="text-sm text-gray-500">{t("auto.loading_configuratio")}</div>
         )}
 
         {/* Actions */}
@@ -368,13 +372,13 @@ export function ProjectSettingsPage() {
             disabled={saving}
             className="rounded-lg bg-indigo-600 px-6 py-2 text-sm text-white hover:bg-indigo-500 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
           >
-            {saving ? "保存中…" : "保存"}
+            {saving ? t("auto.saving_1") : t("auto.save")}
           </button>
           <button
             onClick={() => guardedNavigate(`/app/projects/${projectName}`)}
             className="rounded-lg border border-gray-700 px-6 py-2 text-sm text-gray-300 hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
           >
-            取消
+            {t("auto.cancel")}
           </button>
         </div>
       </div>

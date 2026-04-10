@@ -1,4 +1,6 @@
 import { Loader2, Save } from "lucide-react";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface TabSaveFooterProps {
   isDirty: boolean;
@@ -22,6 +24,8 @@ export function TabSaveFooter({
   onSave,
   onReset,
 }: TabSaveFooterProps) {
+  const { t } = useTranslation();
+
   const controlsDisabled = saving || disabled;
 
   return (
@@ -32,7 +36,7 @@ export function TabSaveFooter({
     >
       <div className="flex items-center gap-3 min-w-0">
         {isDirty && !error && (
-          <span className="text-sm text-gray-400">有未保存的更改</span>
+          <span className="text-sm text-gray-400">{t("auto.there_are_unsaved_ch_1")}</span>
         )}
         {error && (
           <span className="text-sm text-rose-400 truncate">{error}</span>
@@ -46,7 +50,7 @@ export function TabSaveFooter({
             disabled={controlsDisabled}
             className="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-gray-200 transition-colors hover:border-gray-600 hover:bg-gray-800/80 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            撤销
+            {t("auto.cancel_1")}
           </button>
         )}
         <button
@@ -64,7 +68,7 @@ export function TabSaveFooter({
           ) : (
             <Save className="h-4 w-4" />
           )}
-          {saving ? "保存中…" : "保存"}
+          {saving ? t("auto.saving_1") : t("auto.save")}
         </button>
       </div>
     </div>

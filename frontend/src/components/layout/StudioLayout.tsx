@@ -8,6 +8,8 @@ import { useProjectEventsSSE } from "@/hooks/useProjectEventsSSE";
 import { useProjectsStore } from "@/stores/projects-store";
 import { useAppStore } from "@/stores/app-store";
 import { UI_LAYERS } from "@/utils/ui-layers";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // StudioLayout — three-column studio workspace shell
@@ -18,6 +20,8 @@ interface StudioLayoutProps {
 }
 
 export function StudioLayout({ children }: StudioLayoutProps) {
+  const { t } = useTranslation();
+
   const [, setLocation] = useLocation();
   const currentProjectName = useProjectsStore((s) => s.currentProjectName);
   const assistantPanelOpen = useAppStore((s) => s.assistantPanelOpen);
@@ -65,8 +69,8 @@ export function StudioLayout({ children }: StudioLayoutProps) {
             : "scale-100 opacity-100 hover:bg-indigo-500 cursor-pointer"
         }`}
         style={{ transitionDelay: assistantPanelOpen ? "0ms" : "200ms" }}
-        title="展开助手面板"
-        aria-label="展开助手面板"
+        title={t("auto.expand_assistant_pan")}
+        aria-label={t("auto.expand_assistant_pan")}
       >
         <Bot className="h-5 w-5 text-white" />
       </button>

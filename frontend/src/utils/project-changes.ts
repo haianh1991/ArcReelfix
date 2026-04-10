@@ -1,15 +1,16 @@
 import type { ProjectChange } from "@/types";
+import { t } from "@/utils/i18n";
 
 const GROUP_NAME_LIMIT = 5;
 
 const ENTITY_LABELS: Record<ProjectChange["entity_type"], string> = {
-  project: "项目",
-  character: "角色",
-  clue: "线索",
-  segment: "分镜",
-  episode: "剧集",
-  overview: "项目概览",
-  draft: "预处理",
+  project: t("auto.project"),
+  character: t("auto.role"),
+  clue: t("auto.clue"),
+  segment: t("auto.storyboard"),
+  episode: t("auto.drama_series"),
+  overview: t("auto.project_overview"),
+  draft: t("auto.preprocessing"),
 };
 
 export interface GroupedProjectChange {
@@ -64,12 +65,12 @@ export function groupChangesByType(
 
 function getEntityLabel(group: GroupedProjectChange): string {
   if (group.action === "storyboard_ready") {
-    return "分镜图";
+    return t("auto.storyboards");
   }
   if (group.action === "video_ready") {
-    return "视频";
+    return t("auto.video");
   }
-  return ENTITY_LABELS[group.entityType] ?? "内容";
+  return ENTITY_LABELS[group.entityType] ?? t("auto.content");
 }
 
 function getChangeListLabel(change: ProjectChange): string {
@@ -85,7 +86,7 @@ function getChangeListLabel(change: ProjectChange): string {
 
 function summarizeGroupNames(group: GroupedProjectChange): string {
   const names = group.changes.slice(0, GROUP_NAME_LIMIT).map(getChangeListLabel);
-  const suffix = group.changes.length > GROUP_NAME_LIMIT ? "…等" : "";
+  const suffix = group.changes.length > GROUP_NAME_LIMIT ? t("auto.wait") : "";
   return `${names.join("、")}${suffix}`;
 }
 

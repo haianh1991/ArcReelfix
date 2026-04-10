@@ -1,5 +1,7 @@
 import type { ContentBlock } from "@/types";
 import { useAssistantStore } from "@/stores/assistant-store";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface TaskProgressBlockProps {
   block: ContentBlock;
@@ -8,6 +10,8 @@ interface TaskProgressBlockProps {
 const TERMINAL_SESSION = new Set(["completed", "error", "interrupted"]);
 
 export function TaskProgressBlock({ block }: TaskProgressBlockProps) {
+  const { t } = useTranslation();
+
   const sessionStatus = useAssistantStore((s) => s.sessionStatus);
   const sessionDone = sessionStatus != null && TERMINAL_SESSION.has(sessionStatus);
 
@@ -22,7 +26,7 @@ export function TaskProgressBlock({ block }: TaskProgressBlockProps) {
       return (
         <div className="my-1 flex items-center gap-1.5 text-xs text-slate-500">
           <span>{"\u2013"}</span>
-          <span>{description} (已取消)</span>
+          <span>{description} {t("auto.cancelled")}</span>
         </div>
       );
     }
@@ -50,7 +54,7 @@ export function TaskProgressBlock({ block }: TaskProgressBlockProps) {
       >
         <span>{isCompleted ? "\u2713" : isFailed ? "\u2717" : "\u2013"}</span>
         <span>
-          子任务{isCompleted ? "完成" : isFailed ? "失败" : "结束"}: {summary || description}
+          {t("auto.subtask")}{isCompleted ? t("auto.finish") : isFailed ? t("auto.fail") : t("auto.finish_1")}: {summary || description}
         </span>
       </div>
     );

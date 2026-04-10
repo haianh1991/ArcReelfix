@@ -5,6 +5,8 @@ import { CompactInput } from "@/components/ui/CompactInput";
 import { DropdownPill } from "@/components/ui/DropdownPill";
 import { SHOT_TYPES } from "@/types";
 import type { ImagePrompt, ShotType } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface ImagePromptEditorProps {
   prompt: ImagePrompt;
@@ -16,6 +18,8 @@ export function ImagePromptEditor({
   prompt,
   onUpdate,
 }: ImagePromptEditorProps) {
+  const { t } = useTranslation();
+
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -23,7 +27,7 @@ export function ImagePromptEditor({
       <AutoTextarea
         value={prompt.scene}
         onChange={(v) => onUpdate({ scene: v })}
-        placeholder="分镜图描述..."
+        placeholder={t("auto.storyboard_descripti")}
       />
 
       {/* Collapsible composition fields */}
@@ -35,13 +39,13 @@ export function ImagePromptEditor({
         <ChevronDown
           className={`h-3 w-3 transition-transform ${collapsed ? "-rotate-90" : ""}`}
         />
-        构图参数
+        {t("auto.composition_paramete")}
       </button>
 
       {!collapsed && (
         <div className="flex flex-col gap-2 pl-1">
           <DropdownPill
-            label="镜头"
+            label={t("auto.lens")}
             value={prompt.composition.shot_type}
             options={SHOT_TYPES}
             onChange={(v: ShotType) =>
@@ -51,24 +55,24 @@ export function ImagePromptEditor({
             }
           />
           <CompactInput
-            label="光线"
+            label={t("auto.light")}
             value={prompt.composition.lighting}
             onChange={(v) =>
               onUpdate({
                 composition: { ...prompt.composition, lighting: v },
               })
             }
-            placeholder="光线描述..."
+            placeholder={t("auto.light_description")}
           />
           <CompactInput
-            label="氛围"
+            label={t("auto.atmosphere")}
             value={prompt.composition.ambiance}
             onChange={(v) =>
               onUpdate({
                 composition: { ...prompt.composition, ambiance: v },
               })
             }
-            placeholder="氛围描述..."
+            placeholder={t("auto.description_of_atmos")}
           />
         </div>
       )}

@@ -13,6 +13,7 @@ import { API } from "@/api";
 import { buildEntityRevisionKey } from "@/utils/project-changes";
 import { getProviderModels, getCustomProviderModels, lookupSupportedDurations } from "@/utils/provider-models";
 import type { Clue, CustomProviderInfo, ProviderInfo } from "@/types";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // StudioCanvasRouter — reads Zustand store data and renders the correct
@@ -20,6 +21,7 @@ import type { Clue, CustomProviderInfo, ProviderInfo } from "@/types";
 // ---------------------------------------------------------------------------
 
 export function StudioCanvasRouter() {
+    const { t } = useTranslation();
   const { currentProjectData, currentProjectName, currentScripts } =
     useProjectsStore();
 
@@ -283,8 +285,7 @@ export function StudioCanvasRouter() {
   if (!currentProjectName) {
     return (
       <div className="flex h-full items-center justify-center text-gray-500">
-        加载中...
-      </div>
+        {t("auto.loading")}</div>
     );
   }
 

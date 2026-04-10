@@ -400,7 +400,7 @@ export function ProjectsPage() {
             <span className="text-indigo-400">
               ArcReel
             </span>
-            <span className="ml-1 text-gray-400 font-normal text-base">项目</span>
+            <span className="ml-1 text-gray-400 font-normal text-base">{t("auto.project")}</span>
           </h1>
           <div className="flex items-center gap-3">
             <button

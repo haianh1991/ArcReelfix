@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { ChevronDown, ChevronRight, Check, Circle } from "lucide-react";
 import type { Turn, TodoItem } from "@/types";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // extractLatestTodos – scan turns (back-to-front) to find the most recent
@@ -48,6 +49,7 @@ interface TodoListPanelProps {
 }
 
 export function TodoListPanel({ turns, draftTurn }: TodoListPanelProps) {
+    const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
 
   const todos = useMemo(
@@ -64,7 +66,7 @@ export function TodoListPanel({ turns, draftTurn }: TodoListPanelProps) {
   const total = todos.length;
   const progressPercent = Math.round((completedCount / total) * 100);
   const currentTask = todos.find((t) => t.status === "in_progress");
-  const headerLabel = currentTask?.activeForm ?? "任务进行中";
+  const headerLabel = currentTask?.activeForm ?? t("auto.task_in_progress");
 
   return (
     <div className="mx-3 mb-1 rounded-lg border border-white/10 bg-white/[0.03] overflow-hidden">
@@ -125,6 +127,7 @@ export function TodoListPanel({ turns, draftTurn }: TodoListPanelProps) {
 // ---------------------------------------------------------------------------
 
 function TodoRow({ todo }: { todo: TodoItem }) {
+    const { t } = useTranslation();
   const isCompleted = todo.status === "completed";
   const isInProgress = todo.status === "in_progress";
 

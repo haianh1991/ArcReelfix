@@ -6,6 +6,8 @@ import { ToolCallWithResult } from "./ToolCallWithResult";
 import { ThinkingBlock } from "./ThinkingBlock";
 import { SkillContentBlock } from "./SkillContentBlock";
 import { TaskProgressBlock } from "./TaskProgressBlock";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // ContentBlockRenderer – dispatches a single ContentBlock to the appropriate
@@ -25,6 +27,8 @@ interface ContentBlockRendererProps {
 }
 
 export function ContentBlockRenderer({ block, index }: ContentBlockRendererProps) {
+  const { t } = useTranslation();
+
   if (!block || typeof block !== "object") {
     return null;
   }
@@ -54,7 +58,7 @@ export function ContentBlockRenderer({ block, index }: ContentBlockRendererProps
           className="my-1.5 rounded-lg border border-white/10 bg-ink-800/30 px-3 py-2"
         >
           <div className="text-[10px] uppercase tracking-wide text-slate-500 mb-1">
-            {block.is_error ? "执行失败" : "工具结果"}
+            {block.is_error ? t("auto.execution_failed") : t("auto.tool_results")}
           </div>
           <pre className="text-xs text-slate-300 overflow-x-auto whitespace-pre-wrap">
             {block.content || ""}
@@ -93,7 +97,7 @@ export function ContentBlockRenderer({ block, index }: ContentBlockRendererProps
           className="my-1 flex items-center gap-1.5 text-xs text-amber-400"
         >
           <span>{"\u25A0"}</span>
-          <span>用户中断了会话</span>
+          <span>{t("auto.user_interrupted_ses")}</span>
         </div>
       );
 
@@ -117,6 +121,8 @@ export function ContentBlockRenderer({ block, index }: ContentBlockRendererProps
 }
 
 function ChatImageBlock({ src }: Readonly<{ src: string }>) {
+  const { t } = useTranslation();
+
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -124,16 +130,16 @@ function ChatImageBlock({ src }: Readonly<{ src: string }>) {
         type="button"
         className="mt-1 cursor-pointer border-0 bg-transparent p-0"
         onClick={() => setOpen(true)}
-        aria-label="点击放大图片"
+        aria-label={t("auto.click_to_enlarge_ima")}
       >
         <img
           src={src}
-          alt="附件图片"
+          alt={t("auto.attachment_picture")}
           className="max-w-full max-h-64 rounded-lg"
         />
       </button>
       {open && (
-        <ImageLightbox src={src} alt="附件图片" onClose={() => setOpen(false)} />
+        <ImageLightbox src={src} alt={t("auto.attachment_picture")} onClose={() => setOpen(false)} />
       )}
     </>
   );

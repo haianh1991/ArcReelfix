@@ -16,6 +16,7 @@ import {
 import { useProjectsStore } from "@/stores/projects-store";
 import { useAppStore } from "@/stores/app-store";
 import { API } from "@/api";
+import { useTranslation } from "@/utils/i18n";
 
 // ---------------------------------------------------------------------------
 // CollapsibleSection — reusable accordion primitive
@@ -34,6 +35,7 @@ function CollapsibleSection({
   defaultOpen?: boolean;
   action?: React.ReactNode;
 }) {
+    const { t } = useTranslation();
   const [open, setOpen] = useState(defaultOpen);
 
   return (
@@ -83,6 +85,7 @@ function CharacterThumbnail({
   sheetPath: string | undefined;
   projectName: string;
 }) {
+    const { t } = useTranslation();
   const sheetFp = useProjectsStore((s) =>
     sheetPath ? s.getAssetFingerprint(sheetPath) : null,
   );
@@ -123,6 +126,7 @@ function ClueThumbnail({
   sheetPath: string | undefined;
   projectName: string;
 }) {
+    const { t } = useTranslation();
   const sheetFp = useProjectsStore((s) =>
     sheetPath ? s.getAssetFingerprint(sheetPath) : null,
   );
@@ -155,6 +159,7 @@ function ClueThumbnail({
 // ---------------------------------------------------------------------------
 
 function EmptyState({ text }: { text: string }) {
+    const { t } = useTranslation();
   return (
     <p className="px-3 py-1.5 text-xs italic text-gray-600">{text}</p>
   );
@@ -169,6 +174,7 @@ interface AssetSidebarProps {
 }
 
 export function AssetSidebar({ className }: AssetSidebarProps) {
+    const { t } = useTranslation();
   const { currentProjectData, currentProjectName } = useProjectsStore();
   const sourceFilesVersion = useAppStore((s) => s.sourceFilesVersion);
   const [location, setLocation] = useLocation();
@@ -259,7 +265,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
         }`}
       >
         <LayoutDashboard className="h-4 w-4 shrink-0 text-indigo-400" />
-        <span className="font-medium">项目概览</span>
+        <span className="font-medium">{t("auto.project_overview")}</span>
       </button>
 
       {/* ---- Divider ---- */}
@@ -267,7 +273,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
 
       {/* ---- Section 1: Source Files ---- */}
       <CollapsibleSection
-        title="源文件"
+        title={t("auto.source_file_1")}
         icon={FileText}
         action={
           <>
@@ -275,7 +281,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
               type="button"
               onClick={() => fileInputRef.current?.click()}
               className="rounded p-1 text-gray-500 transition-colors hover:bg-gray-800 hover:text-gray-300 focus-ring"
-              title="上传源文件"
+              title={t("auto.upload_source_file")}
             >
               <Upload className="h-3.5 w-3.5" />
             </button>
@@ -290,7 +296,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
         }
       >
         {sourceFiles.length === 0 ? (
-          <EmptyState text="暂无文件" />
+          <EmptyState text={t("auto.no_files_yet")} />
         ) : (
           <ul>
             {sourceFiles.map((name) => {
@@ -317,7 +323,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
                       type="button"
                       onClick={(e) => { e.stopPropagation(); handleDeleteFile(name); }}
                       className="shrink-0 rounded p-0.5 text-gray-600 opacity-0 transition-opacity hover:text-red-400 group-hover:opacity-100 focus-ring focus-visible:opacity-100"
-                      title="删除文件"
+                      title={t("auto.delete_files")}
                     >
                       <X className="h-3 w-3" />
                     </button>
@@ -333,15 +339,15 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
       <div className="mx-3 border-t border-gray-800" />
 
       {/* ---- Section 2: Lorebook (Characters + Clues) ---- */}
-      <CollapsibleSection title="设定集" icon={Users} defaultOpen={true}>
+      <CollapsibleSection title={t("auto.settings_set")} icon={Users} defaultOpen={true}>
         {/* Characters sub-section */}
         <div className="mb-1">
           <div className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gray-600">
             <Users className="h-3 w-3" />
-            <span>角色</span>
+            <span>{t("auto.role")}</span>
           </div>
           {characterEntries.length === 0 ? (
-            <EmptyState text="暂无角色" />
+            <EmptyState text={t("auto.no_role_yet")} />
           ) : (
             <ul>
               {characterEntries.map(([name, char]) => (
@@ -372,10 +378,10 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
         <div>
           <div className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-gray-600">
             <Puzzle className="h-3 w-3" />
-            <span>线索</span>
+            <span>{t("auto.clue")}</span>
           </div>
           {clueEntries.length === 0 ? (
-            <EmptyState text="暂无线索" />
+            <EmptyState text={t("auto.no_clue_yet")} />
           ) : (
             <ul>
               {clueEntries.map(([name, clue]) => (
@@ -407,9 +413,9 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
       <div className="mx-3 border-t border-gray-800" />
 
       {/* ---- Section 3: Episodes ---- */}
-      <CollapsibleSection title="剧集" icon={Film}>
+      <CollapsibleSection title={t("auto.drama_series")} icon={Film}>
         {episodes.length === 0 ? (
-          <EmptyState text="暂无剧集" />
+          <EmptyState text={t("auto.no_episodes_yet")} />
         ) : (
           <ul>
             {episodes.map((ep) => {
@@ -439,8 +445,7 @@ export function AssetSidebar({ className }: AssetSidebarProps) {
                     </span>
                     {isSegmented && !ep.scenes_count && (
                       <span className="ml-auto shrink-0 rounded bg-indigo-950 px-1.5 py-0.5 text-[10px] text-indigo-400">
-                        预处理
-                      </span>
+                        {t("auto.preprocessing")}</span>
                     )}
                   </button>
                 </li>

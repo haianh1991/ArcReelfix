@@ -6,9 +6,13 @@ import { useCallback, useMemo, useState } from "react";
 import { copyText } from "@/utils/clipboard";
 import { Check, Copy, ExternalLink, X } from "lucide-react";
 import { useLocation } from "wouter";
+import { useTranslation } from "@/utils/i18n";
+import { t as standaloneT } from "@/utils/i18n";
 
 // 🦞 SVG lobster icon (inline, no external dep)
 function LobsterIcon({ className }: { className?: string }) {
+  const { t } = useTranslation();
+
   return (
     <span className={className} aria-hidden="true" role="img">
       🦞
@@ -24,22 +28,24 @@ interface OpenClawModalProps {
 const STEPS = [
   {
     step: "01",
-    title: "向你的 OpenClaw 发送上述提示词",
-    desc: "复制提示词，粘贴给 OpenClaw 发送",
+    title: standaloneT("auto.send_the_above_promp"),
+    desc: standaloneT("auto.copy_the_prompt_word"),
   },
   {
     step: "02",
-    title: "OpenClaw 从 Skill 文档学习能力",
-    desc: "OpenClaw 会自动读取 ArcReel Skill 文档，获取所有可用工具与 API 的使用方式",
+    title: standaloneT("auto.openclaw_learns_capa"),
+    desc: standaloneT("auto.openclaw_will_automa"),
   },
   {
     step: "03",
-    title: "OpenClaw 与 ArcReel 交互并创建视频",
-    desc: "描述你的创作需求，OpenClaw 将调用 ArcReel 完成项目管理、剧本生成和视频创作",
+    title: standaloneT("auto.openclaw_interacts_w"),
+    desc: standaloneT("auto.describe_your_creati"),
   },
 ] as const;
 
 export function OpenClawModal({ onClose }: OpenClawModalProps) {
+  const { t } = useTranslation();
+
   const [, navigate] = useLocation();
   const [copied, setCopied] = useState(false);
 
@@ -92,15 +98,15 @@ export function OpenClawModal({ onClose }: OpenClawModalProps) {
           <div className="flex items-center gap-2.5">
             <LobsterIcon className="text-xl leading-none" />
             <div>
-              <h2 className="text-sm font-semibold text-gray-100">OpenClaw 集成指南</h2>
-              <p className="text-xs text-gray-500">将 ArcReel 接入 OpenClaw AI Agent</p>
+              <h2 className="text-sm font-semibold text-gray-100">{t("auto.openclaw_integration")}</h2>
+              <p className="text-xs text-gray-500">{t("auto.connect_arcreel_to_o")}</p>
             </div>
           </div>
           <button
             type="button"
             onClick={onClose}
             className="rounded-md p-1 text-gray-500 transition-colors hover:bg-gray-800 hover:text-gray-300"
-            aria-label="关闭"
+            aria-label={t("auto.closure")}
           >
             <X className="h-4 w-4" />
           </button>
@@ -119,12 +125,12 @@ export function OpenClawModal({ onClose }: OpenClawModalProps) {
                 {copied ? (
                   <>
                     <Check className="h-3 w-3 text-emerald-400" />
-                    已复制
+                    {t("auto.copied")}
                   </>
                 ) : (
                   <>
                     <Copy className="h-3 w-3" />
-                    复制
+                    {t("auto.copy")}
                   </>
                 )}
               </button>
@@ -135,7 +141,7 @@ export function OpenClawModal({ onClose }: OpenClawModalProps) {
               </pre>
             </div>
             <p className="mt-1.5 text-xs text-gray-600">
-              Skill 文档地址：
+              {t("auto.skill_document_addre")}
               <a
                 href={skillUrl}
                 target="_blank"
@@ -150,7 +156,7 @@ export function OpenClawModal({ onClose }: OpenClawModalProps) {
 
           {/* ——— 3 步说明 ——— */}
           <div>
-            <div className="mb-3 text-xs font-medium text-gray-400">使用步骤</div>
+            <div className="mb-3 text-xs font-medium text-gray-400">{t("auto.usage_steps")}</div>
             <div className="space-y-2">
               {STEPS.map(({ step, title, desc }) => (
                 <div
@@ -176,14 +182,14 @@ export function OpenClawModal({ onClose }: OpenClawModalProps) {
               onClick={onClose}
               className="flex-1 rounded-xl border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-gray-300 transition-colors hover:border-gray-600 hover:bg-gray-700"
             >
-              关闭
+              {t("auto.closure")}
             </button>
             <button
               type="button"
               onClick={handleGoToApiKeys}
               className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
             >
-              获取 API 令牌
+              {t("auto.get_api_token")}
             </button>
           </div>
         </div>

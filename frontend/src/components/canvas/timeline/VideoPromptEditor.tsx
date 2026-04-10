@@ -6,6 +6,8 @@ import { DropdownPill } from "@/components/ui/DropdownPill";
 import { DialogueListEditor } from "./DialogueListEditor";
 import { CAMERA_MOTIONS } from "@/types";
 import type { VideoPrompt, CameraMotion, Dialogue } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 interface VideoPromptEditorProps {
   prompt: VideoPrompt;
@@ -17,6 +19,8 @@ export function VideoPromptEditor({
   prompt,
   onUpdate,
 }: VideoPromptEditorProps) {
+  const { t } = useTranslation();
+
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -24,7 +28,7 @@ export function VideoPromptEditor({
       <AutoTextarea
         value={prompt.action}
         onChange={(v) => onUpdate({ action: v })}
-        placeholder="视频动作描述..."
+        placeholder={t("auto.video_action_descrip")}
       />
 
       {/* Collapsible metadata fields */}
@@ -36,22 +40,22 @@ export function VideoPromptEditor({
         <ChevronDown
           className={`h-3 w-3 transition-transform ${collapsed ? "-rotate-90" : ""}`}
         />
-        运镜 / 音效 / 对话
+        {t("auto.camera_movement_soun")}
       </button>
 
       {!collapsed && (
         <div className="flex flex-col gap-2 pl-1">
           <DropdownPill
-            label="镜头运动"
+            label={t("auto.camera_movement")}
             value={prompt.camera_motion}
             options={CAMERA_MOTIONS}
             onChange={(v: CameraMotion) => onUpdate({ camera_motion: v })}
           />
           <CompactInput
-            label="环境音效"
+            label={t("auto.ambient_sound_effect")}
             value={prompt.ambiance_audio}
             onChange={(v) => onUpdate({ ambiance_audio: v })}
-            placeholder="环境音效描述..."
+            placeholder={t("auto.ambient_sound_effect_1")}
           />
           <DialogueListEditor
             dialogue={prompt.dialogue ?? []}

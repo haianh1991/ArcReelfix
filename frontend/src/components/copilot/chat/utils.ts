@@ -1,3 +1,5 @@
+
+import { t } from "@/utils/i18n";
 // ---------------------------------------------------------------------------
 // cn – lightweight className concatenation utility.
 // Filters out falsy values and joins the rest with spaces.
@@ -14,24 +16,24 @@ export function cn(...classes: (string | false | null | undefined)[]): string {
 export function getRoleLabel(role: string): string {
   switch (role) {
     case "assistant":
-      return "助手";
+      return t("auto.assistant");
     case "user":
-      return "你";
+      return t("auto.you");
     case "tool":
-      return "工具";
+      return t("auto.tool");
     case "tool_result":
-      return "工具结果";
+      return t("auto.tool_results");
     case "skill_content":
       return "Skill";
     case "result":
-      return "完成";
+      return t("auto.finish");
     case "system":
-      return "系统";
+      return t("auto.system");
     case "stream_event":
-      return "流式更新";
+      return t("auto.streaming_updates");
     case "unknown":
-      return "消息";
+      return t("auto.information");
     default:
-      return role || "消息";
+      return role || t("auto.information");
   }
 }

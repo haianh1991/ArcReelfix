@@ -9,6 +9,7 @@ import {
   isOtherSelected,
   isQuestionAnswerReady,
 } from "./pending-question";
+import { useTranslation } from "@/utils/i18n";
 
 interface PendingQuestionWizardProps {
   pendingQuestion: PendingQuestion;
@@ -23,6 +24,7 @@ export function PendingQuestionWizard({
   error,
   onSubmitAnswers,
 }: PendingQuestionWizardProps) {
+    const { t } = useTranslation();
   const pendingQuestions = pendingQuestion.questions;
   const [questionAnswers, setQuestionAnswers] = useState<Record<string, string | string[]>>({});
   const [questionCustomAnswers, setQuestionCustomAnswers] = useState<Record<string, string>>({});
@@ -153,8 +155,7 @@ export function PendingQuestionWizard({
     >
       <div className="flex max-h-[min(34rem,52vh)] min-h-0 flex-col gap-3 rounded-xl border border-amber-300/20 bg-gray-950/60 p-3 shadow-[0_0_0_1px_rgba(251,191,36,0.04)]">
         <div className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-300">
-          需要你的选择
-        </div>
+          {t("auto.need_your_choice")}</div>
 
         <div className="shrink-0 flex items-center gap-2 overflow-x-auto pb-1">
           {pendingQuestions.map((question, questionIndex) => {
@@ -198,12 +199,12 @@ export function PendingQuestionWizard({
                 </span>
               )}
               <span className="text-xs text-slate-400">
-                {currentQuestion.multiSelect ? "可多选" : "单选"}
+                {currentQuestion.multiSelect ? t("auto.multiple_selections_") : t("auto.single_choice")}
               </span>
             </div>
 
             <p className="mb-3 text-sm leading-6 text-slate-100">
-              {currentQuestion.question || "请选择一个选项"}
+              {currentQuestion.question || t("auto.please_select_an_opt")}
             </p>
 
             <div className="space-y-2">
@@ -253,7 +254,7 @@ export function PendingQuestionWizard({
                   type="text"
                   value={currentQuestionCustomAnswer}
                   onChange={(event) => setCustomQuestionAnswer(currentQuestionKey, event.target.value)}
-                  placeholder="请输入其他内容"
+                  placeholder={t("auto.please_enter_other_c")}
                   disabled={answeringQuestion}
                   className="w-full rounded-lg border border-amber-300/30 bg-white/5 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition-colors focus:border-amber-300/60"
                 />
@@ -276,8 +277,7 @@ export function PendingQuestionWizard({
               disabled={answeringQuestion || isFirstQuestion}
               className="rounded-lg border border-white/10 px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              上一步
-            </button>
+              {t("auto.previous_step")}</button>
 
             {isLastQuestion ? (
               <button
@@ -285,7 +285,7 @@ export function PendingQuestionWizard({
                 disabled={answeringQuestion || !allQuestionsReady}
                 className="rounded-lg bg-amber-300 px-3 py-2 text-sm font-medium text-gray-950 transition-colors hover:bg-amber-200 disabled:cursor-not-allowed disabled:bg-amber-300/40 disabled:text-gray-300"
               >
-                {answeringQuestion ? "提交中..." : "完成并提交"}
+                {answeringQuestion ? t("auto.submitting") : t("auto.complete_and_submit")}
               </button>
             ) : (
               <button
@@ -294,8 +294,7 @@ export function PendingQuestionWizard({
                 disabled={answeringQuestion || !currentQuestionReady}
                 className="rounded-lg bg-white/10 px-3 py-2 text-sm font-medium text-slate-100 transition-colors hover:bg-white/15 disabled:cursor-not-allowed disabled:bg-white/5 disabled:text-slate-500"
               >
-                下一题
-              </button>
+                {t("auto.next_question")}</button>
             )}
           </div>
         </div>

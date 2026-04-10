@@ -38,6 +38,7 @@ import type {
   CostEstimateResponse,
 } from "@/types";
 import { getToken, clearToken } from "@/utils/auth";
+import { t } from "@/utils/i18n";
 
 // ==================== Helper types ====================
 
@@ -181,7 +182,7 @@ function handleUnauthorized(response: Response): void {
 
   clearToken();
   globalThis.location.href = "/login";
-  throw new Error("认证已过期，请重新登录");
+  throw new Error(t("auto.the_certification_ha"));
 }
 
 /** 为 fetch options 注入 Authorization header */
@@ -223,7 +224,7 @@ class API {
       const error = await response
         .json()
         .catch(() => ({ detail: response.statusText }));
-      let message = "请求失败";
+      let message = t("auto.request_failed");
       if (typeof error.detail === "string") {
         message = error.detail;
       } else if (Array.isArray(error.detail) && error.detail.length > 0) {
@@ -294,7 +295,7 @@ class API {
     updates: Partial<ProjectData>
   ): Promise<{ success: boolean; project: ProjectData }> {
     if ("content_mode" in updates) {
-      throw new Error("项目创建后不支持修改 content_mode");
+      throw new Error(t("auto.modification_of_cont"));
     }
     return this.request(`/projects/${encodeURIComponent(name)}`, {
       method: "PATCH",
@@ -371,7 +372,7 @@ class API {
         .json()
         .catch(() => ({ detail: response.statusText, errors: [], warnings: [] }));
       const error = new Error(
-        typeof payload.detail === "string" ? payload.detail : "导入失败"
+        typeof payload.detail === "string" ? payload.detail : t("auto.import_failed")
       ) as Error & {
         status?: number;
         detail?: string;
@@ -381,7 +382,7 @@ class API {
         diagnostics?: ImportFailureDiagnostics;
       };
       error.status = response.status;
-      error.detail = typeof payload.detail === "string" ? payload.detail : "导入失败";
+      error.detail = typeof payload.detail === "string" ? payload.detail : t("auto.import_failed");
       error.errors = Array.isArray(payload.errors) ? payload.errors : [];
       error.warnings = Array.isArray(payload.warnings) ? payload.warnings : [];
       if (typeof payload.conflict_project_name === "string") {
@@ -560,7 +561,7 @@ class API {
       body: formData,
     }));
 
-    await throwIfNotOk(response, "上传失败");
+    await throwIfNotOk(response, t("auto.upload_failed"));
 
     return response.json();
   }
@@ -599,7 +600,7 @@ class API {
       `${API_BASE}/projects/${encodeURIComponent(projectName)}/source/${encodeURIComponent(filename)}`,
       withAuth()
     );
-    await throwIfNotOk(response, "获取文件内容失败");
+    await throwIfNotOk(response, t("auto.failed_to_get_file_c"));
     return response.text();
   }
 
@@ -619,7 +620,7 @@ class API {
         body: content,
       })
     );
-    await throwIfNotOk(response, "保存文件失败");
+    await throwIfNotOk(response, t("auto.failed_to_save_file"));
     return response.json();
   }
 
@@ -636,7 +637,7 @@ class API {
         method: "DELETE",
       })
     );
-    await throwIfNotOk(response, "删除文件失败");
+    await throwIfNotOk(response, t("auto.failed_to_delete_fil"));
     return response.json();
   }
 
@@ -665,7 +666,7 @@ class API {
       `${API_BASE}/projects/${encodeURIComponent(projectName)}/drafts/${episode}/step${stepNum}`,
       withAuth()
     );
-    await throwIfNotOk(response, "获取草稿内容失败");
+    await throwIfNotOk(response, t("auto.failed_to_get_draft_"));
     return response.text();
   }
 
@@ -686,7 +687,7 @@ class API {
         body: content,
       })
     );
-    await throwIfNotOk(response, "保存草稿失败");
+    await throwIfNotOk(response, t("auto.failed_to_save_draft"));
     return response.json();
   }
 
@@ -898,7 +899,7 @@ class API {
       try {
         return JSON.parse(event.data || "{}");
       } catch (err) {
-        console.error("解析 SSE 数据失败:", err, event.data);
+        console.error(t("auto.failed_to_parse_sse_"), err, event.data);
         return null;
       }
     };
@@ -942,7 +943,7 @@ class API {
       try {
         return JSON.parse(event.data || "{}");
       } catch (err) {
-        console.error("解析项目事件 SSE 数据失败:", err, event.data);
+        console.error(t("auto.failed_to_parse_proj"), err, event.data);
         return null;
       }
     };
@@ -1043,7 +1044,7 @@ class API {
       })
     );
 
-    await throwIfNotOk(response, "上传失败");
+    await throwIfNotOk(response, t("auto.upload_failed"));
 
     return response.json();
   }
@@ -1329,7 +1330,7 @@ class API {
       `${API_BASE}/providers/gemini-vertex/credentials/upload?name=${encodeURIComponent(name)}`,
       withAuth({ method: "POST", body: formData }),
     );
-    await throwIfNotOk(response, "上传凭证失败");
+    await throwIfNotOk(response, t("auto.failed_to_upload_cre"));
     return response.json();
   }
 

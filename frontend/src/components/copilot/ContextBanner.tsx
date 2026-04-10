@@ -1,14 +1,16 @@
 import { useAppStore } from "@/stores/app-store";
 import { X, User, Puzzle, Film } from "lucide-react";
+import { useTranslation } from "@/utils/i18n";
 
 export function ContextBanner() {
+    const { t } = useTranslation();
   const { focusedContext, setFocusedContext } = useAppStore();
 
   if (!focusedContext) return null;
 
   const icons = { character: User, clue: Puzzle, segment: Film };
   const Icon = icons[focusedContext.type];
-  const labels: Record<string, string> = { character: "角色", clue: "线索", segment: "片段" };
+  const labels: Record<string, string> = { character: t("auto.role"), clue: t("auto.clue"), segment: t("auto.fragment") };
 
   return (
     <div className="flex items-center gap-2 border-b border-gray-800 bg-indigo-950/30 px-3 py-1.5 text-xs">

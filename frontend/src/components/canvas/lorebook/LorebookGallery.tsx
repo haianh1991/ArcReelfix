@@ -5,6 +5,8 @@ import { ClueCard } from "./ClueCard";
 import { useScrollTarget } from "@/hooks/useScrollTarget";
 import { useAppStore } from "@/stores/app-store";
 import type { Character, Clue } from "@/types";
+import { useTranslation } from "@/utils/i18n";
+
 
 // ---------------------------------------------------------------------------
 // Props
@@ -63,6 +65,8 @@ export function LorebookGallery({
   onAddCharacter,
   onAddClue,
 }: LorebookGalleryProps) {
+  const { t } = useTranslation();
+
   const [activeTab, setActiveTab] = useState<Tab>(mode ?? "characters");
   const showTabs = !mode;
 
@@ -105,13 +109,13 @@ export function LorebookGallery({
           active={activeTab === "characters"}
           onClick={() => setActiveTab("characters")}
         >
-          角色 ({charCount})
+          {t("auto.role_2")}{charCount})
         </TabButton>
         <TabButton
           active={activeTab === "clues"}
           onClick={() => setActiveTab("clues")}
         >
-          线索 ({clueCount})
+          {t("auto.clue_2")}{clueCount})
         </TabButton>
       </div>
       )}
@@ -122,7 +126,7 @@ export function LorebookGallery({
           {charCount === 0 ? (
             <EmptyState
               icon={<User className="h-12 w-12 text-gray-600" />}
-              message="暂无角色，点击下方按钮添加"
+              message={t("auto.there_is_no_role_yet")}
             />
           ) : (
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
@@ -143,7 +147,7 @@ export function LorebookGallery({
           )}
 
           {onAddCharacter && (
-            <AddButton onClick={onAddCharacter}>添加角色</AddButton>
+            <AddButton onClick={onAddCharacter}>{t("auto.add_role")}</AddButton>
           )}
         </>
       )}
@@ -154,7 +158,7 @@ export function LorebookGallery({
           {clueCount === 0 ? (
             <EmptyState
               icon={<Puzzle className="h-12 w-12 text-gray-600" />}
-              message="暂无线索，点击下方按钮添加"
+              message={t("auto.no_clues_yet_click_t")}
             />
           ) : (
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
@@ -174,7 +178,7 @@ export function LorebookGallery({
             </div>
           )}
 
-          {onAddClue && <AddButton onClick={onAddClue}>添加线索</AddButton>}
+          {onAddClue && <AddButton onClick={onAddClue}>{t("auto.add_clues")}</AddButton>}
         </>
       )}
     </div>
@@ -194,6 +198,8 @@ function TabButton({
   onClick: () => void;
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
+
   return (
     <button
       type="button"
@@ -216,6 +222,8 @@ function EmptyState({
   icon: React.ReactNode;
   message: string;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-16 text-gray-500">
       {icon}
@@ -231,6 +239,8 @@ function AddButton({
   onClick: () => void;
   children: React.ReactNode;
 }) {
+  const { t } = useTranslation();
+
   return (
     <button
       type="button"
