@@ -8,8 +8,11 @@ interface I18nState {
 }
 
 export const useI18nStore = create<I18nState>((set) => ({
-  language: "zh",
-  setLanguage: (lang) => set({ language: lang }),
+  language: (localStorage.getItem("language") as SupportedLanguage) || "vi",
+  setLanguage: (lang) => {
+    localStorage.setItem("language", lang);
+    set({ language: lang });
+  },
 }));
 
 // Dictionaries
@@ -965,7 +968,7 @@ const dict = {
     "auto.this_operation_is_ir": "\"? Hoạt động này là không thể đảo ngược.",
     "auto.loading_files": "Đang tải tập tin...",
     "auto.unable_to_load_file": "Không thể tải tập tin\"",
-    "auto.save": "Cứu",
+    "auto.save": "Lưu",
     "auto.cancel": "Hủy bỏ",
     "auto.edit": "Biên tập",
     "auto.delete": "Xóa bỏ",

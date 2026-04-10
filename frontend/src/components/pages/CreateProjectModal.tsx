@@ -8,14 +8,16 @@ import { DEFAULT_DURATIONS } from "@/utils/provider-models";
 import { useTranslation } from "@/utils/i18n";
 import { t as standaloneT } from "@/utils/i18n";
 
-const STYLE_OPTIONS = [
-  { value: "Photographic", label: standaloneT("auto.realistic_photograph") },
-  { value: "Anime", label: standaloneT("auto.anime_style") },
-  { value: "3D Animation", label: standaloneT("auto.3d_animation") },
-] as const;
+
 
 export function CreateProjectModal() {
   const { t } = useTranslation();
+
+  const STYLE_OPTIONS = [
+  { value: "Photographic", label: t("auto.realistic_photograph") },
+  { value: "Anime", label: t("auto.anime_style") },
+  { value: "3D Animation", label: t("auto.3d_animation") },
+];
 
   const [, navigate] = useLocation();
   const { setShowCreateModal, setCreatingProject, creatingProject } =

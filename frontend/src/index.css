@@ -23,6 +23,6 @@
     --color-accent-end: #4f46e5;
 
     /* Font families — 字体定义 */
-    --font-sans: "Inter", "Be Vietnam Pro", system-ui, sans-serif;
+    --font-sans: "Inter", "Roboto", system-ui, sans-serif;
     --font-mono: "Fira Code", "Noto Sans Mono", monospace;
 }
