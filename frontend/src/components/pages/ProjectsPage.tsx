@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
-import { Loader2, Plus, FolderOpen, Upload, AlertTriangle, Settings } from "lucide-react";
+import { Loader2, Plus, FolderOpen, Upload, AlertTriangle, Settings, Trash2 } from "lucide-react";
 import { API } from "@/api";
 import { useProjectsStore } from "@/stores/projects-store";
 import { useAppStore } from "@/stores/app-store";
@@ -160,7 +160,7 @@ function usePhaseLabels(): Record<string, string> {
 // ProjectCard — single project entry
 // ---------------------------------------------------------------------------
 
-function ProjectCard({ project }: { project: ProjectSummary }) {
+function ProjectCard({ project, onDelete }: { project: ProjectSummary; onDelete: (name: string) => void }) {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
   const status = project.status;
@@ -178,8 +178,25 @@ function ProjectCard({ project }: { project: ProjectSummary }) {
     <button
       type="button"
       onClick={() => navigate(`/app/projects/${project.name}`)}
-      className="flex flex-col gap-3 rounded-xl border border-gray-800 bg-gray-900 p-5 text-left transition-colors hover:border-indigo-500/50 hover:bg-gray-800/50 cursor-pointer"
+      className="group relative flex flex-col gap-3 rounded-xl border border-gray-800 bg-gray-900 p-5 text-left transition-colors hover:border-indigo-500/50 hover:bg-gray-800/50 cursor-pointer"
     >
+      <div 
+        role="button"
+        tabIndex={0}
+        className="absolute top-3 right-3 p-2 rounded bg-gray-900/80 border border-gray-700/50 text-gray-500 opacity-0 transition-opacity hover:bg-red-500/10 hover:text-red-400 group-hover:opacity-100 z-10"
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete(project.name);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation();
+            onDelete(project.name);
+          }
+        }}
+      >
+        <Trash2 className="h-4 w-4" />
+      </div>
       {/* Thumbnail or placeholder */}
       <div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-800">
         {project.thumbnail ? (
@@ -260,6 +277,10 @@ export function ProjectsPage() {
   const importInputRef = useRef<HTMLInputElement>(null);
   const isConfigComplete = useConfigStatusStore((s) => s.isComplete);
   const fetchConfigStatus = useConfigStatusStore((s) => s.fetch);
+
+  // Deletion state
+  const [projectToDelete, setProjectToDelete] = useState<string | null>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const loadProjects = useCallback(async () => {
     setProjectsLoading(true);
@@ -363,6 +384,20 @@ export function ProjectsPage() {
     },
     [loadProjects, navigate],
   );
+
+  const handleDeleteProject = useCallback(async () => {
+    if (!projectToDelete) return;
+    setIsDeleting(true);
+    try {
+      await API.deleteProject(projectToDelete);
+      await loadProjects();
+      setProjectToDelete(null);
+    } catch {
+      // silently fail — user can retry
+    } finally {
+      setIsDeleting(false);
+    }
+  }, [projectToDelete, loadProjects]);
 
   const handleImport = useCallback(
     async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -474,7 +509,7 @@ export function ProjectsPage() {
         ) : (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((p) => (
-              <ProjectCard key={p.name} project={p} />
+              <ProjectCard key={p.name} project={p} onDelete={setProjectToDelete} />
             ))}
           </div>
         )}
@@ -497,6 +532,47 @@ export function ProjectsPage() {
         />
       )}
       {showOpenClaw && <OpenClawModal onClose={() => setShowOpenClaw(false)} />}
+
+      {/* Delete project dialog */}
+      {projectToDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4">
+          <div className="w-full max-w-sm rounded-2xl border border-red-400/20 bg-gray-900 p-6 shadow-2xl shadow-black/40">
+            <div className="flex items-start gap-3">
+              <div className="mt-0.5 rounded-full bg-red-400/10 p-2 text-red-400">
+                <Trash2 className="h-5 w-5" />
+              </div>
+              <div className="space-y-2">
+                <h2 className="text-lg font-semibold text-gray-100">
+                  {t("auto.are_you_sure_you_wan_3")}{projectToDelete}{t("auto.text")}
+                </h2>
+                <p className="text-sm leading-6 text-gray-400">
+                  {(t as any)("proj.delete_desc") || "This action cannot be undone."}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setProjectToDelete(null)}
+                disabled={isDeleting}
+                className="rounded-lg border border-gray-700 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-500 hover:text-white disabled:opacity-50"
+              >
+                {t("btn.cancel")}
+              </button>
+              <button
+                type="button"
+                onClick={handleDeleteProject}
+                disabled={isDeleting}
+                className="flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-sm text-white transition-colors hover:bg-red-500 disabled:opacity-50"
+              >
+                {isDeleting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                {(t as any)("btn.delete") || "Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
